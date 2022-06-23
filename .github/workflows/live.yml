@@ -1,0 +1,57 @@
+name: Deploy to LIVE
+
+on:
+  push:
+    branches: [LIVE]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Pull repository into the current pipeline
+      - name: Pull repository
+        uses: actions/checkout@v2
+
+      # Install PHP dependencies
+      - name: Composer install
+        run: composer install --no-interaction --no-progress --no-suggest --optimize-autoloader
+
+      # Install NPM dependencies
+      - name: NPM install
+        run: npm ci
+
+      # Build assets using npm 
+      - name: Build step with NPM
+        run: npm run build
+
+      # deploy files via rsync
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@5.2
+        with:
+          switches:
+            -avzr
+            --exclude=".[!.]*"
+            --exclude "storage/"
+            --exclude "www/cpresources/"
+            --exclude "www/assets/"
+            --exclude "www/imager/"
+            --exclude "www/cache/"
+          remote_path: ${{ secrets.SERVER_LIVE_PATH }}
+          remote_host: ${{ secrets.SSH_HOST }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_key: ${{ secrets.SSH_KEY }}
+          
+      # execute Craft commands on remote server
+      - name: Execute SSH Craft Commands on remote server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ${{ secrets.SERVER_LIVE_PATH }}
+            ./craft project-config/apply
+            ./craft blitz/cache/refresh
+          
+          
