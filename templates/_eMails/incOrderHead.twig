@@ -1,0 +1,16 @@
+{% import '_incl/docMacros' as macro %}
+
+<h1>{{'Quittung für Bestellung'}}
+	#{{ order.number[:7] }}</h1>
+<p class="ksprHead">
+	<strong>{{ globals.naviName }}</strong> <br>
+    {{ macro.textField(globals.naviClaim) }}
+	<br>
+    <br>
+	www.{{ currentSite.baseUrl | replace({'https://':'', 'http://':'', '/':''}) }}
+</p>
+{% if ksprImg | length %}
+	<td>
+		<img src="{{ ksprImg.getUrl({ width: 50 }) }}" alt="">
+	</td>
+{% endif %}

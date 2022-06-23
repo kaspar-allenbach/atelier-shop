@@ -1,0 +1,87 @@
+.shopListing .content, .originalsListing {
+  max-width: 1500px;
+  margin: auto;
+  .productGrid {
+    grid-template-columns: 20px repeat(6, 1fr) 20px;
+    @include mdUp {
+      grid-template-rows: auto $gridGap * 5 auto;
+    }
+  }
+  @include mdDown {
+    .pageHead {
+      text-align: center;
+      padding-top: 40px;
+    }
+  }
+  .stickyEntry, .secondaryEntries {
+    padding-bottom: $gridGap;
+    .listingThumb {
+      @include smDown {
+        grid-column: span 2;
+      }
+    }
+  }
+  .variantImages {
+    grid-column: 1 / -1;
+    .tabPanel {
+      @extend %panel;
+    }
+    @include smDown {
+      padding-top: $gridGap;
+    }
+    @include mdUp {
+      grid-row: 1 / span 2;
+    }
+  }
+  .productDescription,
+  .productGallery {
+    grid-column: 1 / -1;
+    @include mdUp {
+      grid-column: 2 / span 4;
+    }
+  }
+  .productTaxonomy {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    @include mdUp {
+      grid-column: 6/-2;
+      grid-row: 2/6;
+    }
+  }
+  .variantTaxonomy {
+    @extend %panel;
+  }
+  .shopTxt {
+    grid-column: 1/-1;
+    text-align: center;
+    margin: $gridGap 0;
+    padding-top: $gridGap;
+    display: none;
+    @include mdUp {
+      display: block;
+      &.odd {
+        grid-column: span 6;
+        align-self: center;
+        text-align: left;
+      }
+    }
+  }
+  .productDescription {
+    @extend %hyphenate;
+  }
+  .productLead {
+    @extend %fontL;
+    font-weight: 700;
+  }
+  // style on shop & category page
+  .categoryText, .shopText {
+    grid-column: 1/-1;
+    @include mdUp {
+      column-gap: $gridGap;
+    }
+  }
+  .trustLogos li {
+    max-width: 15%;
+  }
+  
+}

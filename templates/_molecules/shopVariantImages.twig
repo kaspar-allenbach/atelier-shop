@@ -1,0 +1,17 @@
+{% import '_incl/docMacros' as macro %}
+
+
+<div class="variantImages">
+
+	{% if product.variantThumb | length %}
+			<div class="tabPanel">
+			{% for asset in product.variantThumb %}
+				{{ macro.variantImage( asset, 16/10 ) }}
+			{% endfor %}
+		</div>
+
+	{% else %}
+		{% include "_atoms/shopVariantTabs" %}
+	{% endif %}
+
+</div>

@@ -1,0 +1,46 @@
+fieldLayouts:
+  3f1049cf-9faa-4f12-9afc-5298bf69987e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 67de40d3-6f5d-4cd2-9756-4418f13f26df # Payment Gateway Message
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 41575187-fffb-4dae-9811-8a8b49199818 # Order Success Message
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2b7fb599-b346-4718-8d0c-232e1e584b88 # Order Shipment Provider
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 76e5215c-d632-4808-8192-c16f8bc9d9c6 # Sinwel Honorar
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 1
+handle: checkoutFields
+name: 'Checkout Fields'
+sortOrder: 2

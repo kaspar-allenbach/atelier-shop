@@ -1,0 +1,29 @@
+
+{% set variantsArray = [] %}
+{% for item in product.variants %}
+
+    {% if item.stock == 0 %}
+      {% set itemStock = 'OutOfStock' %}
+    {% else %}
+      {% set itemStock = 'InStock' %}
+    {% endif %}
+
+    {% set variantsArray = variantsArray | merge([seomatic.jsonLd.create({
+        'type' : 'Offer',
+        'price' : item.price,
+        'priceCurrency': 'CHF',
+        'sku': item.sku,
+        'url': entry.url ~ '?variant=' ~ item.sku,
+        'availability': itemStock,
+        'gtin': item.gtin
+    }, false)]) %}
+
+{% endfor %}
+
+{% if product.variants | length > 1 %}
+	{% set mainEntity = seomatic.jsonLd.get('mainEntityOfPage') %}
+  {% do mainEntity.setAttributes({
+    'offers' : [variantsArray]
+  }) %}
+
+{% endif %}

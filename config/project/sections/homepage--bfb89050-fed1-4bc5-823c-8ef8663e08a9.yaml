@@ -1,0 +1,26 @@
+defaultPlacement: end
+enableVersioning: true
+handle: homepage
+name: Homepage
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primäre eintrag Seite'
+      -
+        - urlFormat
+        - '{url}'
+propagationMethod: all
+siteSettings:
+  bc63c03e-bdb9-4257-848b-bea06f5ce825: # Kaspar Allenbach
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/index
+    uriFormat: __home__
+  cb7c4cc1-6fcf-4482-912c-87ce9bbe5d98: # Kaspar Allenbach en
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/index
+    uriFormat: __home__
+type: single

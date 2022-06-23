@@ -1,0 +1,42 @@
+.variantTaxonomy {
+    .productCategory {
+        @extend %fontS;
+        font-weight: 600;
+        margin: 0;
+        display: block;
+    }
+    .productTitle {
+        @extend %fontL;
+        font-weight: 600;
+        border-bottom: 1px solid $brandColor;
+    }
+    p {
+        margin: 0;
+        @extend %fontS;
+    }
+
+    select {
+        margin: 20px 0;
+        width: 100%;
+        option {
+            @extend %fontM;
+        }
+    }
+    .element {
+        display: flex;
+        border-bottom: 1px solid $brandColor;
+        justify-content: space-between;
+        width: 100%;
+        p:last-child {
+            font-weight: 600;
+            text-align: right;
+        }
+    }
+}
+body.darkTheme {
+ .variantTaxonomy {
+     h1, h2, p, a {
+         color: $txtColor;;
+     }
+ }   
+}

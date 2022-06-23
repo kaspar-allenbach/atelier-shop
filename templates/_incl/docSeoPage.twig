@@ -1,0 +1,5 @@
+{# seo #}
+
+{% if craft.app.request.getSegment(1) == 'shopdata' %}
+	{% do seomatic.meta.robots("none") %}
+{% endif %}

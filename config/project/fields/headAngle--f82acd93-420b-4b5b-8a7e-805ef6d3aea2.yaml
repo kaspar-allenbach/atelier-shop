@@ -1,0 +1,14 @@
+columnSuffix: null
+contentColumnType: boolean
+fieldGroup: e5bdd4fe-93a8-4915-ab87-93602a94922b # Coordinator
+handle: headAngle
+instructions: 'Green = 90°'
+name: 'Head Angle 0° / 90°'
+searchable: true
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

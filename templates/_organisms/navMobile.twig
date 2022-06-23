@@ -1,0 +1,9 @@
+{% import '_incl/docMacros' as macro %}
+
+<nav id="mainMobileNav" class="navigationMobile">
+	<button id="mobileNavCloser">{{ svg('@webroot/theme/img/hamburger-close.svg') | append('<title>Schliessen</title>', 'replace') }}</button>
+	<div class="mobileNavbrand">{% include "_atoms/mobileBrand" %}</div>
+	<ul class="mobileLinks">
+		{% include '_atoms/navList' %}
+	</ul>
+</nav>

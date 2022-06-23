@@ -1,0 +1,20 @@
+columnSuffix: null
+contentColumnType: integer(10)
+fieldGroup: 21f04442-c9bf-42c3-a5a0-d899ef06f6eb # Pages
+handle: instaPostLimit
+instructions: ''
+name: 'Insta Post Limit'
+searchable: true
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: 20
+  prefix: 'Die Galleriepage soll'
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: 'Einträge haben.'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

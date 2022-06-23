@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+	<channel>
+		<title>{{ siteName }}</title>
+		<link>{{ currentSite.baseUrl }}</link>
+		<language>{{ craft.app.language }}</language>
+		<pubDate>{{ now|rss }}</pubDate>
+		<lastBuildDate>{{ now|rss }}</lastBuildDate>
+		{% set allProducts = craft.products.all() %}
+
+		{% for product in allProducts %}
+			{% if product.hallOfFame != 1 %}
+				{% for variant in product.variants() %}
+					<item>
+						<g:id>{{ variant.sku }}</g:id>
+						<g:google_product_category>500044</g:google_product_category>
+						{% if loop.length > 1 %}
+                            <g:item_group_id>{{product.title | ascii | kebab }}</g:item_group_id>
+                        {% endif %}
+						<title>{{ product.title }}</title>
+						<description>{{ product.seoDescription }}</description>
+						{% if loop.length > 1 %}
+                            <link>{{ product.url ~ '?variant=' ~ variant.sku ~ '&utm_source=pntrst' }}</link>
+                        {% else %}
+                            <link>{{ product.url ~ '?utm_source=pntrst'}}</link>
+                        {% endif %}
+						{% if variant.gtin %}
+							<g:gtin>{{ variant.gtin }}</g:gtin>
+						{% endif %}
+						<g:price>{{ variant.price|currency('CHF', stripZeros = false) | trim('CHF ') }} CHF</g:price>
+						{% for productSize in variant.catProductSize %}
+							<g:size>{{ productSize.title }}</g:size>
+						{% endfor %}
+						<g:image_link>
+							{% spaceless %}
+								{% for asset in variant.variantThumb %}
+									{% set transformedImage = craft.imager.transformImage(asset, { width: 1024 }) %}
+									{{ currentSite.baseUrl | trim('/') }}{{ transformedImage.url }}
+								{% endfor %}
+							{% endspaceless %}
+						</g:image_link>
+						{% for asset in product.productGallery %}
+							{% set transformedImage = craft.imager.transformImage(asset, { width: 1024 }) %}
+							<g:additional_image_link>{{ currentSite.baseUrl | trim('/') }}{{ transformedImage.url }}</g:additional_image_link>
+						{% endfor %}
+						<g:condition>new</g:condition>
+						<g:availability>
+							{% if variant.stock > 1 %}
+								in stock
+							{% else %}
+								out of stock
+							{% endif %}
+						</g:availability>
+						<g:brand>{{ globals.naviName }}</g:brand>
+					</item>
+				{% endfor %}
+			{% endif %}
+		{% endfor %}
+	</channel>
+</rss>

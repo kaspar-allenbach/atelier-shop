@@ -1,0 +1,59 @@
+
+.mobileNavbar {
+  @extend %hiddenMdUp;
+  background-color: $darkThemeBg;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  @extend %shadow;
+  @include flexBox(null, space-between, center);
+  flex-wrap: wrap;
+  #mobileNavOpener {
+    border: none;
+    color: $txtColor;
+    @extend %fontXS;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    @include transition();
+    width: $navLogoSize;
+    height: $navLogoSize;
+    background-color: $brandColor;
+    svg {
+      vertical-align: middle;
+      circle {
+        fill: transparent;
+      }
+      line {
+        stroke: $darkThemeBg;
+      }
+    }
+    &:hover {
+      text-decoration: none;
+      background-color: $darkThemeBg;
+      color: $txtInvert;
+      cursor: pointer;
+      svg {
+        circle {
+          fill: transparent;
+        }
+        line {
+          stroke: $txtInvert;
+        }
+      }
+    }
+  }
+  .headerLogo {
+    svg {
+      height: $navLogoSize;
+    }
+  }
+  .brandName {
+    margin: 0;
+    a {
+      color: $txtInvert;
+      text-decoration: none;
+      @extend %fontS;
+    }
+  }
+}

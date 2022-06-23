@@ -1,0 +1,68 @@
+#payrexxRedirect.spinning:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    right: 6px;
+    top: 50%;
+    position: absolute;
+    border: 2px solid darken($txtColor,40%);
+    border-right: 3px solid $txtInvert;
+    animation: rotate360 .5s infinite linear, exist .1s forwards ease ;
+    
+  }
+  
+  #payrexxRedirect.spinning:after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    width: 0;
+    height: 0;
+    box-shadow: 0px 0px 0 1px darken(green,10%);
+    position: absolute;
+    border-radius: 50%;
+    animation: rotate360 .5s infinite linear, exist .1s forwards ease;
+  }
+  
+  .showLoading {
+      .cartHead , form {
+        @include transition;
+          opacity: 0.5;
+      }
+    .coolDownMessage {
+        background: $bgColor;
+        @include transition;
+        @extend %shadow;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        padding: 30px;
+        max-width: 95vw;
+        @include smUp {
+            max-width: 50vw;
+        }
+        &:before {
+            $loaderSize: 100px;
+            content: "x";
+            color: transparent;
+            background-image: url('/theme/img/loading.svg');
+            background-repeat: no-repeat;
+            background-size: $loaderSize;
+            width: $loaderSize;
+            height: $loaderSize;
+            display: block;
+            margin:auto;
+        }
+        &:after {
+            content: "Sie werden zum Payrexx Zahlungsdienstleister weitergeleitet.\A Einen Moment Geduld Bitte";
+            padding-top: 50px;
+            display: block;
+            @include smUp {
+                white-space: pre;
+            }
+        }
+    }
+  }

@@ -1,0 +1,5 @@
+{% import '_incl/docMacros' as macro %}
+
+{% for item in craft.entries.section('microNews').limit(1).all() %}
+    <aside class="microNews">{{ item.microNews }}</aside>
+{% endfor %}

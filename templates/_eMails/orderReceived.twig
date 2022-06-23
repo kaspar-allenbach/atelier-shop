@@ -1,0 +1,20 @@
+{% import '_incl/docMacros' as macro %}
+{% set tableBorder = 'border-bottom: black 1px dashed; padding: 10px;' %}
+{% set tableHeadBorder = 'border-bottom: black 2px solid; padding: 10px;text-align: left;' %}
+
+{% set env = getenv('ENVIRONMENT') %}
+
+{% if env != 'production' %}
+    <p style="color: red;"><strong style="color: red;">Dies ist nur eine TEST E-Mail. Das wurde nicht von der LIVE seite gesedet. Daher bitte ignorieren.</strong></p>
+{% endif %}
+
+{{ macro.nonHtmlTxt(checkoutFields.orderSuccessMessage) }}<br>
+
+<strong>{{'Bestelldaten'|t}}:</strong><br>
+{% include "_eMails/incOrderData" %}
+{% include "_eMails/incOrderAddresses" %}
+{% include "_eMails/incOrderProducts" %}
+<br>
+{{ macro.nonHtmlTxt(checkoutFields.orderShipmentProvider) }}
+
+{% include "_atoms/shopBuyersTrustLinks" %}

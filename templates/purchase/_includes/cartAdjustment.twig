@@ -1,0 +1,10 @@
+{% if not lineItemHasErrors %}
+    {% for adjustment in cart.orderAdjustments %}
+        <p class="adjustment">
+            {# <span class="adjustmentType">{{ adjustment.type | capitalize }}:</span> #}
+            {{ adjustment.name }}
+            {% if adjustment.description %}<br>({{ adjustment.description }}){% endif %},
+            {{ adjustment.amount|commerceCurrency(cart.currency) }}
+        </p>
+    {% endfor %}
+{% endif %}

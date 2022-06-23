@@ -1,0 +1,135 @@
+fieldLayouts:
+  878b463a-bf0b-47db-b1cb-cdb3000c2103:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: Titel
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8fbaa9c4-de52-411c-b9b7-2d8a02765aaf # Universal SEO Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ddc1a314-5b75-48dd-8397-738ddb51f3c8 # SEO Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1a831980-5069-46e3-8c6a-e0223d5426dd # Intro Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 02acabc8-d237-46a1-9f9b-e70a190b06e7
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 6b970296-d52f-465f-9ff7-1efbcf2a12b2 # Theme Switch
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Coordinator
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: fbf74abd-c66e-4701-be21-b9de5513b2db
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Pokalwand
+        sortOrder: 3
+      -
+        elements:
+          -
+            fieldUid: dbd9e24f-43ba-433c-92ce-5fd7fa3f0f41
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8ee40959-f950-413a-b9ad-99db1e8bc2da
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Portrait & CTA'
+        sortOrder: 4
+      -
+        elements:
+          -
+            fieldUid: 30d24b19-5861-4d46-90a2-ec86f8b0efc8 # Subpage SEO
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 5
+handle: homepage
+hasTitleField: true
+name: Homepage
+section: bfb89050-fed1-4bc5-823c-8ef8663e08a9 # Homepage
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

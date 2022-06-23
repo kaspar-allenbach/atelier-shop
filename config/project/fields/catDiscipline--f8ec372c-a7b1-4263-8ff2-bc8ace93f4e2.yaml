@@ -1,0 +1,24 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 0457eee9-3df5-43c1-8e17-fc2232fc73a8 # Portfolio
+handle: catDiscipline
+instructions: ''
+name: Discipline
+searchable: true
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: 'Add Discipline'
+  showSiteMenu: true
+  source: 'group:f6b8a0f2-fbfd-446e-8cbd-6add39062745' # Discipline
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

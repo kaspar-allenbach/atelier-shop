@@ -1,0 +1,61 @@
+.listingThumb {
+  width: 100%;
+  &.posCenter {
+    align-self: center;
+  }
+  &.posBottom {
+    align-self: flex-end;
+  }
+  h2 {
+    margin: 0;
+  }
+}
+
+a.listingThumb {
+  @include transition(transform);
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: none;
+    z-index: 100;
+    .textPart {
+      opacity: 1;
+    }
+  }
+  text-decoration: none;
+  @extend %fontM;
+  .visualPart {
+    position: relative;
+    img, video {
+      border-radius: 2px;
+      min-width: 100%;
+    }
+  }
+  .textPart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    opacity: 0;
+    padding: 20px;
+    @include transition(all);
+    background-color: rgba($brandColor, .9);
+    @include flexBox(column, center, center);
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.textPart {
+  padding: 5px 0;
+  .thumbClaim {
+    @extend %fontXS;
+    margin: 0;
+  }
+  h2 {
+    @extend %fontL;
+    font-weight: 700;
+  }
+}

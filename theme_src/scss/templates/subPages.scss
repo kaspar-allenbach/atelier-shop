@@ -1,0 +1,23 @@
+.subPages {
+  .uEberMich {
+    .mainGrid {
+      > * {
+        @include smDown {
+          grid-column: span 2;
+        }
+      }
+    }
+  }
+  .mainGrid {
+    h3, h4 {
+      margin: 0;
+    }
+    h2 {
+      padding-top: $gridGap;
+      @extend %fontXXL;
+      @include smDown {
+        grid-column: 1/-1;
+      }
+    }
+  }
+}

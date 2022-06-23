@@ -1,0 +1,28 @@
+{% import '_incl/docMacros' as macro %}
+
+{% for variant in variantEntries %}
+
+	<div
+		{% if loop.length > 1 %}
+			class="tabPanel js-image-variant-panel"
+			data-variant-slug="{{ variant.sku | ascii | kebab }}"
+		{% endif %}
+	>
+		<div class="element">
+			{% if variant.stock != 0 %}
+				<p>{{ 'Preis' | t }}:</p>
+				<p class="productPrice">{{ macro.currency( variant.price ) }}</p>
+			{% endif %}
+		</div>
+		{% if product.type == 'originals' %}
+			{% include "_atoms/taxProductType" %}
+		{% endif %}
+		{% include "_atoms/taxProductSize" %}
+        {% if variant|length < 2  %}
+            <div class="element">
+                <p>Variante:</p>
+                <p>{{ variant.title }}</p>
+            </div>
+        {% endif %}
+	</div>
+{% endfor %}

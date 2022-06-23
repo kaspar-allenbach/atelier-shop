@@ -1,0 +1,55 @@
+.shopPerks {
+  background-color: $brandColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: $gridGap;
+  width: 100%;
+  @include mdUp {
+    flex-direction: row;
+    margin: $gridGap * 3 0;
+    padding: $gridGap * 3;
+  }
+  .perk {
+    flex: 0 0 20%;
+    display: flex;
+
+    @include mdUp {
+      padding: 0 $gridGap * 2;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    p,
+    h3,
+    a,
+    label {
+      color: $txtColor;
+    }
+    h3 {
+      margin: 0;
+    }
+    img, svg {
+      max-width: 50px;
+      align-self: center;
+      margin-right: $gridGap;
+      @include mdUp {
+        margin-right: 0;
+        max-width: 100px;
+        padding-bottom: $gridGap;
+      }
+    }
+    form {
+      @include mdDown {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        input {
+          margin-bottom: $gridGap;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}

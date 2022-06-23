@@ -1,0 +1,56 @@
+.shopListing, .categoryTemplate {
+    // style on product page
+  .productText, .shopText, .categoryText {
+    &.enableColumn {
+      @include mdUp {
+        column-count: 2;
+        column-gap: $gridGap;
+      }
+    }
+    .txtBox {
+      page-break-inside:avoid;
+      break-inside:avoid;
+    }
+  }
+  blockquote {
+    padding-bottom: $gridGap;
+    p {
+      @extend %fontL;
+      &:before, &:after {
+        color: $brandColor;
+      }
+      &:before {
+        content: "«";
+        white-space: pre;
+      }
+      &:after {
+        content: "»";
+      }
+    }
+    cite {
+      @extend %fontM;
+      &:before {
+        content: "— ";
+        color: $brandColor;
+      }
+      a {
+        &:hover {
+          text-decoration: none;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  // style on all shop pages
+  .productTextSubtitle {
+    @extend %fontM;
+    font-weight: 700;
+    margin-bottom: 0;
+    padding-top: $gridGap;
+    &.separator {
+      padding-top: $gridGap;
+      border-top: $tabBorder;
+      @extend %fontL;
+    }
+  }
+}

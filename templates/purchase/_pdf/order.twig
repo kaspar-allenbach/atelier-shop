@@ -1,0 +1,133 @@
+{% import '_incl/docMacros' as macro %}
+{% set ksprImg = globals.logoRasterized.one() %}
+
+{% set tableBorder = 'border-bottom: #c7c7c7 1px dashed;' %}
+{% set tableHeadBorder = 'border-bottom: #c7c7c7 1px solid;' %}
+
+<!doctype html>
+<html lang="{{ craft.app.language }}">
+<head>
+    <meta charset="utf-8">
+    {% include '_incl/docWebfont' %}
+    <style>
+    {# {% include 'purchase/style.css' %} #}
+    .orderPaidStatus {
+        font-weight:bold;
+        position: absolute;
+        right:5%;
+        font-family: 'Vaud', Helvetica, serif;
+        color:rgb(211, 65, 50);
+        font-size:48px;
+        -ms-transform: rotate(-20deg); /* IE 9 */
+        -webkit-transform: rotate(-20deg); /* Safari */
+        transform: rotate(-20deg);
+    }
+    table.heading td {
+        vertical-align: top;
+    }
+    p, h1, h2, h3, li, a {
+        font-family: 'Vaud', Helvetica, serif;
+        margin: 0;
+    }
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    p {
+        font-size: 12px;
+        line-height: 1.2;
+    }
+    li {
+        line-height: 1.2;
+    }
+    h1 {
+        line-height: 1.5;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    tr, td,th {
+        padding: 2px !important;
+        margin: 0 !important;
+        font-size: 12px;
+    }
+    th {
+        text-align: left;
+    }
+    .ksprHead {
+        line-height: 1.1;
+    }
+    .tableHead {
+        border-bottom: solid 1px dotted #c7c7c7;
+        margin-bottom: 20px;
+    }
+    .address-data {
+        margin-top: 95px;
+        padding-bottom: 90px
+    }
+    .cellHead {
+        width: 450px;
+    }
+    .cellAddress {
+        width: 270px;
+        font-size: 15px;
+        line-height: 1.4;
+    }
+    .orderData {
+        margin-bottom: 40px;
+    }
+    .multipleUnits {
+        background: #ff2020;
+        padding: 5px;
+        color: white;
+        border-radius: 100px;
+        line-height: 1;
+    }
+    </style>
+</head>
+
+<body>
+
+{% set orderTable %}
+    <div class="container mx-auto">
+        {% include "_eMails/incOrderData" %}
+        {% include "_eMails/incOrderProducts" %}
+    </div>
+{% endset %}
+
+{# Use the option param passed into the pdf template to show different order pdf's depending on the context #}
+{% if option is defined %}
+{% switch option %}
+{% case "receipt" %}
+    <table class="tableHead">
+        <tr>
+            <td class="cellHead">{% include "_eMails/incOrderHead" %}</td>
+            <td class="cellAddress">{% include "_eMails/incOrderAddresses" %}</td>
+        </tr>
+    </table>
+    {{ orderTable }}
+{% case "ajax" %}
+    <h1>NA</h1>
+{% default %}
+    <table class="tableHead">
+        <tr>
+            <td class="cellHead">{% include "_eMails/incOrderHead" %}</td>
+            <td class="cellAddress">{% include "_eMails/incOrderAddresses" %}</td>
+        </tr>
+    </table>
+    {{ orderTable }}
+{% endswitch %}
+{% endif %}
+    <table>
+        <tr>
+            <td class="message">
+                {{ checkoutFields.orderSuccessMessage }}
+            <td class="message">
+                {{ checkoutFields.orderShipmentProvider }}
+            </td>
+        </tr>
+    </table>
+
+{% include "_atoms/shopBuyersTrustLinks" %}
+
+</body>
+</html>

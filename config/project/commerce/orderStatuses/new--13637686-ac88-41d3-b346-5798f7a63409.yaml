@@ -1,0 +1,8 @@
+color: orange
+default: true
+description: 'Eine Bestellung ist eingegangen'
+emails:
+  e0a06767-b57e-42c8-82b1-fe32bf54e785: e0a06767-b57e-42c8-82b1-fe32bf54e785 # Order Success
+handle: new
+name: New
+sortOrder: 99

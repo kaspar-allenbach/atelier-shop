@@ -1,0 +1,19 @@
+{% import '_incl/docMacros' as macro %}
+
+{% set portfolioListing = craft.entries.section('portfolioListing').one() %}
+
+{% for block in portfolioListing.ctaButton.all() %}
+	{% if loop.first %}
+		<aside class="ctaWrapper">
+	{% endif %}
+		{% switch block.type %}
+			{% case "mxCtaBtnTxt" %}
+				<div class="txtBlock">{{ macro.richText(block.cellTxt)}}</div>
+			{% default %}
+				{% set btnLink = block.cellBtnLink.one() %}
+				<a href="{{ btnLink.url }}" class="btn ctaBtn">{{ block.cellBtnTxt }}</a>
+		{% endswitch %}
+	{% if loop.last %}
+		</aside>
+	{% endif %}
+{% endfor %}

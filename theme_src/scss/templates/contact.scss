@@ -1,0 +1,37 @@
+.contact {
+  .adress {
+    background: $brandColor;
+    padding: 50px;
+    @include flexBox(null, center, center);
+    p, .heading, a {
+        color: $darkThemeBg;
+    }
+    p a {
+      text-decoration-color: $txtInvert;
+    }
+    @include mdDown {
+      margin-top: -$gridGap;
+    }
+  }
+  .heading {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .map {
+    min-height: 300px;
+  }
+  .contactGrid {
+    display: grid;
+    @include smUp {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: minmax(400px, 50vh) minmax(300px, auto);
+      grid-auto-rows: 1fr;
+      .map {
+        grid-column: 1/-1;
+      }
+    }
+    @media screen and ( min-height: 768px ) {
+      height: calc(100vh - 220px);
+    }
+  }
+}

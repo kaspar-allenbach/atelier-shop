@@ -1,0 +1,9 @@
+{% import '_incl/docMacros' as macro %}
+
+{% if item.purchasable.product.type != 'originals' %}
+	{% set cartThumb = item.purchasable.variantThumb.one() %}
+	{{ macro.checkoutThumb(cartThumb) }}
+{% else %}
+	{% set singleThumb = item.purchasable.product.variantThumb.one() %}
+	{{ macro.checkoutThumb(singleThumb) }}
+{% endif %}

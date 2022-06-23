@@ -1,0 +1,28 @@
+{% set env = getenv('ENVIRONMENT') %}
+{% set themeVersions = '17' %}
+{# {% if env != 'dev' %}{% requireLogin %}{% endif %} #}
+{% import '_incl/docMacros' as docMacro %}
+
+{% if entry is not defined %}
+  {% set entry = craft.entries.section('shopListing').one() %}
+{% endif %}
+
+{% set latestOrder = craft.orders.orderBy('dateOrdered DESC') | first %}
+
+  {% minify %}
+  	<!DOCTYPE html>
+  	<html lang="{{ craft.app.language }}">
+      {% include '_incl/docHead' %}
+  	  <body class="{{ entry.section.handle }} shopData">
+        {% block content %}{% endblock %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js" integrity="sha256-FPJJt8nA+xL4RU6/gsriA8p8xAeLGatoyTjldvQKGdE=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.2.0/js/tableexport.js" integrity="sha256-SZwjVuVpJ2DUrl5CzwaYjn50MX1VZkVSL/uynmtrV4I=" crossorigin="anonymous"></script>
+        <script>
+          $("table").tableExport({
+            formats:['csv']
+          });
+        </script>
+  	  </body>
+  	</html>
+{% endminify %}

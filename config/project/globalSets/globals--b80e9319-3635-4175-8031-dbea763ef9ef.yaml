@@ -1,0 +1,68 @@
+fieldLayouts:
+  8377b735-fcd7-4c39-97c5-91f442096307:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4312bceb-101c-4af0-beb1-9c97c107512d # Navi Name
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: af41c347-097a-4c4a-a1ff-a372bb4da867 # Navi Claim
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: baf2ec6c-eb3d-432c-ae51-9786a79968ba # Navi Logo
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 77970c08-daa2-445a-9ce6-0fe0f3dda847 # Logo Rasterized
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 803c1993-6dd4-4692-83af-3fbc46dca313 # Newsletter Button Label
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Globals
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 033595bd-f806-4358-8a90-838c988353f6 # Navi Links
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Navigation
+        sortOrder: 2
+handle: globals
+name: Globals
+sortOrder: 3

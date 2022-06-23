@@ -1,0 +1,40 @@
+{% extends "shopdata/_layoutShopData" %}
+{% import '_incl/docMacros' as macro %}
+
+{% block content %}
+
+	<main class="layoutHolder">
+		<article class="mainGrid">
+			{% for asset in globals.naviLogo.all() %}
+				<a href="{{ currentSite.baseUrl }}" class="logo">
+					<div class="navLogo" style="margin-top:-70px">{{ macro.oneImage(asset) }}</div>
+				</a>
+			{% endfor %}
+
+			<form method="post" accept-charset="UTF-8" class="loginForm">
+				<input type="hidden" name="action" value="users/login">
+				 {{ csrfInput() }}
+				 {{ redirectInput('shopdata/redirector') }}
+				<label for="loginName">Username or email</label>
+				<input id="loginName" type="text" name="loginName" value="{{ craft.app.user.rememberedUsername }}">
+				<label for="password">Password</label>
+				<input id="password" type="password" name="password" placeholder="***">
+				<div class="remember">
+					<label>
+						<input type="checkbox" name="rememberMe" value="1">
+						Remember me
+					</label>
+				</div>
+				<div class="submit">
+					<a href="{{ url('forgotpassword') }}">Forget your password?</a>
+					<input type="submit" value="Login">
+				</div>
+
+
+				{% if errorMessage is defined %}
+					<p>{{ errorMessage }}</p>
+				{% endif %}
+			</form>
+		</article>
+	</main>
+{% endblock %}

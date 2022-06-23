@@ -1,0 +1,128 @@
+{% import '_incl/docMacros' as macro %}
+
+{% set themeVersions = '17' %}
+{% set env = getenv('ENVIRONMENT') %}
+{% set expiry = now|date_modify('+7 days') %}
+{% if craft.app.config.general.devMode == false %}
+	{# Tell the browser to cache this page for 30 days #}
+	{% header "Cache-Control: max-age=" ~ (expiry.timestamp - now.timestamp) %}
+	{% header "Pragma: cache" %}
+	{% header "Expires: " ~ expiry|date('D, d M Y H:i:s', 'GMT') ~ " GMT" %}
+{% endif %}
+
+{% if cart is not defined %}
+    {% set cart = craft.commerce.carts.cart %}
+{% endif %}
+
+{% set flashNotice = craft.app.session.getFlash('notice') %}
+{% set flashError = craft.app.session.getFlash('error') %}
+
+{% set classes = {
+  input: 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded',
+  box: {
+    base: 'bg-gray-100 border-gray-300 border-b-2 p-6',
+    error: 'bg-red-100 border-red-500 border-b-2 p-6'
+  },
+  btn: {
+    base: 'cursor-pointer rounded px-4 py-2 inline-block',
+    small: 'cursor-pointer rounded px-2 py-1 text-sm inline-block',
+    grey: 'bg-gray-500 hover:bg-gray-600 text-white hover:text-white',
+    greyLight: 'bg-gray-300 hover:bg-gray-400 text-gray-600 hover:text-white',
+    blue: 'bg-blue-500 hover:bg-blue-600 text-white hover:text-white',
+    green: 'bg-green-500 hover:bg-green-600 text-white hover:text-white'
+  }
+} %}
+
+
+<!DOCTYPE html>
+<html lang="{{ craft.app.language }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{{ globals.naviName }} | Shop</title>
+
+    <meta name="description" content="{{ "The example templates for Craft Commerce"|t }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>{% include 'purchase/tailwind.css' %}</style>
+    <style>{% include 'purchase/style.css' %}</style>
+
+     {% if env != 'dev' %}
+        <link href="/theme/css/atelier6.min.css?version={{ themeVersions }}" rel="stylesheet">
+    {% else %}
+        <link href="/theme/css/atelier6.dev.css" rel="stylesheet">
+    {% endif %}
+
+    {% include '_atoms/fbPixel' %}
+    {% include '_atoms/pinterestTag' %}
+</head>
+<body class="shopCheckout shop{{ craft.app.request.segments|last|capitalize }}">
+
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    {% if cart is not defined %}
+        {% set cart = craft.commerce.carts.cart %}
+    {% endif %}
+
+
+    {% if showNav is not defined %}
+        {% set showNav = true %}
+    {% endif %}
+
+    <div class="cartHead">
+        {% include '_atoms/envTrigger' %}
+        {% include "purchase/_includes/shopHeader" %}
+    </div>
+
+    {% set flashNotice = craft.app.session.getFlash('notice') %}
+
+    {% if flashNotice %}
+        <div class="bg-blue text-white">
+            <div class="container mx-auto px-6 py-4">
+                {{ flashNotice }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% set flashError = craft.app.session.getFlash('error') %}
+
+    {% if flashError %}
+        <div class="bg-red text-white">
+            <div class="container mx-auto px-6 py-4">
+                {{ flashError }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if cart.errors|length %}
+        <div class="bg-red text-white">
+            <div class="container mx-auto px-6 py-4">
+                {% for attribute, errors in cart.errors %}
+                    {% if loop.first %}<ul>{% endif %}
+                    {% for key, error in errors %}
+                        <li>{{ attribute }}: {{ error }}</li>
+                    {% endfor %}
+                    {% if loop.last %}</ul>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% block body %}
+        <div class="bg-white">
+            <div id="main" class="container mx-auto p-6">
+                {% block main %}
+                    <h1>Default Content</h1>
+                    <p>You should not see this.</p>
+                {% endblock %}
+            </div>
+        </div>
+        {# {% include "_eMails/orderReceived" %} #}
+    {% endblock %}
+    {% include '_incl/docScripts' %}
+    {# {{ craft.blitz.getTemplate('_atoms/trackerBodyScripts') }} #}
+    {% include '_atoms/trackerBodyScripts' %}
+</body>
+</html>

@@ -1,0 +1,62 @@
+.shopData {
+    .mainGrid {
+        min-height: 100vh;
+        padding: $gridGap * 2;
+    }
+    .logo {
+        grid-column: span 2;
+        align-self: center;
+    }
+    .loginForm {
+        grid-column: 4 / span 6;
+        align-self: center;
+        label {
+            padding-bottom: 5px;
+            padding-top: 25px;
+            display: block;
+        }
+        input[type=text], input[type=password] {
+            padding: 12px 11px 7px;
+            width: 100%;
+        }
+        .submit {
+            @include flexBox(null, space-between, baseline);
+        }
+    }
+    .timestamp, .testString {
+        grid-column: 1/-1;
+    }
+    table {
+        width: 100%;
+    }
+    .monthlyResult {
+        grid-column: 1/-1;
+        border: 1px dashed $brandColor;
+        padding: $gridGap;
+        table {
+            thead {
+                text-align: left;
+            }
+            th, td {
+                border-bottom: 1px dashed $brandColor; 
+                padding: 5px;
+                border-right: 1px dashed $brandColor;
+                &:last-child {
+                    border-right: 0;
+                }
+                .oneLine {
+                    @include flexBox(column, space-between, baseline);
+                    background: white;
+                    padding: 4px;
+                    margin-bottom: 3px;
+                }
+                .invoice {
+                    color: red;
+                }
+            }
+        }
+    }
+    .txtRight {
+        text-align: right;
+    }
+}

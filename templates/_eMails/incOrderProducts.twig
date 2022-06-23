@@ -1,0 +1,64 @@
+<table style="width: 100%;">
+	<thead>
+		<tr>
+			<th style="{{tableHeadBorder}}">{{ "Produkt" | t }}</th>
+			<th style="{{tableHeadBorder}}">{{ "Menge" | t }}</th>
+			<th style="{{tableHeadBorder}}">{{ "Einzelpreis" | t }}</th>
+			<th style="{{tableHeadBorder}} text-align: right;">{{ "Subtotal" | t }}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for item in order.lineItems %}
+			<tr>
+				<td style="{{tableBorder}}">
+					<strong>{{ item.description }}</strong><br>
+					SKU:
+					{{ item.sku }}
+				</td>
+				<td style="{{tableBorder}}">
+					<strong {% if item.qty > 1 %}class="multipleUnits"{% endif %}>{{ item.qty }}</strong>
+					Ex.
+				</td>
+				<td style="{{tableBorder}}">{{ item.price|commerceCurrency(order.currency) }}</td>
+				<td style="{{tableBorder}} text-align: right;">
+					{% if item.onSale %}
+						<strike>{{ item.price|commerceCurrency(order.currency) }}</strike>
+						{{ item.salePrice|commerceCurrency(order.currency) }}
+					{% else %}
+						{{ item.subtotal|commerceCurrency(order.currency) }}
+					{% endif %}
+				</td>
+			</tr>
+		{% endfor %}
+		{% for adjustment in order.adjustments %}
+			<tr>
+				<td style="{{tableBorder}}">
+					<strong>{{ adjustment.type | capitalize }}</strong>
+				</td>
+				<td style="{{tableBorder}}">
+					{{ adjustment.name }}
+					{% if adjustment.description %}<br>({{ adjustment.description }}){% endif %}
+				</td>
+                <td style="{{tableBorder}}"></td>
+				<td colspan="2" style="{{tableBorder}}">{{ adjustment.amount|commerceCurrency(order.currency) }}</td>
+			</tr>
+		{% endfor %}
+		<tr>
+			<td colspan="4" style="{{tableBorder}}">
+				<strong>{{'Versandkosten:'|t}}</strong>
+                {% if order.shippingMethod %}
+                    {{ order.shippingMethod.name }}
+                {% else %}
+                    No shipping method selected.
+                {% endif %}
+			</td>
+		</tr>
+        <tr>
+            <td colspan="4" style="{{tableHeadBorder}} text-align: right;">
+                {{'Subtotal'}}: {{ order.itemTotal|commerceCurrency(order.currency) }}
+                <h4>Total: {{ order.totalPrice|commerceCurrency(order.currency) }}</h4>
+				{% include "purchase/_includes/paidStatus" %}
+            </td>
+        </tr>
+	</tbody>
+</table>

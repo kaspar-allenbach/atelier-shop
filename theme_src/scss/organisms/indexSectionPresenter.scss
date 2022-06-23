@@ -1,0 +1,35 @@
+
+.indexPresentationElement {
+  display: flex;
+  flex-direction: column-reverse;
+  background: white;
+  padding: $gridGap;
+  &:nth-child(even) {
+    background: $darkThemeBg;
+    h2, p, p > a {
+      color: $txtInvert;
+    }
+  }
+  @include mdDown {
+    .listingThumb:nth-child(n + 3) {
+      display: none;
+    }
+  }
+  @include mdUp{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    padding: $gridGap * 4;
+  }
+  header {
+    //outline: red solid 1px;
+    padding: $gridGap;
+    h2, a {
+      margin: 0;
+    }
+    @include mdUp {
+      //padding: $gridGap * 4;
+      grid-row: span 2;
+    }
+  }
+}

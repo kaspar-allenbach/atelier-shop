@@ -1,0 +1,171 @@
+{% set countries = craft.commerce.countries.allEnabledCountriesAsList %}
+{% set states = craft.commerce.states.allEnabledStatesAsListGroupedByCountryId %}
+
+{% set modelName = modelName is defined ? modelName : 'address' %}
+{% set model = address is defined ? address : null %}
+
+<div class="js-addressBox {{ modelName }}">
+
+	<div class="md:flex-row -mx-4">
+		<div class="flex-1 mx-4 inputWrapper">
+			<button type="button" class="toggleFieldButton btn btnSmall btnSecondary" tabindex="-1">+ {{'Firma' | t}}</button>
+			<div class="inputWrapper toggleField">
+				<label for="{{ modelName }}-businessName">{{'Firma' | t}} <span class="hint">(optional)</span></label>
+				<input type="text" id="{{ modelName }}-businessName" class="w-full" name="{{ modelName }}[businessName]" value="{{ model ? model.businessName : '' }}">
+				{% if model and model.getErrors('businessName') %}
+					<div class="text-red-700">{{ model.getErrors('businessName')|join }}</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+    <div class="md:flex -mx-4">
+        <div class="flex-1 mx-4 inputWrapper">
+            <label for="{{ modelName }}-firstName">{{'Vorname'|t}}*</label>
+            <input type="text" id="{{ modelName }}-firstName" class="w-full" name="{{ modelName }}[firstName]" autocomplete="given-name" value="{{ model ? model.firstName : '' }}">
+            {% if model and model.getErrors('firstName') %}
+                <div class="text-red-700">{{ model.getErrors('firstName')|join }}</div>
+            {% endif %}
+         </div>
+        <div class="flex-1 mx-4 inputWrapper">
+            <label for="{{ modelName }}-lastName">{{'Nachname'|t}}*</label>
+            <input type="text" id="{{ modelName }}-lastName" class="w-full" name="{{ modelName }}[lastName]" autocomplete="family-name" value="{{ model ? model.lastName : '' }}">
+            {% if model and model.getErrors('lastName') %}
+                <div class="text-red-700">{{ model.getErrors('lastName')|join }}</div>
+            {% endif %}
+        </div>
+	</div>
+	<div class="md:flex-row -mx-4">
+		<div class="flex-1 mx-4 inputWrapper">
+            <label for="{{ modelName }}-address1">{{'Strasse Nr.' | t }}*</label>
+            <input type="text" id="{{ modelName }}-address1" class="w-full" name="{{ modelName }}[address1]" autocomplete="street-address" value="{{ model ? model.address1 : '' }}">
+            {% if model and model.getErrors('address1') %}
+                <div class="text-red-700">{{ model.getErrors('address1')|join }}</div>
+            {% endif %}
+        </div>
+	</div>
+	<div class="mx:flex-row -mx-4">
+		<div class="flex-1 mx-4 inputWrapper">
+			<button type="button" class="toggleFieldButton btn btnSmall btnSecondary" tabindex="-1">+ {{'Adresszusatz' | t}}</button>
+			<div class="inputWrapper toggleField">
+				<label for="{{ modelName }}-address2">{{'Adresszusatz' | t }} <span class="hint">(optional)</span></label>
+				<input type="text" id="{{ modelName }}-address2" class="w-full" name="{{ modelName }}[address2]" value="{{ model ? model.address2 : '' }}">
+				{% if model and model.getErrors('address2') %}
+					<div class="text-red-700">{{ model.getErrors('address2')|join }}</div>
+				{% endif %}
+			</div>
+        </div>
+	</div>
+	<div class="md:flex -mx-4 mt-3">
+		<div class="flex-3 mx-4 inputWrapper">
+            <label for="{{ modelName }}-zipCode">{{'PLZ' | t }}*</label>
+            <input type="number" id="{{ modelName }}-zipCode" class="w-full" name="{{ modelName }}[zipCode]" autocomplete="postal-code" value="{{ model ? model.zipCode : '' }}">
+            {% if model and model.getErrors('zipCode') %}
+                <div class="text-red-700">{{ model.getErrors('zipCode')|join }}</div>
+            {% endif %}
+        </div>
+        <div class="flex-1 mx-4 inputWrapper">
+            <label for="{{ modelName }}-city">{{'Stadt' | t }}*</label>
+            <input type="text" id="{{ modelName }}-city" class="w-full" name="{{ modelName }}[city]" autocomplete="address-level2" value="{{ model ? model.city : '' }}">
+            {% if model and model.getErrors('city') %}
+                <div class="text-red-700">{{ model.getErrors('city')|join }}</div>
+            {% endif %}
+        </div>
+    </div>
+	<div class="md:flex -mx-4 mt-3">
+        <div class="flex-1 mx-4 inputWrapper">
+            <label for="{{ modelName }}-countryId">{{'Land'|t}}*</label>
+            <select class="js-address-country w-full" autocomplete="country" name="{{ modelName }}[countryId]">
+				{% for key, option in countries %}
+					{% set optionValue = (model ? model.countryId : '') %}
+					{% if loop.first %}
+						<option value="" disabled>Bitte Land auswählen</option>
+						<option value="" disabled>--</option>
+					{% endif %}
+					<option value="{{ key }}" {% if key == optionValue %} selected{% endif %}>{{ option }}</option>
+				{% endfor %}
+            </select>
+            {% if model and model.getErrors('countryId') %}
+                <div class="text-red-700">{{ model.getErrors('countryId')|join }}</div>
+            {% endif %}
+        </div>
+        <div class="flex-1 mx-4">
+            <label for="{{ modelName }}-state" class="selectLabel">State</label>
+            {% set options = (model and states[model.countryId] is defined ? states[model.countryId] : []) %}
+            <select id="{{ modelName }}-stateId" data-modelname="{{ modelName }}" class="js-address-stateId w-full {% if options|length == 0 %}hidden{% endif %}" name="{{ modelName }}[stateValue]">
+                {% for key, option in options %}
+                    {% set optionValue = (model ? model.stateId : '') %}
+                    <option value="{{ key }}" {% if key == optionValue %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            <input type="text" data-modelname="{{ modelName }}" id="{{ modelName }}-stateName" class="js-address-stateName {% if options|length > 0 %}hidden{% endif %} w-full" {% if options|length == 0 %}name="{{ modelName }}[stateValue]"{% endif %} value="{{ model ? model.stateName : '' }}">
+            {% if model and model.getErrors('stateValue') %}
+                <div class="text-red-700">{{ model.getErrors('stateValue')|join }}</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% js %}
+  var states = {{ craft.commerce.states.allEnabledStatesAsListGroupedByCountryId|json_encode|raw }};
+
+  var $countrySelects = document.querySelectorAll('select.js-address-country');
+
+  if ($countrySelects && $countrySelects.length) {
+    $countrySelects.forEach(function(el) {
+      el.addEventListener('change', function(ev) {
+        var $this = ev.target;
+
+        // get the value of the selected country.
+        var cid = $this.value;
+        var $closestAddressBox = $this.closest('.js-addressBox');
+
+        if ($closestAddressBox) {
+
+          var $states = $closestAddressBox.querySelector('select.js-address-stateId');
+          var $stateName = $closestAddressBox.querySelector('input.js-address-stateName');
+
+          if ($states && $stateName) {
+            var $options = $states.querySelectorAll('option');
+
+            if ($options && $options.length) {
+              $options.forEach(function(el) {
+                el.remove();
+              });
+            }
+
+            if (states.hasOwnProperty(cid))
+            {
+                // We have states for this country, show the states drop down.
+                $states.classList.remove('hidden');
+                $states.setAttribute('name', $states.dataset.modelname + '[stateValue]');
+
+                // We have states for this country, hide the stateName input.
+                $stateName.removeAttribute('name');
+                $stateName.classList.add('hidden');
+                $stateName.value = '';
+
+                // Add all states as options to drop down.
+                for (var id in states[cid])
+                {
+                    var state = states[cid][id];
+                    var $option = document.createElement('OPTION');
+                    $option.text = state;
+                    $option.value = id;
+                    $states.appendChild($option);
+                }
+
+            } else {
+                // hide the states dropdown, since this country has none.
+                $states.classList.add('hidden');
+                $states.removeAttribute('name');
+
+                // show the stateName
+                $stateName.classList.remove('hidden');
+                $stateName.setAttribute('name', $stateName.dataset.modelname + '[stateValue]');
+            }
+          }
+        }
+      });
+    });
+  }
+{% endjs %}

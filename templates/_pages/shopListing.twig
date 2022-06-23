@@ -1,0 +1,44 @@
+{% extends "_layout" %}
+{% import '_incl/docMacros' as macro %}
+
+{% block content %}
+	{# all content #}
+	{{ craft.blitz.getTemplate ("_atoms/shopCartTab") }}
+	<main class="layoutHolder">
+		<aside class="mainGrid">
+			{% include "_molecules/pageHead" %}
+			{% include "_molecules/shopCategories" %}
+		</aside>
+		{% if entry.section.handle == 'originalsListing' %}
+			{% set stickyProducts = craft.products.sticky(1).hallOfFame(not 1).type('originals').all() %}
+			{% set nonStickyProducts = craft.products.sticky(not 1).hallOfFame(not 1).type('originals').all() %}
+		{% else %}
+			{# Main Product Page #}
+			{% set stickyProducts = craft.products.sticky(1).hallOfFame(not 1).type('not originals').all() %}
+			{% set nonStickyProducts = craft.products.sticky(not 1).hallOfFame(not 1).type('not originals').all() %}
+		{% endif %}
+
+		<article class="mainGrid stickyEntry">
+			{% for item in stickyProducts %}
+				{% include "_molecules/shopThumb" %}
+				{% if (loop.last) and (entry.shopListingText) %}
+						<div class="{% if loop.index is odd %}odd{% else %}even{% endif %} shopTxt">{{ macro.richText(entry.shopListingText)}}</div>
+				{% endif %}
+			{% endfor %}
+		</article>
+	</main>
+	{% include "_organisms/shopPerks" %}
+	<main class="layoutHolder">
+		<article class="mainGrid secondaryEntries">
+			{% for item in nonStickyProducts %}
+				{% include "_molecules/shopThumb" %}
+			{% endfor %}
+			<div class="shopText{% if entry.enableColumn == 1 %} enableColumn{% endif %}">
+				{% include "_molecules/productText" %}
+			</div>
+		</article>
+		{% for entry in craft.entries.section('hallOfFame').all() %}
+			<a href="{{ entry.url }}" class="btn">{{ entry.title }}</a>
+		{% endfor %}
+	</main>
+{% endblock %}

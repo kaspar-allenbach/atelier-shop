@@ -1,0 +1,16 @@
+{% import '_incl/docMacros' as macro %}
+
+<div class="presenter">
+	<a href="{{ currentSite.baseUrl }}" class="headerLogo">
+		{% for asset in globals.naviLogo.all() %}
+			{{ macro.oneImage(asset) }}
+		{% endfor %}
+	</a>
+	<div class="indexBrand">
+		<div>
+			<h2 class="brandName brandHeadTxt">{{ globals.naviName }}</h2>
+			<h3 class="brandClaim brandHeadTxt">{{ macro.textField(globals.naviClaim) }}</h3>
+		</div>
+		<h2 class="indexTxt">{{ entry.seoDescription }}</h2>
+	</div>
+</div>

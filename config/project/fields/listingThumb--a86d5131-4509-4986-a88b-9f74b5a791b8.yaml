@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 0457eee9-3df5-43c1-8e17-fc2232fc73a8 # Portfolio
+handle: listingThumb
+instructions: 'Only one Field is allowed'
+name: 'Listing Thumb'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_listingthumb}}'
+  maxBlocks: '1'
+  minBlocks: '1'
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

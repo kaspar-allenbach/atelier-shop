@@ -1,0 +1,100 @@
+fieldLayouts:
+  c87000e4-9b44-49f4-9e99-20b3ff4f15c9:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: Titel
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: ddc1a314-5b75-48dd-8397-738ddb51f3c8 # SEO Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8fbaa9c4-de52-411c-b9b7-2d8a02765aaf # Universal SEO Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: dff41763-7565-4d2d-854a-57446e222deb # Page Elements
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: f82acd93-420b-4b5b-8a7e-805ef6d3aea2 # Head Angle 0° / 90°
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6b970296-d52f-465f-9ff7-1efbcf2a12b2 # Theme Switch
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Coordinator
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 30d24b19-5861-4d46-90a2-ec86f8b0efc8 # Subpage SEO
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 3
+handle: subPages
+hasTitleField: true
+name: 'Sub Pages'
+section: 1783fd15-f538-43ff-a601-6c104bffd5c5 # Sub Pages
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: ''

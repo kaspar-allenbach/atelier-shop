@@ -1,0 +1,37 @@
+fieldLayouts:
+  f41f3fdc-7b5a-409c-aea0-0eea8bb53442:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 283692bf-88e1-45ab-ba3a-6e4c70ca489c # Buyers Trust Text
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b99dae51-7d76-4f25-bdad-6ec8beeb9044 # Buyers Trust Links
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0dcf12e9-7072-4828-af83-d3faa9e93193 # Options Logos
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Buyers trust'
+        sortOrder: 1
+handle: buyersTrust
+name: 'Buyers Trust'
+sortOrder: 1

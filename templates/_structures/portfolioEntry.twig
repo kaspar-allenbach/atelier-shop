@@ -1,0 +1,24 @@
+{% extends "_layout" %}
+{% import '_incl/docMacros' as macro %}
+
+{% block content %}
+
+{% if entry.type != 'portfolioEntry' %}
+  {% do craft.blitz.options({cachingEnabled: false}) %}
+  {% exit 404 %}
+{% endif %} 
+
+
+  {# all content #}
+<main class="layoutHolder">
+  <article class="mainGrid">
+    {% for block in entry.pageElements.all() %}
+      {% include '_organisms/pageElements' %}
+    {% endfor %}
+  </article>
+  {% include '_molecules/portfolioDetails' %}
+</main>
+
+
+  
+{% endblock %}

@@ -1,0 +1,28 @@
+{# <input type="submit" value="{{ 'Zum Warenkorb hinzufügen' | t }}" class="btn btnBuy"> #}
+{% set visibleClasses = ' tabPanel js-image-variant-panel' %}
+{% set singleVariant = product.variants | length %}
+
+{% for variant in product.variants %}
+	{% if variant.stock != 0 %}
+		<button
+			id="addToCartButton"
+			data-variant-slug="{{ variant.sku | ascii | kebab }}"
+			class="btn btnFull buyBtn{% if singleVariant > 1 %}{{ visibleClasses }}{% endif %}">
+			<img src="/theme/img/shopping-cart.svg" alt="Cart Icon" class="btnIcon">
+			{{ 'In den Warenkorb' | t }}
+		</button>
+		{# <button
+			id="addToCartButton"
+			data-variant-slug="{{ variant.sku | ascii | kebab }}"
+			class="btn btnFull btnDirectCheckout buyBtn{% if singleVariant > 1 %}{{ visibleClasses }}{% endif %}">
+			<img src="/theme/img/shopping-cash-register.svg" alt="Cart Icon" class="btnIcon">
+			{{ 'Direkt Kaufen' | t }}
+		</button> #}
+	{% else %}
+		<input
+			type="submit"
+			value="{% if product.type == 'originals' %}{{ 'Verkauft' | t }}{% else %}{{ 'Ausverkauft' | t }}{% endif %}"
+			data-variant-slug="{{ variant.sku | ascii | kebab }}"
+			class="btn btnFull btnPrimary btnDisabled{% if singleVariant > 1 %}{{ visibleClasses }}{% endif %}" disabled>
+	{% endif %}
+{% endfor %}

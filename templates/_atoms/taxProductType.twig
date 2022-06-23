@@ -1,0 +1,16 @@
+{% if product.type == 'plakate' %}
+    {% set typeCall = variant.catProductiontype.all() %}
+{% else %}
+    {% set typeCall = product.catProductiontype.all() %}
+{% endif %}
+
+{% for item in typeCall %}
+	{% if loop.first %}
+		<div class="element">
+			<p>{{ 'Typ' | t }}:</p>
+		{% endif %}
+		<p>{{ item.title }}</p>
+		{% if loop.last %}
+		</div>
+	{% endif %}
+{% endfor %}

@@ -1,0 +1,120 @@
+field: e0cb3a4c-e144-41b6-8a4f-3d2bf361b243 # Shop Perks
+fieldLayouts:
+  f3f97c50-e007-408c-95c6-588e6b35099b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 88082650-ece1-4971-9a4f-5caf76e33b92 # Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bf171930-7fe0-406a-9277-f787eded5ad6 # Titel
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: af5e0867-3560-47de-a69d-7d7b169103e4 # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  88082650-ece1-4971-9a4f-5caf76e33b92: # Icon
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellIcon
+    instructions: ''
+    name: Icon
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:f30daf60-565d-4952-a03a-5740ee091724'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: 'Icon Hinzufügen'
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:86365b96-23a4-41aa-afd6-2396f45c29ad' # Images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  af5e0867-3560-47de-a69d-7d7b169103e4: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellTxt
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\redactor\Field
+  bf171930-7fe0-406a-9277-f787eded5ad6: # Titel
+    columnSuffix: null
+    contentColumnType: string(200)
+    fieldGroup: null
+    handle: cellTitle
+    instructions: ''
+    name: Titel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 50
+      code: '1'
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+handle: mxPerk
+name: Perk
+sortOrder: 1

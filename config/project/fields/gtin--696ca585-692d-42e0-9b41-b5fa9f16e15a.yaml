@@ -1,0 +1,19 @@
+columnSuffix: jkstfzri
+contentColumnType: text
+fieldGroup: 32b6581c-f334-41d2-8c31-56debf8fa7cb # Shop
+handle: gtin
+instructions: ''
+name: GTIN
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: '1'
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: xxxxxxxxxxxxx
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

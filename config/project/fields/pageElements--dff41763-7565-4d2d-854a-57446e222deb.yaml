@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 0457eee9-3df5-43c1-8e17-fc2232fc73a8 # Portfolio
+handle: pageElements
+instructions: ''
+name: 'Page Elements'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_pageelements}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

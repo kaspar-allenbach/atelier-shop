@@ -1,0 +1,20 @@
+{% if product.type == 'plakate' %}
+    {% set sizeCall = variant.catProductSize.all() %}
+{% else %}
+    {% set sizeCall = product.catProductSize.all() %}
+{% endif %}
+
+{% for item in sizeCall %}
+	{% if loop.first %}
+		<div class="element">
+			<p>{{ 'Format' | t }}:</p>
+		{% endif %}
+			<p>{{ item.title }} 
+				{% if (item.productWidth) or (item.produktHoehe) %}
+					 / {{ item.productWidth / 10 }}x{{ item.produktHoehe / 10 }} cm
+				{% endif %}
+			</p>
+		{% if loop.last %}
+		</div>
+	{% endif %}
+{% endfor %}

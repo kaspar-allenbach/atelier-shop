@@ -1,0 +1,18 @@
+
+  {% for site in currentSite.group.sites %}
+    <li class="{% if currentSite.id == site.id %}active{% endif %}">
+      {% set url = alias(site.baseUrl) %}
+      {% if product is defined %}
+        {% set productForOtherSite = craft.products.id(product.id).site(site).one() %}
+        {% if productForOtherSite %}
+          {% set url = productForOtherSite.getUrl() %}
+        {% endif %}
+      {% else %}
+        {% set entryForOtherSite = craft.entries.id(entry.id).site(site).one() %}
+        {% if entryForOtherSite %}
+          {% set url = entryForOtherSite.getUrl() %}
+        {% endif %}
+      {% endif %}
+      <a href="{{ url }}">{{ site.language | replace("de-CH" , "de" )  }}</a>
+    </li>
+  {% endfor %}

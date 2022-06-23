@@ -1,0 +1,120 @@
+{% extends "shopdata/_layoutShopData" %}
+{% requireLogin %}
+{% block content %}
+
+	<div class="container-fluid shoppingList">
+
+
+		<p>
+			Last Updated:
+			{{ now | date('D d.m.Y - H:i') }}
+			-
+			{% if currentUser %}
+				<a href="{{ logoutUrl }}">Logout</a>
+			{% endif %}
+		</p>
+
+		{% set orders = craft.orders.completed(true).orderBy('dateOrdered desc').all() %}
+		{% set ordersByCustomerId = orders | group(order => order.customerId) %}
+		<main>
+			<article class="mainGrid">
+				<div class="monthlyResult">
+					<h2>Newsletter Liste</h2>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Vorname</th>
+								<th>Nachname</th>
+								<th>Mail</th>
+								<th>Bestelldatum</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for customer, customerOrders in ordersByCustomerId %}
+								<tr>
+									<td>{{ loop.index }} - ID: {{ customer }}</td>
+									{% for order in customerOrders %}
+										{% if loop.index == 1 %}
+											<td>{{ order.shippingAddress.firstName | title }}</td>
+											<td>{{ order.shippingAddress.lastName | title }}</td>
+											<td>
+												{% set customerMail = order.email %}
+												<a href="mailto:{{ customerMail }}">{{ customerMail }}</a>
+											</td>
+											<td>{{ order.dateOrdered | date('D d.m.Y - H:i') }}</td>
+										{% endif %}
+									{% endfor %}
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+
+				<div class="monthlyResult">
+					<h2>Adress Liste</h2>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Bestelldatum</th>
+								<th>Firma</th>
+								<th>Nachname</th>
+								<th>Nachname</th>
+								<th>Strasse</th>
+								<th>PLZ</th>
+								<th>Ort</th>
+								<th>Land</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for customer, customerOrders in ordersByCustomerId %}
+								<tr>
+									<td>{{ loop.index }} - ID: {{ customer }}</td>
+									{% for order in customerOrders %}
+										{% if loop.index == 1 %}
+											<td>{{ order.dateOrdered | date('D d.m.Y - H:i') }}</td>
+											<td>{{ order.shippingAddress.businessName | replace({'Frau':'','Herr':'','-':''}) }}</td>
+											<td>{{ order.shippingAddress.firstName }}</td>
+											<td>{{ order.shippingAddress.lastName }}</td>
+											<td>{{ order.shippingAddress.address1 }}</td>
+											<td>{{ order.shippingAddress.zipCode }}</td>
+											<td>{{ order.shippingAddress.city }}</td>
+											<td>{{ order.shippingAddress.countryId }}</td>
+										{% endif %}
+									{% endfor %}
+								</tr>
+							{% endfor %}
+							{# {% for order in orders %}
+								<tr>
+									<td>{{ loop.index }}</td>
+									<td>{{ order.dateOrdered | date('D d.m.Y - H:i') }}</td>
+									<td>
+										{% if order.billingAddress.businessName is defined %}
+											{{ order.billingAddress.businessName | title }}
+										{% endif %}
+									</td>
+									<td>
+										{% if order.billingAddress.firstName is defined %}
+											{{ order.billingAddress.firstName | title }}
+										{% endif %}
+									</td>
+									<td>
+										{% if order.billingAddress.lastName is defined %}
+											{{ order.billingAddress.lastName  | title }}
+										{% endif %}
+									</td>
+									<td>{{ order.shippingAddress.address1 }}</td>
+									<td>{{ order.shippingAddress.zipCode }}</td>
+									<td>{{ order.shippingAddress.city }}</td>
+									<td>{{ order.shippingAddress.countryId }}</td>
+								</tr>
+							{% endfor %} #}
+						</tbody>
+					</table>
+				</div>
+			</article>
+		</main>
+	</div>
+
+{% endblock %}

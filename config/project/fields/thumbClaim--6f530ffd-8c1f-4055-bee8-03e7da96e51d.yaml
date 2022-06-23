@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: 0457eee9-3df5-43c1-8e17-fc2232fc73a8 # Portfolio
+handle: thumbClaim
+instructions: 'Line right above the listing thumb'
+name: 'Thumb Claim'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: '160'
+  code: ''
+  columnType: text
+  initialRows: '2'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: language
+type: craft\fields\PlainText

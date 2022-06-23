@@ -1,0 +1,342 @@
+{% macro textField(macroParam) %}
+	{{ macroParam | nl2br | raw }}
+{% endmacro %}
+
+{% macro defDate(macroParam) %}
+	{% if craft.app.language == 'de-CH' %}
+		{{ macroParam|date('D d.m.Y, H:i') }}
+	{% else %}
+		{{ macroParam|date('D jS M Y, H:i') }}
+	{% endif %}
+{% endmacro %}
+
+{% macro richText(string) %}
+	{{ string | striptags('<p><a><strong><br><ul><li><em>') | enkode_mailtos | raw }}
+{% endmacro %}
+
+{% macro nonHtmlTxt(string) %}
+	{{ string | striptags('<br><p><a>') | raw }}
+{% endmacro %}
+
+{% macro currency(string) %}
+	{{ string |currency('CHF') }}
+{% endmacro %}
+
+{% macro category(string) %}
+	{% for cat in string.all() %}
+		{{ cat.title }}
+	{% endfor %}
+{% endmacro %}
+
+{%- macro imageNaming(handle) -%}
+	{%- if handle.objectType | length -%}
+		{% for cat in handle.objectType.all() %}
+			{{cat.title}}
+		{% endfor %}
+		{{ handle.title }}
+	{%- else -%}
+		{{ handle.title }}
+	{%- endif -%}
+{%- endmacro -%}
+
+
+{# Standard Image Makro #}
+{% macro oneImage(handleParam, ratioRaram) %}
+	{% set image = handleParam %}
+	{% import _self as macro %}
+	{% if handleParam | length %}
+		{% if handleParam.extension == 'svg' %}
+			{{ svg(image) }}
+		{% else %}
+
+
+			{% set transformedImages = craft.imager.transformImage(image, [
+				{ width: 150 },{ width: 256 },{ width: 512 },{ width: 980 },],
+        { jpegQuality: 75, ratio: ratioRaram, allowUpscale: false },
+        { filenamePattern: macro.imageNaming(image) | kebab ~ '-kaspar_allenbach' ~ '_{fullname|shorthash}.{extension}' }) 
+      %}
+
+			<img
+				data-sizes="auto"
+				src="{{ craft.imager.placeholder() }}"
+				data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+				alt="{{ macro.imageNaming(image) }}"
+				class="lazyload{{ image.dropShadow ? ' dropShadow' : '' }}"
+				data-majorImg="{{transformedImages[3].url}}"
+			/>
+		{% endif %}
+
+	{% endif %}
+
+{% endmacro %}
+
+{# Standard shop image Makro #}
+{% macro variantImage(handleParam, ratioRaram) %}
+	{% set image = handleParam %}
+	{% import _self as macro %}
+	{% if handleParam | length %}
+		{% set transformedImages = craft.imager.transformImage(image,
+            [
+				{ width: 320, ratio: 1/1 }, 
+				{ width: 320 * 2, ratio: 1/1 },
+				{ width: 375 * 2, ratio: 1/1 }, 
+				{ width: 375 * 3, ratio: 1/1 }, 
+				{ width: 414 * 3, ratio: 1/1 },
+				{ width: 720 * 2 },
+				{ width: 992},
+				{ width: 1200},
+			],
+            { jpegQuality: 75, ratio: ratioRaram },
+            { filenamePattern: macro.imageNaming(image) | kebab ~ '-kaspar_allenbach' ~ '_{fullname|shorthash}.{extension}' })
+         %}
+		<img
+			data-sizes="100vw"
+			src="{{ craft.imager.placeholder() }}"
+			srcset="{{ craft.imager.srcset(transformedImages) }}"
+			alt="{{ macro.imageNaming(image) }}"
+			class="lazyload{{ image.dropShadow ? ' dropShadow' : '' }}"
+		/>
+
+	{% endif %}
+
+{% endmacro %}
+
+
+{# Youtube Macro #}
+{% macro youTube(handleParam, autoplayParam) %}
+	<div class="youtubeWrapper">
+
+		<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen frameborder="0" height="315" width="560" src="https://www.youtube.com/embed/{{ handleParam | youtubeId }}{% if autoplayParam == 1 %}?autoplay=1&mute=1{% endif %}&loop=1&rel=0&playlist={{ handleParam | youtubeId }}"></iframe>
+
+	</div>
+{% endmacro %}
+
+{# Video Makro #}
+
+{% macro video(handleParam, autoplayParam) %}
+	{# https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video #}
+
+	<video muted {% if autoplayParam == 1 %} autoplay allow="autoplay" {% else %} controls {% endif %} loop {% if handleParam.dropShadow == '1' %} class="dropShadow" {% endif %}>
+		<source src="{{ handleParam.url }}" type="video/mp4">
+	</video>
+{% endmacro %}
+
+{# Standard shopThumb Makro #}
+{% macro shopThumb(handleParam, ratioRaram) %}
+	{% set image = handleParam %}
+	{% import _self as macro %}
+	{% if handleParam | length %}
+		{% if handleParam.extension == 'svg' %}
+			{{ svg(image) }}
+		{% else %}
+			{% set transformedImages = craft.imager.transformImage(image,
+                [{ width: 320 },
+                { width: 980 },
+                { width: 1200 },],
+                { jpegQuality: 75, ratio: ratioRaram },
+                { filenamePattern: macro.imageNaming(image) | kebab ~ '-kaspar_allenbach' ~ '_{fullname|shorthash}.{extension}' })
+             %}
+			<img
+				data-sizes="auto"
+				src="{{ craft.imager.placeholder() }}"
+				data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+				alt="{{ macro.imageNaming(image) }}"
+				class="lazyload{{ image.dropShadow ? ' dropShadow' : '' }}"
+				data-majorImg="{{transformedImages[2].url}}"
+			/>
+
+		{% endif %}
+
+	{% endif %}
+
+{% endmacro %}
+
+{% macro pictureElement(handleParam, ratioRaram) %}
+	{% import _self as macro %}
+
+	{% for asset in handleParam.all() %}
+		{% if asset.extension == 'svg' %}
+			<picture>
+				<source data-srcset="{{ asset.url }}" alt="{{ asset.title }}" data-sizes="auto"/>
+				<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+			</picture>
+		{% else %}
+			<picture>
+				{% set transformedImages = craft.imager.transformImage(asset,
+                    [{ width: 320 },
+                    { width: 980 },
+                    { width: 1200 },],
+                    {jpegQuality: 75, ratio: ratioRaram, position: asset.getFocalPoint() },
+                    { filenamePattern: macro.imageNaming(asset) | kebab ~ '-kaspar_allenbach' ~ '_{fullname|shorthash}.{extension}' })
+                %}
+
+				<source
+					data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+					alt="{{ macro.imageNaming(asset) }}"
+					data-sizes="auto"
+					data-majorImg="{{transformedImages[2].url}}"
+				/>
+
+				<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+			</picture>
+		{% endif %}
+	{% endfor %}
+
+{% endmacro %}
+
+{# index picture element #}
+{% macro indexPicture(handleParam, ratioRaram) %}
+	{% import _self as macro %}
+
+	{% set image = handleParam %}
+
+		{% if image.extension == 'svg' %}
+			{# <picture>
+				<source data-srcset="{{ image.url }}" alt="{{ image.title }}" data-sizes="auto"/>
+				<img class="lazyload svgImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+			</picture> #}
+			{{ svg(image) |attr({preserveAspectRatio: 'xMidYMid slice', viewBox: '0 0 512 512', class: 'svgImage'}) }}
+		{% else %}
+			<picture>
+				{% set transformedImages = craft.imager.transformImage(image,
+                    [{ width: 150 },{ width: 320 }, { width: 450 }, { width: 512 },{ width: 768 }],
+                    {jpegQuality: 75, ratio: ratioRaram, position: image.getFocalPoint() },
+                    { filenamePattern: macro.imageNaming(image) | kebab ~ '-kaspar_allenbach' ~ '_{fullname|shorthash}.{extension}' })
+                %}
+				<source
+					data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+					alt="{{ macro.imageNaming(image) }}"
+					data-sizes="auto"
+					data-majorImg="{{transformedImages[4].url}}"
+				/>
+
+				<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+			</picture>
+		{% endif %}
+
+{% endmacro %}
+
+
+{# Product Gallery Image #}
+{% macro productGalleryImage(handleParam) %}
+	{% set image = handleParam %}
+	{% import _self as macro %}
+
+	{% set lightGalleryImg = craft.imager.transformImage(image, [
+		{ width: 600 }],{ jpegQuality: 75 },
+		{ filenamePattern: macro.imageNaming(image) | kebab ~ '-kaspar_allenbach' ~ '_{fullname|shorthash}.{extension}' }
+	) %}
+	{% set transformedImages = craft.imager.transformImage(image,
+		[{ width: 150 },{ width: 320 },{ width: 512 },],{ jpegQuality: 75, ratio: 1/1 },
+		{ filenamePattern: macro.imageNaming(image) | kebab ~ '-kaspar_allenbach' ~ '_{fullname|shorthash}.{extension}' })
+	%}
+	{% if handleParam | length %}
+		<a href="{{lightGalleryImg[0].url}}">
+			{% if handleParam.extension == 'svg' %}
+				{{ svg(image) }}
+			{% else %}
+
+				<img
+					data-sizes="auto"
+					src="{{ craft.imager.placeholder() }}"
+					data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+					alt="{{ macro.imageNaming(image) }}"
+					class="lazyload{{ image.dropShadow ? ' dropShadow' : '' }}"
+				/>
+			{% endif %}
+		</a>
+	{% endif %}
+
+{% endmacro %}
+
+
+{# indexportrait macro image #}
+{% macro indexPortrait(handleParam) %}
+	{% set image = handleParam %}
+	{% import _self as macro %}
+	{% if handleParam | length %}
+		{% if handleParam.extension == 'svg' %}
+			{{ svg(image) }}
+		{% else %}
+
+			{% set transformedImages = craft.imager.transformImage(image, [
+                { width: 320, ratio: 3/2 },
+                { width: 980, ratio: 3/2 },
+                { width: 1300,ratio: 16/9 },],
+                { jpegQuality: 75, mode: 'crop', position: image.getFocalPoint()  },
+                { filenamePattern: macro.imageNaming(image) | kebab ~ '-kaspar_allenbach' ~ '_{fullname|shorthash}.{extension}' }) 
+            %}
+
+			<img
+				data-sizes="auto"
+				src="{{ craft.imager.placeholder() }}"
+				data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+				alt="{{ macro.imageNaming(image) }}"
+				class="lazyload{{ image.dropShadow ? ' dropShadow' : '' }}"
+				data-majorImg="{{transformedImages[2].url}}"
+			/>
+		{% endif %}
+
+	{% endif %}
+
+{% endmacro %}
+
+
+{# portfolio listing Image Makro #}
+{% macro portfolioListing(handleParam, ratioRaram) %}
+	{% set image = handleParam %}
+	{% import _self as macro %}
+	{% if handleParam | length %}
+		{% if handleParam.extension == 'svg' %}
+			{{ svg(image) }}
+		{% else %}
+
+
+			{% set transformedImages = craft.imager.transformImage(image, [
+				{ width: 150 }, { width: 256 }, { width: 512 }, { width: 768 } ],
+                { jpegQuality: 75, ratio: ratioRaram, allowUpscale: false },
+                { filenamePattern: macro.imageNaming(image) | kebab ~ '-kaspar_allenbach' ~ '_{fullname|shorthash}.{extension}' }) 
+            %}
+
+			<img
+				data-sizes="auto"
+				src="{{ craft.imager.placeholder() }}"
+				data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+				alt="{{ macro.imageNaming(image) }}"
+				class="lazyload{{ image.dropShadow ? ' dropShadow' : '' }}"
+				data-majorImg="{{transformedImages[3].url}}"
+			/>
+		{% endif %}
+
+	{% endif %}
+
+{% endmacro %}
+
+{# Standard Image Makro #}
+{% macro checkoutThumb(handleParam) %}
+	{% set image = handleParam %}
+	{% import _self as macro %}
+	{% if handleParam | length %}
+		{% if handleParam.extension == 'svg' %}
+			{{ svg(image) }}
+		{% else %}
+
+
+			{% set transformedImages = craft.imager.transformImage(image, [
+				{ width: 150 },{ width: 320 },{ width: 768 }],
+        		{ jpegQuality: 75, allowUpscale: false, ratio: 16/9 },
+        		{ filenamePattern: macro.imageNaming(image) | kebab ~ '-kaspar_allenbach' ~ '_{fullname|shorthash}.{extension}' }) 
+      		%}
+
+			<img
+				data-sizes="auto"
+				src="{{ craft.imager.placeholder() }}"
+				data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+				alt="{{ macro.imageNaming(image) }}"
+				class="lazyload"
+			/>
+		{% endif %}
+
+	{% endif %}
+
+{% endmacro %}

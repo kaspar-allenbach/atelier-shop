@@ -1,0 +1,10 @@
+{% set env = getenv('ENVIRONMENT') %}
+
+{% if env != 'production' %}
+    <div class="envHint">
+        <p>
+            Du befindest dich <span class="envNon">nicht</span> auf der <strong class="envString">LIVE</strong> seite.
+            <small>Current: {{ env }}</small>
+        </p>
+    </div>
+{% endif %}

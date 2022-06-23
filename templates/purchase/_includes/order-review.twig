@@ -1,0 +1,109 @@
+{% import '_incl/docMacros' as macro %}
+
+{% if showShippingAddress is not defined %}
+    {% set showShippingAddress = false %}
+{% endif %}
+
+{% if showShippingMethod is not defined %}
+    {% set showShippingMethod = false %}
+{% endif %}
+
+<div class="order-review mt-8">
+    <h3 class="mt-0">
+        {{ 'Bestellübersicht' | t }}
+        <a href="{{ url('purchase/cart') }}" class="editOrderReview hiddenMdUp">{{ 'Anpassen' | t }}</a>
+    </h3>
+    <ul class="list-reset leading-normal">
+        {% for item in cart.lineItems %}
+            <li class="lineItem">
+                <div class="lg:flex">
+                    <div class="lg:w-1/3 lineItemImg">
+                        {% include "purchase/_includes/lineItemImage" %}
+                    </div>
+                    <div class="lg:w-2/3 lineItemTxt">
+                        <span class="itemDescription"><strong>{{ item.description }}</strong></span> <br>
+                        <span>
+                            {{ item.qty }} {{'Stk.'|t}}
+                            {# à {{ item.price|commerceCurrency(cart.currency) }} #}
+                        </span>
+                        <span class="subTotal">
+                            <strong>à {{ item.subtotal|commerceCurrency(cart.currency) }}</strong>
+                        </span>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+
+
+        {% for adjustment in cart.adjustments %}
+            <li class="{% if adjustment.type == 'shipping' %}flex {% endif %}adjustment">
+                <strong>{{ adjustment.name }} </strong>
+                <span>
+                    {{ adjustment.amount|commerceCurrency(cart.currency) }} {# {% if adjustment.type != 'shipping' %}<br>{% endif %} #}
+                    {% if adjustment.description %}
+                        ({{ adjustment.description }})
+                    {% endif %}
+                </span>
+            </li>
+        {% endfor %}
+
+
+        {% if not cart.shippingMethod %}
+
+            {# If the order requires a shipping method be selected, you could redirect back to the shipping page until one is applied to the order.
+                {% redirect "purchase/checkout/shipping" %}
+                You might also want to add a php plugin hook to require
+            #}
+
+            {# <li>
+                <strong>Shipping</strong>
+                None selected.
+                <a href="{{ url('purchase/checkout/shipping') }}">Choose a shipping method.</a>
+            </li> #}
+        {% endif %}
+        <li><hr></li>
+        <li>
+            <strong>Total
+                {{ cart.currency }}:</strong>
+            <span>{{ cart.totalPrice|commerceCurrency(cart.currency) }}</span>
+        </li>
+        {% if cart.currency != cart.paymentCurrency %}
+            <li>
+                <strong>{{'Bezahlung'|t}}
+                    {{ cart.paymentCurrency }}:</strong>
+                <span>{{ cart.totalPrice|commerceCurrency(cart.paymentCurrency,convert=true) }}</span>
+            </li>
+        {% endif %}
+    </ul>
+
+    {% if showShippingAddress %}
+        <hr>
+        <h4>{{'Versand nach…'|t}}</h4>
+        {% if cart.shippingAddress %}
+            <div class="address-select border-0">
+                {% include 'purchase/_includes/addresses/address' with {'address': cart.shippingAddress} %}
+            </div>
+        {% else %}
+            <p>No shipping address selected.</p>
+        {% endif %}
+
+        <a class="btn btnSmall" href="{{ url('purchase/checkout/addresses') }}">{{'Adresse ändern' | t}}</a>
+
+        <hr>
+    {% endif %}
+
+    {% if showShippingMethod %}
+        <h4>{{'Versandkosten:'|t}}</h4>
+
+        <p>
+            {% if cart.shippingMethod %}
+                {{ cart.shippingMethod.name }}
+            {% else %}
+                No shipping method selected.
+            {% endif %}
+        </p>
+
+        <hr>
+    {% endif %}
+    <a href="{{ url('purchase/cart') }}" class="editOrderReview btn btnSmall hiddenMdDown">{{ 'Anpassen' | t }}</a>
+</div>

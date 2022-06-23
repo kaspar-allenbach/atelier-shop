@@ -1,0 +1,23 @@
+{% extends "_layout" %}
+{% import '_incl/docMacros' as macro %}
+
+{% block content %}
+	{# all content #}
+	{{ craft.blitz.getTemplate ("_atoms/shopCartTab") }}
+	<main class="layoutHolder">
+		<article class="mainGrid">
+
+
+			{% include "_molecules/pageHead" %}
+
+			{% include "_molecules/shopCategories" %}
+
+			{% for item in craft.products.relatedTo(category).hallOfFame(not 1).all() %}
+				{% include "_molecules/shopThumb" %}
+			{% endfor %}
+			<div class="categoryText{% if category.enableColumn == 1 %} enableColumn{% endif %}">
+				{% include "_molecules/productText" %}
+			</div>
+		</article>
+	</main>
+{% endblock %}

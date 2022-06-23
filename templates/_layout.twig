@@ -1,0 +1,45 @@
+{# cheap asset versioning for invalidation #}
+{% set themeVersions = '17' %}
+{% set expiry = now|date_modify('+1 year') %}
+{% if craft.app.config.general.devMode == false %}
+	{# Tell the browser to cache this page for 30 days #}
+	{% header "Cache-Control: max-age=" ~ (expiry.timestamp - now.timestamp) %}
+	{% header "Pragma: cache" %}
+	{% header "Expires: " ~ expiry|date('D, d M Y H:i:s', 'GMT') ~ " GMT" %}
+{% endif %}
+
+{% import '_incl/docMacros' as macro %}
+
+{% set env = getenv('ENVIRONMENT') %}
+
+{% if product is defined %}
+    {% set entry = craft.entries.section('homepage').one() %}
+    {% set bodyClass = 'shopListing' %}
+{% elseif (category is defined) and (entry is not defined) %}
+    {% set entry = craft.categories.group('shopCategories').one() %}
+    {% set bodyClass = 'shopListing' %}
+{% else %}
+    {% set bodyClass = entry.section.handle %}
+{% endif %}
+
+{% set themeColor = entry.themeSwitch | length  ? 'darkTheme' %}
+
+{%- minify -%}
+    <!doctype html>
+    <html lang="{{ craft.app.language }}">
+        {% include '_incl/docHead' %}
+            <body class="{{ bodyClass }} {{ themeColor }} bodyEl">
+            {% include '_organisms/navMobile' %}
+            {% include '_atoms/mobileNavbar' %}
+            {% include '_organisms/siteHead' %}
+            {% block content %}{# all the content #}{% endblock %}
+            <footer class="layoutHolder mainGrid">
+                {% include "_atoms/buyersTrustLinks" %}
+                <div class="footerBrand">{% include '_atoms/headBranding' %}</div>
+                <ul class="trustLinks footerNavi">{% include '_atoms/navList' %}</ul>
+            </footer>
+            {% include '_incl/docScripts' %}
+            {% include '_atoms/trackerBodyScripts' %}
+        </body>
+    </html>
+{%- endminify -%}

@@ -1,0 +1,20 @@
+.portfolioEntry {
+  &.darkTheme {
+    p.prefix {
+      border-color: $txtInvert;
+    }
+  }
+  @include mdDown {
+    figure {
+      grid-column: 1/-1;
+    }
+  }
+  .wrapOnce {
+    img {
+      margin-bottom: $gridGap;
+    }
+  }
+  .hideOnSm {
+    @extend %hiddenSmDown;
+  }
+}

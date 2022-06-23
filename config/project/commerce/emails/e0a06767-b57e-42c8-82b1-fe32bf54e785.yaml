@@ -1,0 +1,12 @@
+bcc: '{{ getenv("EMAIL_SHOP_ADDRESS") }}, {{ getenv("EMAIL_LOGISTIC_ADDRESS") }}'
+cc: null
+enabled: true
+language: orderLanguage
+name: 'Order Success'
+pdf: 8382fe8e-8a5e-4d70-8716-744be405f18e # Order Success PDF
+plainTextTemplatePath: ''
+recipientType: customer
+replyTo: null
+subject: '<(^_^)> Ihre Bestellung {{ order.reference }} wird ausgeführt '
+templatePath: _eMails/orderReceived
+to: null

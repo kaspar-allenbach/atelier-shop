@@ -1,0 +1,36 @@
+.shopCheckout.shopPayment {
+  .gatewayChoice {
+    @include mdUp {
+      @include flexBox(null, flex-start, baseline);
+    }
+    @extend %panel;
+    @extend %shadow;
+    select#paymentMethod {
+      margin-left: auto;
+      width: 100%;
+    }
+  }
+  .paymentSource-form .grid {
+    @include mdDown {
+      display: block;
+    }
+  }
+  .stripe-charge-form {
+    width: 100%;
+  }
+  .StripeElement {
+    &.card-data {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+    }
+  }
+  .card-errors {
+    background-color: red;
+    padding-left: 10px;
+
+    color: $txtInvert;
+  }
+  .registerNewUser {
+    display: none;
+  }
+}

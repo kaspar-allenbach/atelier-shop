@@ -1,0 +1,104 @@
+field: dff41763-7565-4d2d-854a-57446e222deb # Page Elements
+fieldLayouts:
+  45d0ced9-0614-4012-9ddf-fe0cb8b25e0d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 7bbd10c8-bf87-4055-8d8c-68ffb135da06 # Youtube
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7117751f-a877-4277-b875-fafc34810791 # Grid Coordinator
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7bbd10c8-bf87-4055-8d8c-68ffb135da06: # Youtube
+    columnSuffix: null
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: cellYoutube
+    instructions: ''
+    name: Youtube
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: 'https://www.youtube.com/watch?v=cLNT_n0Tx5A'
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  7117751f-a877-4277-b875-fafc34810791: # Grid Coordinator
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellGridCoordinator
+    instructions: ''
+    name: 'Grid Coordinator'
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 013938a5-20cd-44f2-ab2d-38b805db8698 # No Mobile
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 5953ac4a-fb66-4c89-b92c-c1894300b26a # Grid Offset
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 5eb4348e-c36c-48e5-a3a5-14bbcbe70363 # Grid Height
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 95e4ec45-807e-419c-86a3-4f710f03a2e4 # Autoplay?
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - d3b43846-e68e-4ecf-8ad0-94109e683a48 # Grid Width
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_7_cellgridcoordinator}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: mxYoutube
+name: Youtube
+sortOrder: 6

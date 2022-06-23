@@ -1,0 +1,9 @@
+<a class="instaElement" href="{{ item.permalink  }}" target="_blank">
+    {% if item.media_type == 'VIDEO' %}
+        <video poster="{{ item.media_url }}" autoplay loop>
+            <source src="{{ item.media_url }}" />
+        <video>
+    {% else %}
+        <img src="{{ item.media_url }}" class="lazyload">
+    {% endif %}
+</a>

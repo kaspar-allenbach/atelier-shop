@@ -1,0 +1,16 @@
+.categoryTemplate {
+    @include smDown {
+        .listingThumb {
+            grid-column: 1/-1;
+        }
+    }
+    .content .shopTxt {
+        @include mdUp {
+            grid-column: span 6;
+            text-align: left;
+        }
+    }
+    .categoryTitlePrefix {
+        margin: 0;
+    }
+}

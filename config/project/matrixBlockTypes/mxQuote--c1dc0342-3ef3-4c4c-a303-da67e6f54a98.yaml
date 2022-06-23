@@ -1,0 +1,95 @@
+field: 6082ab94-81c7-43df-936c-ca4af64122df # Product Text
+fieldLayouts:
+  bc4640b8-20e4-4db6-8d83-cb2349337567:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0b99408b-2cbc-43f0-962a-fbe8fb3c71c4 # Quote
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7d745b42-be65-4936-b934-bf2edb0fc546 # Source
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d2b0573f-bb1b-40e4-b53b-cb45b73d45d4 # Cite Link
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  0b99408b-2cbc-43f0-962a-fbe8fb3c71c4: # Quote
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellQuote
+    instructions: ''
+    name: Quote
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '2'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+  7d745b42-be65-4936-b934-bf2edb0fc546: # Source
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellSource
+    instructions: ''
+    name: Source
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: '1'
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'Friedrich Nietzsche'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d2b0573f-bb1b-40e4-b53b-cb45b73d45d4: # Cite Link
+    columnSuffix: null
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: cellCiteLink
+    instructions: ''
+    name: 'Cite Link'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: 'https://www.gutzitiert.de/'
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: mxQuote
+name: Quote
+sortOrder: 4

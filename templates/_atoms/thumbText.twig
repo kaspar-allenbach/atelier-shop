@@ -1,0 +1,27 @@
+{% import '_incl/docMacros' as macro %}
+
+{% set thumbText %}
+    {% if entry.showText == 1 %}
+        <div class="textPart">
+            <div>
+                <p class="thumbClaim">{{ entry.thumbClaim }}</p>
+                {% if currentHandle == 'homepage' %}
+                    <h3>{{ entry.title }}</h3>
+                {% else %}
+                    <h2>{{ entry.title }}</h2>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endset %}
+
+
+{% switch entry.type %}
+
+    {% case "linkedEntry" %}
+        {{ thumbText }}
+    {% case "thumbEntry" %}
+    {% default %}
+        {{ thumbText }}
+
+{% endswitch %}

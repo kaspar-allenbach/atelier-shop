@@ -1,0 +1,116 @@
+field: dff41763-7565-4d2d-854a-57446e222deb # Page Elements
+fieldLayouts:
+  ef12dcaf-f66f-4257-b043-eebf9fa59859:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: c0d19c4e-de67-4890-b2e2-1d41e67045af # Text
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 74de468a-a30e-4185-baf9-8bf28586ac71 # Grid Coordinator
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  74de468a-a30e-4185-baf9-8bf28586ac71: # Grid Coordinator
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellGridCoordinator
+    instructions: ''
+    name: 'Grid Coordinator'
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 0309f5d0-79ed-4de6-a49e-74aa261e1054 # Grid Width
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - b5df6476-5b86-46b5-b9b1-df1e839d2325 # No Mobile
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - bf47b895-9c9f-4b84-8a9b-70c323099df8 # Grid Offset
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - c2e9d3b7-2090-4f8b-ac2a-157b0beda1b1 # Grid Height
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - d4f084c1-78c8-46ec-8420-341ba27d7211 # Text Pos
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_9_cellgridcoordinator}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  c0d19c4e-de67-4890-b2e2-1d41e67045af: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellTxt
+    instructions: ''
+    name: Text
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\redactor\Field
+handle: mxTxt
+name: Text
+sortOrder: 4

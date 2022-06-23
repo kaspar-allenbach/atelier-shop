@@ -1,0 +1,163 @@
+$btnRadius: 5px;
+
+.btn, input[type="submit"] {
+  background: $btnColor;
+  position: relative;
+  color: $txtColor;
+  border: solid 1px $btnColor;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  border-radius: $btnRadius;
+  margin-bottom: 20px;
+  padding: 10px 15px 8px;
+  text-decoration: none;
+  @extend %fontS;
+  @include transition;
+  &:hover {
+    background-color: lighten($btnColor, 20%);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  &.buyBtn, &.commenceBuy {
+    background: $buyColor;
+    font-weight: 600;
+    color: $txtColor;
+    border: none;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &.btnDisabled {
+    background-color: $disabledColor !important;
+    color: $txtColor !important;
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: not-allowed;
+      background-color: $disabledColor;
+      color: $txtColor;
+    }
+  }
+  &.btnPrimary {
+    outline: none;
+    background-color: $buyColor;
+    color: $txtInvert;
+    border-radius: $btnRadius;
+    border: none;
+    &:hover {
+      background-color: lighten($buyColor, 15%);
+      cursor: pointer;
+      text-decoration: none;
+      color: $txtColor;
+    }
+  }
+  &.btnSecondary {
+    background: $subtleColor;
+  }
+  &.btnSmall {
+    @extend %fontXS;
+    padding: 5px 10px 4px;
+  }
+  &.btnFull {
+    width: 100%;
+  }
+  &.btnMinor, %btnMinor {
+    background-color: lighten($txtColor, 70%);
+    color: lighten($txtColor, 50%);
+  }
+  &.btnInvert {
+    background-color: transparent;
+    border: solid 1px $btnColor;
+    &:hover,
+    &.btnActive {
+      background-color: $btnColor;
+      color: $darkThemeBg;
+    }
+  }
+  &.btnNeutral {
+    background: $txtInvert;
+    border: solid 1px $subtleColor;
+  }
+  &.btnPill {
+    border-radius: $btnRadius * 10;
+  }
+  .btnIcon {
+    display: inline;
+    width: 30px;
+  }
+}
+.darkTheme {
+  .btn {
+    outline-color: $txtInvert;
+  }
+}
+.btnGroup {
+  margin-bottom: 20px;
+  @include mdUp {
+    display: flex;
+  }
+  .btn {
+    border-radius: 0;
+    margin-bottom: 0;
+    text-align: center;
+    border-bottom: solid 1px $bgColor;
+    &:first-child {
+      border-radius: $btnRadius $btnRadius 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 $btnRadius $btnRadius;
+    }
+    @include mdUp {
+        border-right: solid 1px $bgColor;
+      &:first-child {
+        border-radius: $btnRadius 0 0 $btnRadius;
+      }
+      &:last-child {
+        border-radius: 0 $btnRadius $btnRadius 0;
+      }
+    }
+  }
+  &.btnGroupHorizontal {
+    @include flexBox(null, null, null);
+    > .btn {
+      border-radius: 0;
+      @include mdDown {
+        flex: 1;
+      }
+      &:first-child {
+        border-radius: 4px 0 0 4px;
+        margin-right: 1px;
+      }
+      &:last-child {
+        border-radius: 0 4px 4px 0;
+      }
+    }
+  }
+}
+.btnRemove {
+  margin-bottom: 0;
+}
+.revealBtn {
+  display: block;
+  padding-top: 10px;
+  color: $revealColor;
+  @extend %fontS;
+  cursor: pointer;
+  &:before {
+    content:"+";
+    color: $txtInvert;
+    background: $revealColor;
+    border-radius: 20px;
+    line-height: 1;
+    margin-right: 10px;
+    text-align: center;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 1.3;
+  }
+  &.closeField:before {
+    content:"-";
+  }
+}

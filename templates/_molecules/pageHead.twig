@@ -1,0 +1,18 @@
+{% import '_incl/docMacros' as macro %}
+
+{% if category is defined %}
+
+	<div class="pageHead">
+		<h1 class="pageTitle">{{ category.title }}</h1>
+	</div>
+
+{% else %}
+
+	<div class="pageHead">
+		<h1 class="pageTitle">{{ entry.title }}</h1>
+		{% if entry.pageClaim %}
+			<h2 class="pageClaim">{{ macro.textField(entry.pageClaim) }}</h2>
+		{% endif %}
+	</div>
+
+{% endif %}

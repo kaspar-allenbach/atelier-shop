@@ -1,0 +1,5 @@
+{% if order.paidStatus == 'paid' %}
+    {% if order.gateway.id != 2 %}
+        <h2 class="orderPaidStatus">{{'Bezahlt'|t}}</h2>
+    {% endif %}
+{% endif %}

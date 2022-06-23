@@ -1,0 +1,31 @@
+{% import '_incl/docMacros' as macro %}
+
+{# Set parameters for prev/next elements list #}
+{% set params = craft.entries.section('portfolioEntry').type('portfolioEntry') %}
+
+{# Get the prev/next elements #}
+{% set prevEntry = entry.getPrev(params) %}
+{% set nextEntry = entry.getNext(params) %}
+
+<aside class="pagination">
+    {% if prevEntry %}
+        <a href="{{ prevEntry.url }}" class="pagination pagPrev">
+            <span>
+                <span class="pagIcon" aria-hidden="true">
+                    {{ svg('@webroot/theme/img/prevNext.svg') | append('<title>Next</title>', 'replace') }}
+                </span>
+                <span class="visuallyHidden">Previous</span>
+            </span>
+        </a>
+    {% endif %}
+    {% if nextEntry %}
+        <a href="{{ nextEntry.url }}" class="pagination pagNext">
+            <span>
+                <span class="pagIcon" aria-hidden="true">
+                    {{ svg('@webroot/theme/img/prevNext.svg') | append('<title>Previous</title>', 'replace') }}
+                </span>
+                <span class="visuallyHidden">Next</span>
+            </span>
+        </a>
+    {% endif %}
+</aside>

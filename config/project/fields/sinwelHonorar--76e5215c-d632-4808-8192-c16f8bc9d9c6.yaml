@@ -1,0 +1,20 @@
+columnSuffix: null
+contentColumnType: integer(10)
+fieldGroup: b561ef0e-3093-459e-ba9a-555511435eb8 # Globals
+handle: sinwelHonorar
+instructions: ''
+name: 'Sinwel Honorar'
+searchable: true
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: 0
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

@@ -1,0 +1,22 @@
+{% import '_incl/docMacros' as macro %}
+
+<div class="container mx-auto md:flex justify-between items-center p-6 text-center" id="header">
+
+    <a href="{{ currentSite.baseUrl }}" class="brand">
+        {% for asset in globals.naviLogo.all() %}
+            {{ macro.oneImage(asset) }}
+        {% endfor %}
+        <div>
+            <h2>{{ globals.naviName }}</h2>
+            {# <h3>{{ macro.textField(globals.naviClaim) }}</h3> #}
+        </div>
+    </a>
+
+    {% if showNav %}
+        {% include "purchase/_includes/nav" %}
+    {% endif %}
+
+    {% if extraHeader is defined %}
+        {{ extraHeader }}
+    {% endif %}
+</div>

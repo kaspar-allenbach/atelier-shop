@@ -1,0 +1,8 @@
+handle: payrexx
+isFrontendEnabled: true
+name: Payrexx
+paymentType: authorize
+settings:
+  onlyAllowForZeroPriceOrders: ''
+sortOrder: 99
+type: craft\commerce\gateways\Manual

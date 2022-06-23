@@ -1,0 +1,54 @@
+{% for block in globals.naviLinks.all() %}
+
+
+
+
+{% set currentID = entry.id %}
+
+    {% switch block.type %}
+        {% case "mxDropdownNaviPoint" %}
+            <li class="dropdown">
+                <a href="#">{{ block.cellDropdownText }}</a>
+                <ul>
+                    {% for item in block.mxDropdownLinks.all() %}
+                        
+                        {% set currentLink = item.id %}
+
+                        {% set addActive %}
+                            {% if currentLink == currentID %}
+                                class="active"
+                            {% endif %}
+                        {% endset %}
+
+
+                        <li{{ addActive }}>
+                            <a href="{{ item.url }}">{{ item.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        
+        {% case "mxManual" %}
+                <li>
+                    <a href="{{ block.cellLink }}">{{ block.cellLabel }}</a>
+                </li>
+        {% default %}
+            {% for item in block.cellLink.all() %}
+
+                {% set currentLink = item.id %}
+
+                {% set addActive %}
+                    {% if currentLink == currentID %}
+                        class="active"
+                    {% endif %}
+                {% endset %}
+
+                <li{{ addActive }}>
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                </li>
+
+            {% endfor %}
+    {% endswitch %}
+
+{% endfor %}
+

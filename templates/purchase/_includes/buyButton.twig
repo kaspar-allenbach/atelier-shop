@@ -1,0 +1,7 @@
+<div class="orderButtons">
+	<button class="btn buyBtn btnIcon" type="submit" id="payrexxRedirect">
+		<img src="/theme/img/shopping-cash-register.svg" alt="Cart Icon" class="btnIcon">
+		{{ 'Bezahlen' | t }}
+		{{ cart.totalPrice|commerceCurrency(cart.paymentCurrency,convert=true) }}
+	</button>
+</div>

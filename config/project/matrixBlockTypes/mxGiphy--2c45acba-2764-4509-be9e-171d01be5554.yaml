@@ -1,0 +1,97 @@
+field: dff41763-7565-4d2d-854a-57446e222deb # Page Elements
+fieldLayouts:
+  7fde1b76-9483-4044-95e2-f2a287c7e59b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fb5b8c05-1298-41b8-9275-e34683803fb1 # GIPHY
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5b85f50a-924a-4fc6-b0dc-dd06ed203e1a # Grid Coordinator
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5b85f50a-924a-4fc6-b0dc-dd06ed203e1a: # Grid Coordinator
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellGridCoordinator
+    instructions: ''
+    name: 'Grid Coordinator'
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 03fc42f4-3ad8-48d6-9a14-79a2e3de0ab8 # Grid Width
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - a6d14185-b811-4647-b6e1-af7f4a468f8c # No Mobile
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - aa9a7864-be5d-4255-8414-0c7c5661ae56 # Grid Height
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - ade15e61-1d5e-418a-a5bc-a160f51cf6d0 # Grid Offset
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_6_cellgridcoordinator}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  fb5b8c05-1298-41b8-9275-e34683803fb1: # GIPHY
+    columnSuffix: null
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: cellGiphy
+    instructions: ''
+    name: GIPHY
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: 'https://media.giphy.com/media/l1J9N1n7UXolzAq2I/giphy.gif'
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: mxGiphy
+name: GIPHY
+sortOrder: 5

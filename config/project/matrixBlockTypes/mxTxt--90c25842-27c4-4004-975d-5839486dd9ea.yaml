@@ -1,0 +1,49 @@
+field: 6082ab94-81c7-43df-936c-ca4af64122df # Product Text
+fieldLayouts:
+  0c53598f-939a-45ea-81e4-45920f6d609b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: acfe304d-c42c-4044-b12e-40ea264ebe92 # Text
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  acfe304d-c42c-4044-b12e-40ea264ebe92: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellTxt
+    instructions: ''
+    name: Text
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\redactor\Field
+handle: mxTxt
+name: Text
+sortOrder: 1

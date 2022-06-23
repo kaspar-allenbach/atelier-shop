@@ -1,0 +1,39 @@
+.titleTrustLogos {
+  @extend %fontS;
+  margin: 0;
+  padding-bottom: $gridGap;
+}
+
+ul.trustLogos,
+ul.trustLinks {
+  @extend %neutralList;
+  @include flexBox(null, flex-start, center);
+  @extend %flexGap;
+  flex-wrap: wrap;
+}
+.trustLinks {
+  li {
+    a {
+      @extend %fontXS;
+    }
+    &.active a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+}
+.trustLogos {
+  li {
+    max-width: 18%;
+    margin-right: 5px !important;
+    margin-bottom: 10px;
+    opacity: 0.4;
+  }
+}
+.productTaxonomy {
+  .buyersTrust {
+    @include mdDown {
+      display: none;
+    }
+  }
+}

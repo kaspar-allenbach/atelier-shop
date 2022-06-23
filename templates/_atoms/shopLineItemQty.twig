@@ -1,0 +1,18 @@
+<div class="itemQuantity">
+	<div {% if item.getFirstError('qty') %} class="has-error" {% endif %}>
+		<strong class="qtyInteger">{{ item.qty }}</strong>
+		<small>
+			{% if item.qty > 1 %}
+				{{ 'Exemplare' | t }}
+			{% else %}
+				{{ 'Exemplar' | t }}
+			{% endif %}
+		</small>
+		{# <input type="{% if item.options.donationAmount is defined %}hidden{%else%}number{%endif%}" name="lineItems[{{ item.id }}][qty]" min="0" value="{{ item.qty }}"> #}
+	</div>
+	<div class="btnGroup btnGroupHorizontal">
+		<button name="lineItems[{{ item.id }}][qty]" type="submit" value="{{ item.qty - 1 }}" class="btn">-1</button>
+		<button name="lineItems[{{ item.id }}][qty]" type="submit" value="{{ item.qty + 1 }}" class="btn">+1</button>
+		<button name="lineItems[{{ item.id }}][remove]" type="submit" value="{{ 'Entfernen' | t }}" class="btn btnRemove">{{ 'Entfernen' | t }}</button>
+	</div>
+</div>

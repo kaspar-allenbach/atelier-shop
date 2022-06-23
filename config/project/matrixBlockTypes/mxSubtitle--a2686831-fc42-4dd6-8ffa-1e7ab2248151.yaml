@@ -1,0 +1,108 @@
+field: dff41763-7565-4d2d-854a-57446e222deb # Page Elements
+fieldLayouts:
+  3d581306-09a7-4bbd-817c-c4e2c0c3e15b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4c98f2b7-f4eb-42a0-a361-8edb4cdb000d # Subtitle
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8b8cae1e-f369-4549-841b-83cd0c74531e # Grid Coordinator
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  4c98f2b7-f4eb-42a0-a361-8edb4cdb000d: # Subtitle
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellSubtitle
+    instructions: ''
+    name: Subtitle
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+  8b8cae1e-f369-4549-841b-83cd0c74531e: # Grid Coordinator
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellGridCoordinator
+    instructions: ''
+    name: 'Grid Coordinator'
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 025fe7fb-2982-4476-99c0-3f43ab0501b3 # Grid Height
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - b0476a59-9c5e-494a-8c8f-c55c61c0be59 # Grid Offset
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - bd1b86cc-8c8a-443d-8dd6-7b20a69f6862 # Grid Width
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - c7588676-6e6a-4430-869f-c3b5656247c4 # H?
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - ead47a90-a89e-4ae0-9c7f-36ee9f0ef41d # No Mobile
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_22_cellgridcoordinator}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: mxSubtitle
+name: Subtitle
+sortOrder: 3

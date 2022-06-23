@@ -1,0 +1,23 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: d0379430-3004-4eb7-af6d-c137e345363a # SEO
+handle: subpageSeo
+instructions: ''
+name: 'Subpage SEO'
+searchable: true
+settings:
+  elementDisplayPreviewType: facebook
+  facebookTabEnabled: ''
+  generalEnabledFields:
+    - seoPreview
+    - mainEntityOfPage
+    - seoTitle
+    - seoDescription
+    - seoImage
+    - robots
+  generalTabEnabled: '1'
+  sitemapTabEnabled: ''
+  twitterTabEnabled: ''
+translationKeyFormat: null
+translationMethod: language
+type: nystudio107\seomatic\fields\SeoSettings

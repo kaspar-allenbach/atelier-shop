@@ -1,0 +1,20 @@
+{% for block in buyersTrust.optionsLogos.all() %}
+	{% set trustLogo = block.cellLogo.one() %}
+
+	{% if loop.first %}
+		{# <h4 class="titleTrustLogos">{{'Bezahlmöglichkeiten'|t}}:</h4> #}
+		<ul class="trustLogos">
+	{% endif %}
+		{% if block.cellLink %}
+			<li>
+				<a href="{{block.cellLink}}">
+					<img src="{{ trustLogo.url }}" alt="">
+				</a>
+			</li>
+		{% else %}
+			<li><img src="{{ trustLogo.url }}" alt=""></li>
+		{% endif %}
+		{% if loop.last %}
+		</ul>
+	{% endif %}
+{% endfor %}

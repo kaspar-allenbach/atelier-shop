@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: b561ef0e-3093-459e-ba9a-555511435eb8 # Globals
+handle: naviClaim
+instructions: ''
+name: 'Navi Claim'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: '1'
+  columnType: text
+  initialRows: '2'
+  multiline: '1'
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: language
+type: craft\fields\PlainText

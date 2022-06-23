@@ -1,0 +1,122 @@
+field: dff41763-7565-4d2d-854a-57446e222deb # Page Elements
+fieldLayouts:
+  cb9e8487-c18e-474c-a4d1-757cc9dee49c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 743e4f39-6d24-4770-9451-5ab26133947e # Video
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fd9400a9-9273-4056-9ab6-c1002f1bba94 # Grid Coordinator
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  743e4f39-6d24-4770-9451-5ab26133947e: # Video
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellVideo
+    instructions: .mp4
+    name: Video
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - video
+      defaultUploadLocationSource: 'volume:f30daf60-565d-4952-a03a-5740ee091724'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Add Video'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:f30daf60-565d-4952-a03a-5740ee091724'
+      singleUploadLocationSubpath: '{owner.slug}'
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  fd9400a9-9273-4056-9ab6-c1002f1bba94: # Grid Coordinator
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellGridCoordinator
+    instructions: ''
+    name: 'Grid Coordinator'
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 4c5fa2af-1c12-45fb-868f-ee3d6b6cf21a # Grid Width
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 7b17e818-42bf-4627-b500-ba29e3ce9049 # Autoplay?
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 89953990-3fda-43a6-a581-7f0f5b4dcb0c # No Mobile
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - c7861ec0-d436-4b74-b5f7-7cb5042b2647 # Grid Height
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - f43126d1-9b2d-4f76-99c8-f6b2b929dc5c # Grid Offset
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_8_cellgridcoordinator}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: mxVideo
+name: Video
+sortOrder: 7

@@ -1,0 +1,45 @@
+.gallery {
+    .pageHead {
+        grid-column: 1/-1;
+        padding: 0;
+        @include smDown {
+            text-align: center;
+        }
+        @include smUp {
+            grid-column: span 6;
+            justify-self: center;
+            align-self: center;
+        }
+        @include lgUp {
+            grid-column: span 4;
+        }
+        .rotator {
+            transform: rotate(0);
+            position: relative;
+            margin: 0;
+            left: 0;
+        }
+    }
+    .profileLink {
+        background-color: $darkThemeBg;
+        color: $txtInvert;
+        @include flexBox(null, center, center);
+        padding: $gridGap;
+        text-decoration: none;
+    }
+    .instaElement {
+        grid-column: 1/-1;
+        @include smUp {
+            grid-column: span 6;
+        }
+        @include lgUp {
+            grid-column: span 4;
+        }
+        height: 100%;
+        @extend %fontS;
+        min-width: 0;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

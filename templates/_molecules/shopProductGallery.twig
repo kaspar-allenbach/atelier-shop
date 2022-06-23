@@ -1,0 +1,9 @@
+{% import '_incl/docMacros' as macro %}
+
+{% if product.productGallery | length %}
+    <div class="productGallery">
+        {% for asset in product.productGallery.all() %}
+            {{macro.productGalleryImage(asset)}}
+        {% endfor %}
+    </div>
+{% endif %}

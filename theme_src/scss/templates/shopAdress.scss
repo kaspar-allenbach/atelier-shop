@@ -1,0 +1,159 @@
+.shopCheckout.shopAddresses {
+  //shipping
+  h1 {
+    margin: 0;
+    padding-bottom: 20px;
+    padding-top: 0;
+    display: block;
+    width: 100%;
+    @include mdDown {
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
+  }
+  .order-review {
+    margin-top: 0;
+    h3 .editOrderReview {
+      @extend %fontS;
+      text-decoration: underline;
+      opacity: 0.7;
+    }
+    > .editOrderReview {
+      position: absolute;
+      right: 10px;
+    }
+  }
+  .orderButtons {
+    @include mdDown {
+      margin-top: 25px;
+      button {
+        width: 100%;
+      }
+    }
+    @include mdUp {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  h2 {
+    @extend %fontL;
+    font-weight: 700;
+  }
+  .addressSectionPanel {
+    @extend %panel;
+    @include mdUp {
+      padding: 30px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      @include mdDown {
+        text-align: center;
+        width: 100%;
+        padding: 20px 0;
+        margin: 0;
+        position: sticky;
+        top: 0;
+        //z-index: 100;
+        background: $txtInvert;
+      }
+    }
+  }
+  .BillingAddress {
+    padding-top: 20px;
+  }
+  .address-select {
+    background-color: transparent;
+    border: none;
+    padding-top: 20px;
+    .body {
+      padding: 0;
+    }
+  }
+  .optionals {
+    padding-top: 20px;
+  }
+  .requiredHint {
+    color: $buyColor;
+  }
+  form {
+    .inputWrapper {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    #shippingAddress-stateName {
+      display: none;
+    }
+    label {
+      @extend %fontXS;
+      position: absolute;
+      transition: all 0.2s ease-out;
+      background: white;
+      display: inline-block;
+      left: 16px;
+      top: -7px;
+      margin: 0;
+      &.normalLabel {
+        position: relative;
+        left: 0;
+        top: 0;
+      }
+      &.selectLabel {
+        position: relative;
+        display: none;
+      }
+      &.shippingBillingAddressCheck {
+        position: relative;
+        display: block;
+      }
+    }
+    input {
+      padding: 20px 8px 10px 14px;
+      transition: all 0.2s ease-out;
+      &:focus {
+        border-color: $brandColor;
+        background-color: lighten( $txtColor, 80% );
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+    .hint {
+      opacity: 0.5;
+      @extend %fontS;
+    }
+  }
+  .toggleField {
+    display: none;
+    &.showField {
+      display: block;
+    }
+  }
+  .toggleFieldButton {
+    margin: 0;
+    &.fieldOpen {
+      margin-bottom: 15px;
+    }
+  }
+  .loadingNextPage {
+    background: green !important;
+  }
+  .buyersTrust {
+    @include flexBox(column, null, null);
+    background: lighten($txtColor, 80%);
+    border: solid 1px $txtInvert;
+    padding: 19px;
+    .trustLogos {
+      order: 1;
+      margin-bottom: 10px;
+    }
+    > p {
+      order: 2;
+    }
+    .trustLinks {
+      order: 3;
+      @extend %fontXS;
+      @include flexBox(column, null, flex-start);
+    }
+  }
+}

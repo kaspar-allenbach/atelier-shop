@@ -1,0 +1,20 @@
+columnSuffix: null
+contentColumnType: integer(10)
+fieldGroup: b8a02f30-44c8-448c-a31a-bc4af707ae34 # Category Fields
+handle: produktHoehe
+instructions: 'in mm'
+name: 'Produkt Höhe'
+searchable: true
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: 0
+  prefix: 'Das Produkt ist'
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: hoch
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

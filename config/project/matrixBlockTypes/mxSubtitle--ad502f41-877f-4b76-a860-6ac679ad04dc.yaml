@@ -1,0 +1,143 @@
+field: 6082ab94-81c7-43df-936c-ca4af64122df # Product Text
+fieldLayouts:
+  82719e01-9eb2-4523-ae73-4e5f90ea84f4:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f106b0a1-3208-4251-b2be-766455ffa0f6 # Subtitle
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d1d7f3d7-07e5-47e2-a63d-068db1cda413 # Subtitle Level
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9b2e92e9-81cf-4e10-9a2e-e8978044f3da # Separator
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  9b2e92e9-81cf-4e10-9a2e-e8978044f3da: # Separator
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: cellSeparator
+    instructions: ''
+    name: Separator
+    searchable: true
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  d1d7f3d7-07e5-47e2-a63d-068db1cda413: # Subtitle Level
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: subtitleLevel
+    instructions: ''
+    name: 'Subtitle Level'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - h2
+            -
+              - value
+              - h2
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - h3
+            -
+              - value
+              - h3
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - h4
+            -
+              - value
+              - h4
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - h5
+            -
+              - value
+              - h5
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - h6
+            -
+              - value
+              - h6
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  f106b0a1-3208-4251-b2be-766455ffa0f6: # Subtitle
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellSubtitle
+    instructions: ''
+    name: Subtitle
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+handle: mxSubtitle
+name: Subtitle
+sortOrder: 2

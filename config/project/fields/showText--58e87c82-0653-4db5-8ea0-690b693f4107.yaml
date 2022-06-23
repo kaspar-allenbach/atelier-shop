@@ -1,0 +1,14 @@
+columnSuffix: null
+contentColumnType: boolean
+fieldGroup: e5bdd4fe-93a8-4915-ab87-93602a94922b # Coordinator
+handle: showText
+instructions: ''
+name: 'Show Text'
+searchable: true
+settings:
+  default: true
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch
