@@ -1,0 +1,32 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: d0379430-3004-4eb7-af6d-c137e345363a # SEO
+handle: portfolioSeo
+instructions: ''
+name: 'Portfolio SEO'
+searchable: true
+settings:
+  elementDisplayPreviewType: google
+  facebookEnabledFields:
+    - seoPreview
+    - ogSiteNamePosition
+    - ogDescription
+    - ogImage
+  facebookTabEnabled: '1'
+  generalEnabledFields:
+    - seoPreview
+    - siteNamePosition
+    - seoDescription
+    - seoImage
+  generalTabEnabled: '1'
+  sitemapTabEnabled: ''
+  twitterEnabledFields:
+    - seoPreview
+    - twitterTitle
+    - twitterSiteNamePosition
+    - twitterDescription
+    - twitterImage
+  twitterTabEnabled: '1'
+translationKeyFormat: null
+translationMethod: language
+type: nystudio107\seomatic\fields\SeoSettings

@@ -1,0 +1,14 @@
+.productGallery {
+  @include flexBox(null, null, null);
+  //flex-wrap: wrap;
+  padding-bottom: $gridGap;
+  a {
+    @include transition(opacity);
+    display: block;
+    max-width: 50%;
+    padding-right: $gridGap;
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}

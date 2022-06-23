@@ -1,0 +1,45 @@
+defaultPlacement: end
+fieldLayouts:
+  462f84b3-8f53-43dd-98a5-ebb33b30a9d1:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: productCat
+name: Produktkategorie
+siteSettings:
+  bc63c03e-bdb9-4257-848b-bea06f5ce825: # Kaspar Allenbach
+    hasUrls: false
+    template: null
+    uriFormat: null
+  cb7c4cc1-6fcf-4482-912c-87ce9bbe5d98: # Kaspar Allenbach en
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: ba8aedf3-747c-46c6-a6f6-0814b9facb8d

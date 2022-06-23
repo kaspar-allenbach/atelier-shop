@@ -1,0 +1,32 @@
+.pageHead {
+  text-align: center;
+  @include mdDown {
+    padding-bottom: 20px;
+  }
+  grid-column: 1 / -1;
+  .pageTitle {
+    @extend %fontXXL;
+    font-weight: 600;
+  }
+  .pageClaim {
+    @extend %fontL;
+    font-weight: 600;
+  }
+  @include xlUp {
+    .rotator {
+      transform: rotate(90deg);
+      transform-origin: -15px 15px;
+      position: absolute;
+      z-index: 100;
+    }
+  }
+}
+
+.headerLogo, .navLogo {
+  svg {
+    vertical-align: bottom;
+    rect {
+      fill: $darkThemeBg;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{% import '_incl/docMacros' as macro %}
+
+{# Create empty attribute array #}
+{% set elementAttributes = [] %}
+
+{# supertable grid coordinator field. write as var for simplification #}
+{% set gridValue = block.cellGridCoordinator %}
+
+{# check text position for text field and write into a variable #}
+{% set textPosCheck %}
+    {% if gridValue.textPos %}pos{{ gridValue.textPos.value | capitalize }}{% endif %}
+{% endset %}
+
+{# check image field if it has same cell activated #}
+{% set wrapOnceCheck %}
+    {% if gridValue.sameCell == 1 %}wrapOnce{% endif %}
+{% endset %}
+
+{% set txtElementCheck %}
+    {% if block.type == 'mxTxt' %}mxTxt{% endif %}
+{% endset %}
+
+{# Construct all the callss attributes #}
+{% set elementAttributes = {
+            
+   class: [
+        'width' ~ gridValue.gridWidth | capitalize,
+        'height' ~ gridValue.gridHeight  | capitalize,
+		gridValue.gridOffset,
+        gridValue.hideOnMobile ? 'hideOnSm',
+        textPosCheck,
+		wrapOnceCheck,
+		txtElementCheck
+    ] 
+
+} %}
+
+{% switch block.type %}
+
+
+	{% case "mxTxt" %}
+		<div {{attr(elementAttributes)}}>
+			{{ macro.richText( block.cellTxt ) }}
+		</div>
+	{% case "mxGiphy" %}
+		<figure {{attr(elementAttributes)}}>
+			<img src="{{ block.cellGiphy }}" alt="{{ entry.title }}">
+		</figure>
+	{% case "mxYoutube" %}
+		<figure {{attr(elementAttributes)}}>
+			{{ macro.youTube(block.cellYoutube, gridValue.autoplay) }}
+		</figure>
+	{% case "mxVideo" %}
+		<figure {{attr(elementAttributes)}}>
+			{% for asset in block.cellVideo %}
+				{{ macro.video(asset, block.autoplay) }}
+			{% endfor %}
+		</figure>
+	{% case "mxSubtitle" %}
+		{% set subtitleLevel = gridValue.subtitleLevel ?? 'h2' %}
+		<{{ subtitleLevel }} {{attr(elementAttributes)}}>{{ block.cellSubtitle }}</{{ subtitleLevel }}>
+	{% default %}
+		{% for asset in block.cellImg.all() %}
+			{% if gridValue.sameCell != 1 %}
+				<figure {{attr(elementAttributes)}}>
+					{{ macro.oneImage(asset) }}
+				</figure>
+			{% else %}
+				{% if loop.first %}
+					<figure {{attr(elementAttributes)}}>
+				{% endif %}
+					{{ macro.oneImage(asset) }}
+				{% if loop.last %}
+					</figure>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+{% endswitch %}

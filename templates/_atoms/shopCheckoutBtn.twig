@@ -1,0 +1,25 @@
+
+
+<form method="POST">
+    <input type="hidden" name="action" value="commerce/cart/update-cart">
+    {{ craft.blitz.csrfInput() }}
+    {{ redirectInput('purchase/cart') }}
+    <input type="hidden" name="qty" value="1">
+    <select
+        name="purchasableId"
+        class="js-image-variant-select"
+    >
+        {% for variant in product.variants %}
+            <option
+                value="{{ variant.id }}"
+                {% if variant.stock == 0 %}disabled{% endif %}
+                data-variant-slug="{{ variant.sku | ascii | kebab }}"
+            >
+                {{ variant.title }} {% if variant.stock == 0 %}{{ 'Ausverkauft' | t }}{% endif %}
+            </option>
+        {% endfor %}
+    </select>
+    {% include "_atoms/shopBuyBtn" %}
+</form>
+
+

@@ -1,0 +1,23 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 6e3154cb-63d9-480c-abd7-9607d38ddac3 # Buyers trust
+handle: buyersTrustLinks
+instructions: ''
+name: 'Buyers Trust Links'
+searchable: true
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: null
+  sources:
+    - singles
+    - 'section:1783fd15-f538-43ff-a601-6c104bffd5c5' # Sub Pages
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

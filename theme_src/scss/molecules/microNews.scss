@@ -1,0 +1,18 @@
+.microNews {
+    background-color: $brandColor;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    @extend %fontS;
+    box-shadow: inset 0px -13px 15px -10px rgba(0,0,0,0.3);
+    p {
+        @extend %fontS; 
+        margin: 0;
+        a {
+            text-decoration: underline;
+            &:hover {
+                text-decoration-thickness: 4px;
+            }
+        }
+    }
+}

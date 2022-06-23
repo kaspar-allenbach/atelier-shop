@@ -1,0 +1,15 @@
+
+    <div class="cartTotal">
+        {% if not lineItemHasErrors %}
+            {# <small>Item Sub Total: {{ cart.itemSubTotal|commerceCurrency(cart.currency) }}</small> #}
+            {% if cart.getTotalDiscount('discount') != 0  %}
+                <small><br>Total Discount: {{ cart.getTotalDiscount('discount')|commerceCurrency(cart.currency) }}</small>
+            {% endif %}
+            {# <br>Total Shipping: {{ cart.adjustmentsTotalByType('shipping')|commerceCurrency(cart.currency) }}
+            <br>Total Tax: {{ cart.adjustmentsTotalByType('tax')|commerceCurrency(cart.currency) }}
+            <br>Total Tax (inc): {{ cart.adjustmentsTotalByType('tax', true)|commerceCurrency(cart.currency) }}
+            <br> Total: {{ cart.total | commerceCurrency(cart.currency) }} <br> #}
+
+            <h4><span>{{'Warenkorb Total' | t}}</span>{{ cart.totalPrice|commerceCurrency(cart.currency) }}</h4>
+        {% endif %}
+    </div>

@@ -1,0 +1,6 @@
+{% extends 'purchase/_layouts/checkout' %}
+{% import '_incl/docMacros' as macro %}
+
+{% block content %}
+    {% hook 'payrexx-gateway' %}
+{% endblock %}

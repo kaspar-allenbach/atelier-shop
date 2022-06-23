@@ -1,0 +1,37 @@
+<nav>
+    <ul class="list-reset">
+        {% set page = craft.app.request.getSegment(2) %}
+
+        {# {% if craft.commerce.plans.getAllPlans|length %}
+            <li>
+                <a class="{% if page == 'services' %}active{% endif %}" href="/shop">
+                    {{ "Services"|t }}
+                </a>
+            </li>
+        {% endif %} #}
+
+        <li>
+            <a class="{% if page == 'products' %}active{% endif %}" href="{{ currentSite.baseUrl }}shop">Shop</a>
+        </li>
+
+        <li>
+            <a class="{% if page == 'cart' %}active{% endif %}" href="{{ url('purchase/cart') }}">
+                <img src="/theme/img/shopping-cart.svg" class="shoppingCart" alt=""> {{ "Warenkorb"|t }} <span class="badge">{{ craft.orders.number(cart.number).one().totalQty ?? 0}}</span>
+            </a>
+        </li>
+
+        {# {% if currentUser %}
+            <li class="account">
+                <a href="#"><i class="fas fa-user"></i> Account</a>
+                <ul class="list-reset">
+                    <li><a href="{{ url('purchase/customer') }}">{{ "Meine Bestellungen"|t }}</a></li>
+                    <li><a href="{{ url('purchase/customer/addresses') }}">{{ "Meine Addressen"|t }}</a></li>
+                    <li><a href="{{ url('purchase/customer/cards') }}">{{ "Meine Karten"|t }}</a></li>
+                    <li><a href="{{ logoutUrl }}">Logout</a></li>
+                </ul>
+            </li>
+        {% else %}
+            <li>{{ "Gast"|t }}</li>
+        {% endif %} #}
+    </ul>
+</nav>

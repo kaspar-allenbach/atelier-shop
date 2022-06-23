@@ -1,0 +1,7 @@
+{% import '_incl/docMacros' as macro %}
+
+<div class="stickyNavBrand">
+    {% for asset in globals.naviLogo.all() %}
+        <div class="navLogo">{{ macro.oneImage(asset) }}</div>
+    {% endfor %}
+</div>

@@ -1,0 +1,14 @@
+columnSuffix: null
+contentColumnType: boolean
+fieldGroup: 80b6829c-358d-4844-bbaf-990e4006dbe6 # Common
+handle: showOnIndex
+instructions: ''
+name: 'Show on Homepage'
+searchable: true
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

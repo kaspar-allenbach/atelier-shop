@@ -1,0 +1,43 @@
+.pagination {
+  text-decoration: none;
+  @include flexBox(null, space-around, center);
+  @include mdUp {
+    @include flexBox(null, center, center);
+  }
+  .prefix {
+    flex: 1;
+  }
+  &.pagNext {
+    right: 50px;
+    .pagIcon {
+      transform: rotate(180deg);
+    }
+  }
+  &.pagPrev {
+    left: 50px;
+  }
+  &:hover {
+    opacity: 0.7;
+    .pagIcon {
+      color: $txtInvert;
+    }
+  }
+  .pagIcon {
+    @extend %fontL;
+    font-weight: 700;
+    font-style: normal;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin: 0;
+  }
+}
+.darkTheme {
+  .pagIcon {
+    svg {
+      polygon {
+        fill: $txtInvert;
+      }
+    }
+  }
+}

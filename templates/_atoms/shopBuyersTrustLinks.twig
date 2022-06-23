@@ -1,0 +1,18 @@
+{% set newsletterLink = craft.entries.section('newsletter').one() %}
+
+{% for item in buyersTrust.buyersTrustLinks.all() %}
+	{% if loop.first %}
+		<p>
+		{% endif %}
+		<a href="{{ item.url }}">{{ item.title }}</a>
+		{% if loop.last %}
+			/
+			<a href="{{newsletterLink.url}}">{{ newsletterLink.title }}</a>
+		{% endif %}
+		{% if loop.last == false %}
+			/
+		{% endif %}
+		{% if loop.last %}
+		</p>
+	{% endif %}
+{% endfor %}

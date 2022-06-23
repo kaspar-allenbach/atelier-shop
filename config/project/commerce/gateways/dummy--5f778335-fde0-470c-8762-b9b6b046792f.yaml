@@ -1,0 +1,7 @@
+handle: dummy
+isFrontendEnabled: false
+name: Dummy
+paymentType: purchase
+settings: null
+sortOrder: 1
+type: craft\commerce\gateways\Dummy

@@ -1,0 +1,520 @@
+dateModified: 1655988283
+email:
+  fromEmail: $EMAIL_ADDRESS
+  fromName: 'Kaspar Allenbach'
+  replyToEmail: $EMAIL_REPLY_TO
+  template: ''
+  transportSettings:
+    encryptionMethod: ssl
+    host: $EMAIL_SERVER
+    password: $EMAIL_PASSWORD
+    port: $EMAIL_OUTGOING_PORT
+    timeout: '30'
+    useAuthentication: '1'
+    username: $EMAIL_ADDRESS
+  transportType: craft\mail\transportadapters\Smtp
+meta:
+  __names__:
+    0afe48f9-a5f1-4026-a0f3-62e1ad0a21e9: Produktionsart # Produktionsart
+    0b99408b-2cbc-43f0-962a-fbe8fb3c71c4: Quote # Quote
+    0c8ebf87-a235-46f8-9ef4-fbd3f05a8c81: Title # Title
+    0dcf12e9-7072-4828-af83-d3faa9e93193: 'Options Logos' # Options Logos
+    0e94fe0f-6f6e-4625-aa27-fe4baffccc96: Kontakt # Kontakt
+    0e9688a3-597a-43e9-83d3-15b6d5341669: Video # Video
+    1a831980-5069-46e3-8c6a-e0223d5426dd: 'Intro Text' # Intro Text
+    1c6ad9c1-3d9d-49ef-9c8a-0cd5255c0032: 'Checkout Fields' # Checkout Fields
+    1c477e79-fe86-45aa-adb4-fe552e08d726: 'Grid Height' # Grid Height
+    1d7ca8d7-9095-4b2e-b3e7-61cd44766d65: 'Grid Coordinator' # Grid Coordinator
+    1de37067-3475-4ba0-ab7e-5bf7f9083a3f: 'No Mobile' # No Mobile
+    1fec92c9-a924-4e65-ae8f-292e7eaa621d: Url # Url
+    2a7855a1-ddd6-496b-920a-b4d4570d4168: Link # Link
+    2b7fb599-b346-4718-8d0c-232e1e584b88: 'Order Shipment Provider' # Order Shipment Provider
+    2b25be9a-c083-4aae-8a50-5a9aa37a271e: Body # Body
+    2c8dafbe-262f-4dc5-9271-f3c62068b17e: Title # Title
+    2c45acba-2764-4509-be9e-171d01be5554: GIPHY # GIPHY
+    2f3b7240-6f5f-4026-ab2f-904ca858b806: 'Micro News' # Micro News
+    03aa9c64-ff16-41f2-843d-7fe264ec168c: Checkout # Checkout
+    3cf1e951-e92f-4762-8fda-2d7641089e80: Dropdown # Dropdown
+    3de52dbc-b7e8-4dc3-b7f6-1978abac33d9: Adress # Adress
+    3e962b98-92fc-454a-897d-688e05ad2e64: Logo # Logo
+    03fc42f4-3ad8-48d6-9a14-79a2e3de0ab8: 'Grid Width' # Grid Width
+    4a47f355-afe1-42d4-8aa0-f42b10600a8e: Link # Link
+    4a927fe6-7e72-460e-999b-656a8f749fa2: Youtube # Youtube
+    4b242d97-2643-492e-8184-c90cb6d321a5: 'Same Cell?' # Same Cell?
+    4b888aa9-687b-458d-90bb-58ab9173f95d: Video # Video
+    4be5fd5d-b5b9-4ea4-a7a0-c9fdfc3c4f14: 'Grid Width' # Grid Width
+    4c5fa2af-1c12-45fb-868f-ee3d6b6cf21a: 'Grid Width' # Grid Width
+    4c43e277-578d-470f-8572-70b3c0ec2212: 'Grid Width' # Grid Width
+    4c98f2b7-f4eb-42a0-a361-8edb4cdb000d: Subtitle # Subtitle
+    4ca40e58-ce65-483d-81e5-0664a0dc9541: 'Grid Coordinator' # Grid Coordinator
+    4e00500c-6d8b-4fcd-ac2f-06a765ba2fac: SplitLink # SplitLink
+    5b4ca42f-5407-413b-b5fc-8ad7687c8a47: 'Link Label' # Link Label
+    5b85f50a-924a-4fc6-b0dc-dd06ed203e1a: 'Grid Coordinator' # Grid Coordinator
+    5bb0c4af-9358-4f2a-9945-fa6ddfb0d3ae: Client # Client
+    5bdde4af-80bb-4aa6-be5d-7b2d2cb62b7d: 'Hall of Fame' # Hall of Fame
+    5eb4348e-c36c-48e5-a3a5-14bbcbe70363: 'Grid Height' # Grid Height
+    5f778335-fde0-470c-8762-b9b6b046792f: Dummy # Dummy
+    6b970296-d52f-465f-9ff7-1efbcf2a12b2: 'Theme Switch' # Theme Switch
+    6bfcebc2-6bad-4c1f-bf71-b7100f82730f: Text # Text
+    6dd325eb-600c-4ee1-9260-17e219268a03: Label # Label
+    6e6a3af7-212c-41bc-82b3-5bbfc351b6ee: Image # Image
+    6e3154cb-63d9-480c-abd7-9607d38ddac3: 'Buyers trust' # Buyers trust
+    6ee615f2-917d-46fd-b83e-83c3b5e63cf9: Manual # Manual
+    6f4ebf00-b1b3-448d-b13a-29b7c567641a: 'Micro News' # Micro News
+    6f530ffd-8c1f-4055-bee8-03e7da96e51d: 'Thumb Claim' # Thumb Claim
+    06f979ef-8feb-418b-983e-2c40682013d8: 'Grid Offset' # Grid Offset
+    7a0b53e7-d31f-4fce-8464-a9ea8f97d83a: Text # Text
+    7b17e818-42bf-4627-b500-ba29e3ce9049: 'Autoplay?' # Autoplay?
+    7bbd10c8-bf87-4055-8d8c-68ffb135da06: Youtube # Youtube
+    7c0766e2-66e6-4dc5-bcea-da3950d180ed: 'Payrexx Transaction Id' # Payrexx Transaction Id
+    7cd8d1f5-1b6c-41d9-b9de-66d412df899a: Link # Link
+    7d745b42-be65-4936-b934-bf2edb0fc546: Source # Source
+    8b8cae1e-f369-4549-841b-83cd0c74531e: 'Grid Coordinator' # Grid Coordinator
+    8db206db-ec7a-443f-ac04-b2eaa324b122: Object # Object
+    8f072388-387e-490f-a8d2-3c23b2c57fe8: Youtube # Youtube
+    8f836e4a-b71e-4b77-829f-e2ca7adae5ff: 'CTA Button' # CTA Button
+    8fbaa9c4-de52-411c-b9b7-2d8a02765aaf: 'Universal SEO Image' # Universal SEO Image
+    08fd94d1-9be4-4de3-ac20-f38812d9da6b: Produkt # Produkt
+    9a1fa5f0-c08b-4d0e-9373-bb09b40b1f6f: Enable # Enable
+    9b2e92e9-81cf-4e10-9a2e-e8978044f3da: Separator # Separator
+    9b65638a-4ac4-4659-b7e2-86860d8dc135: Image # Image
+    9db46d86-4e96-4439-9697-e523a48efb15: 'CTA Begleittext' # CTA Begleittext
+    9dfec06b-4bfd-4a4f-bc4d-67a13d9b44ce: Homepage # Homepage
+    19da83c3-5903-40c6-a8d7-d8229d698a81: 'Basic Lead' # Basic Lead
+    21f04442-c9bf-42c3-a5a0-d899ef06f6eb: Pages # Pages
+    23c36431-de04-43a2-aa87-efceebf4d314: Label # Label
+    025fe7fb-2982-4476-99c0-3f43ab0501b3: 'Grid Height' # Grid Height
+    30d24b19-5861-4d46-90a2-ec86f8b0efc8: 'Subpage SEO' # Subpage SEO
+    32b6581c-f334-41d2-8c31-56debf8fa7cb: Shop # Shop
+    38e56902-5a8c-4a03-aec3-14c07babef99: Youtube # Youtube
+    41e6afaa-0b1b-4bf2-98de-800efc6036f5: 'Payrexx Payment Method' # Payrexx Payment Method
+    55d361a7-fafc-4ef5-8274-0566396d930e: 'Button Text' # Button Text
+    58e87c82-0653-4db5-8ea0-690b693f4107: 'Show Text' # Show Text
+    58fd53d8-56fa-48cf-ad6b-f0c77971ce8d: 'Payrexx Gateway Id' # Payrexx Gateway Id
+    62d52290-1363-4360-b7b8-d96c8e6189e1: 'Produkt Breite' # Produkt Breite
+    062de57b-312a-4da1-a86a-73871e6c927c: 'SEO Shop Image' # SEO Shop Image
+    66edf746-0925-4a9a-a5d4-d427d9719747: Text # Text
+    67d3c7d7-b020-4484-87f5-50b040cab6be: 'Hall of Fame' # Hall of Fame
+    67de40d3-6f5d-4cd2-9756-4418f13f26df: 'Payment Gateway Message' # Payment Gateway Message
+    74de468a-a30e-4185-baf9-8bf28586ac71: 'Grid Coordinator' # Grid Coordinator
+    75a621b9-c5ba-40f7-b93f-7431c2deadbc: Payrexx # Payrexx
+    76e5215c-d632-4808-8192-c16f8bc9d9c6: 'Sinwel Honorar' # Sinwel Honorar
+    79d148d3-2db8-4744-ba65-1430fd75626f: 'Product Gallery' # Product Gallery
+    80b6829c-358d-4844-bbaf-990e4006dbe6: Common # Common
+    80dad2fa-b3cc-4a38-9a52-520125d66ab6: Assets # Assets
+    83a7873c-a2d8-4354-962f-6236b99234d4: 'Sub Pages' # Sub Pages
+    87b5c269-b346-48ec-b733-cfdc4ddc4b48: 'Grid Height' # Grid Height
+    90c25842-27c4-4004-975d-5839486dd9ea: Text # Text
+    90df4880-e2ed-4b0a-8362-6f5fbcb8af8c: 'Basic Text' # Basic Text
+    95e4ec45-807e-419c-86a3-4f710f03a2e4: 'Autoplay?' # Autoplay?
+    96fca046-878b-49ef-8e0e-4df422e76752: Text # Text
+    99dd320f-0da5-49a5-b160-b49013dc4c73: Positioning # Positioning
+    0309f5d0-79ed-4de6-a49e-74aa261e1054: 'Grid Width' # Grid Width
+    350c27ed-b9c7-4a5a-a653-ebac5a807f68: 'Shop Listing Text' # Shop Listing Text
+    433ac83d-508b-4c0c-af8b-5d3f54c41376: 'Image Global' # Image Global
+    0457eee9-3df5-43c1-8e17-fc2232fc73a8: Portfolio # Portfolio
+    507d8153-3d6d-4319-8c40-a9506fccd879: 'Sticky?' # Sticky?
+    655acadb-a806-43f0-b804-fdf8bf09b5fe: 'Insta Post Limit' # Insta Post Limit
+    675f556e-9e3c-4f62-8902-668862a01b1e: Logistik # Logistik
+    696ca585-692d-42e0-9b41-b5fa9f16e15a: GTIN # GTIN
+    743e4f39-6d24-4770-9451-5ab26133947e: Video # Video
+    0791dafd-bfd6-4b0f-b189-d162592760b7: 'Textbox Div' # Textbox Div
+    803c1993-6dd4-4692-83af-3fbc46dca313: 'Newsletter Button Label' # Newsletter Button Label
+    915f5576-4a05-43f3-83a6-c544b40d9981: GIPHY # GIPHY
+    1377b1b9-5ac6-4c85-95a4-6d16b52ce464: 'Object Type' # Object Type
+    1783fd15-f538-43ff-a601-6c104bffd5c5: 'Sub Pages' # Sub Pages
+    1855f431-7c65-4240-9973-fb59cba38292: 'Hall of Fame' # Hall of Fame
+    2882bb47-b48b-4399-9d72-f22f4c9ccd60: Lead # Lead
+    3050a2be-2d59-4495-96a0-70a5683f6c9a: 'Option Logo' # Option Logo
+    4290a498-d943-4a19-b731-1f7a094a9783: Plakate # Plakate
+    4312bceb-101c-4af0-beb1-9c97c107512d: 'Navi Name' # Navi Name
+    4518d03c-1046-4f3b-acd3-08531d0e5734: 'Variant Thumb' # Variant Thumb
+    4769e4a6-9d0c-424b-9d0e-6296d232dacb: 'Originals Produkt Text' # Originals Produkt Text
+    5510ff8a-57ac-40ca-8e32-22d27ca137ae: Pokal # Pokal
+    5953ac4a-fb66-4c89-b92c-c1894300b26a: 'Grid Offset' # Grid Offset
+    06080c3e-d173-4c0a-b1be-3b2c86bcf362: Produktgrösse # Produktgrösse
+    6082ab94-81c7-43df-936c-ca4af64122df: 'Product Text' # Product Text
+    6458f7a8-2514-438d-bfb7-adafd0df6d66: 'Link Url' # Link Url
+    8307e833-b2d9-4fa8-bec3-7a9c74448c2b: Image # Image
+    8382fe8e-8a5e-4d70-8716-744be405f18e: 'Order Success PDF' # Order Success PDF
+    9371ef87-7104-4faa-bd86-e7bf0ecb55a1: 'Dropdown Links' # Dropdown Links
+    013938a5-20cd-44f2-ab2d-38b805db8698: 'No Mobile' # No Mobile
+    033595bd-f806-4358-8a90-838c988353f6: 'Navi Links' # Navi Links
+    33789f87-45d7-4389-83ef-53f45d499dae: 'Guru Member' # Guru Member
+    50149d68-1643-4992-a961-0adcc401448a: 'Link Active?' # Link Active?
+    51134fad-f9e8-4897-b7dc-0687653933b4: 'Produkt Grösse' # Produkt Grösse
+    51531e4e-b696-4edb-b7b7-da517c4f4d08: 'Subtitle Level' # Subtitle Level
+    56554bf1-3b19-4d17-bc8b-4f5367895da6: Kontakt # Kontakt
+    59951f82-1b43-4636-9472-729069bc8df7: 'Basic Lead' # Basic Lead
+    77970c08-daa2-445a-9ce6-0fe0f3dda847: 'Logo Rasterized' # Logo Rasterized
+    85439f23-356b-4b83-8699-365a7d142d08: 'Public Schema' # Public Schema
+    86365b96-23a4-41aa-afd6-2396f45c29ad: Images # Images
+    283692bf-88e1-45ab-ba3a-6e4c70ca489c: 'Buyers Trust Text' # Buyers Trust Text
+    356398ab-9322-4b1c-9d49-0c9fe83fe6c5: 'Navi Point' # Navi Point
+    962030ff-b78e-44e8-931f-67e3fbd348e6: 'Page Claim' # Page Claim
+    2206365c-5bc6-412b-9b7b-652c26622090: 'Listing Category' # Listing Category
+    05610609-dad5-4536-9466-50a5911a3e7e: Titel # Titel
+    7117751f-a877-4277-b875-fafc34810791: 'Grid Coordinator' # Grid Coordinator
+    8536034c-56a9-4ae8-ac9c-1fde5d3c3313: Homepage # Homepage
+    9838962a-1c85-4d41-827f-1cd094673a29: Image # Image
+    13637686-ac88-41d3-b346-5798f7a63409: New # New
+    16175144-c325-48e8-b7bd-c3d053698981: 'Shop Categories' # Shop Categories
+    41575187-fffb-4dae-9811-8a8b49199818: 'Order Success Message' # Order Success Message
+    88082650-ece1-4971-9a4f-5caf76e33b92: Icon # Icon
+    89834594-bd35-4a51-8a39-55dfd77db7f6: 'Same Cell?' # Same Cell?
+    89953990-3fda-43a6-a581-7f0f5b4dcb0c: 'No Mobile' # No Mobile
+    a01b6dc1-d170-418f-a5b8-d582ced1f2a7: 'Grid Offset' # Grid Offset
+    a5ea6b41-33da-4e83-9937-751c16604ac2: Produktionsart # Produktionsart
+    a6d14185-b811-4647-b6e1-af7f4a468f8c: 'No Mobile' # No Mobile
+    a57f2975-bd00-4d1b-a8b5-84630f116216: 'SEO Image' # SEO Image
+    a86d5131-4509-4986-a88b-9f74b5a791b8: 'Listing Thumb' # Listing Thumb
+    a601f75f-e172-47e3-bc17-e0ff54d88c86: Image # Image
+    a826a24c-c56d-41be-b131-258c043900a4: 'Produkt Typ' # Produkt Typ
+    a2686831-fc42-4dd6-8ffa-1e7ab2248151: Subtitle # Subtitle
+    aa9a7864-be5d-4255-8414-0c7c5661ae56: 'Grid Height' # Grid Height
+    acfe304d-c42c-4044-b12e-40ea264ebe92: Text # Text
+    ad502f41-877f-4b76-a860-6ac679ad04dc: Subtitle # Subtitle
+    ade15e61-1d5e-418a-a5bc-a160f51cf6d0: 'Grid Offset' # Grid Offset
+    ae8a4b7d-63f4-48f3-899a-9d3b138318dd: Schatten # Schatten
+    af5e0867-3560-47de-a69d-7d7b169103e4: Text # Text
+    af41c347-097a-4c4a-a1ff-a372bb4da867: 'Navi Claim' # Navi Claim
+    af540a73-dfa9-48db-a0dc-4176f0335016: 'Related Portfolio' # Related Portfolio
+    aff92a82-bc5d-4933-917a-d01fd428ffb0: Url # Url
+    b0476a59-9c5e-494a-8c8f-c55c61c0be59: 'Grid Offset' # Grid Offset
+    b1e7ba52-bd70-4ed9-9800-3beb49d79fe1: Image # Image
+    b3f9f1e5-11fd-4b5a-acb8-fcb014dc1d07: 'Text Box' # Text Box
+    b5df6476-5b86-46b5-b9b1-df1e839d2325: 'No Mobile' # No Mobile
+    b8a02f30-44c8-448c-a31a-bc4af707ae34: 'Category Fields' # Category Fields
+    b26a36c8-3867-411b-97fe-64dd67872ca0: 'No Mobile' # No Mobile
+    b80e9319-3635-4175-8031-dbea763ef9ef: Globals # Globals
+    b99dae51-7d76-4f25-bdad-6ec8beeb9044: 'Buyers Trust Links' # Buyers Trust Links
+    b561ef0e-3093-459e-ba9a-555511435eb8: Globals # Globals
+    baf2ec6c-eb3d-432c-ae51-9786a79968ba: 'Navi Logo' # Navi Logo
+    bc63c03e-bdb9-4257-848b-bea06f5ce825: 'Kaspar Allenbach' # Kaspar Allenbach
+    bd1b86cc-8c8a-443d-8dd6-7b20a69f6862: 'Grid Width' # Grid Width
+    be4ff0f8-ceb5-4819-87bf-4fcb50025db9: 'Micro News' # Micro News
+    bf47b895-9c9f-4b84-8a9b-70c323099df8: 'Grid Offset' # Grid Offset
+    bf171930-7fe0-406a-9277-f787eded5ad6: Titel # Titel
+    bfb89050-fed1-4bc5-823c-8ef8663e08a9: Homepage # Homepage
+    bffe8979-225f-457c-83e2-80984957a871: Client # Client
+    c0d19c4e-de67-4890-b2e2-1d41e67045af: Text # Text
+    c1dc0342-3ef3-4c4c-a303-da67e6f54a98: Quote # Quote
+    c2e9d3b7-2090-4f8b-ac2a-157b0beda1b1: 'Grid Height' # Grid Height
+    c5ca8e90-d161-46ab-a1f7-a310ab06b79c: kspr.design # kspr.design
+    c7ad1cdb-dad2-466a-949c-32d40e130f82: 'Buyers Trust' # Buyers Trust
+    c404bb9d-9bac-4901-8f83-ff53f248293b: Perk # Perk
+    c622e7e6-e7ae-4433-9880-2a3c87d40b9b: Produktkategorie # Produktkategorie
+    c7861ec0-d436-4b74-b5f7-7cb5042b2647: 'Grid Height' # Grid Height
+    c7588676-6e6a-4430-869f-c3b5656247c4: 'H?' # H?
+    c7817451-af61-4d42-af4a-fb7370ef4fd2: Shop # Shop
+    cb7c4cc1-6fcf-4482-912c-87ce9bbe5d98: 'Kaspar Allenbach en' # Kaspar Allenbach en
+    d0379430-3004-4eb7-af6d-c137e345363a: SEO # SEO
+    d1d7f3d7-07e5-47e2-a63d-068db1cda413: 'Subtitle Level' # Subtitle Level
+    d2b0573f-bb1b-40e4-b53b-cb45b73d45d4: 'Cite Link' # Cite Link
+    d2dc4643-a23a-4423-b668-b8289ca763d6: 'CTA Label' # CTA Label
+    d3b43846-e68e-4ecf-8ad0-94109e683a48: 'Grid Width' # Grid Width
+    d4f084c1-78c8-46ec-8420-341ba27d7211: 'Text Pos' # Text Pos
+    d14a271e-c071-471c-85b6-215d9127e323: 'Product SEO' # Product SEO
+    d223bfab-8659-4490-8857-207f53cd8012: Portrait # Portrait
+    d1748e1a-c93e-4956-861c-b08ee202d058: 'Dropdown Text' # Dropdown Text
+    d782370f-05fb-43c1-b304-342f189a6a4c: Image # Image
+    daeb74c1-bb63-4cda-83d4-c6cc5e9d7c54: 'Produkt Höhe' # Produkt Höhe
+    dc2b3e4f-3122-4800-87a7-232009875d28: Link # Link
+    ddc1a314-5b75-48dd-8397-738ddb51f3c8: 'SEO Description' # SEO Description
+    deb3a438-4762-413b-8d26-6874ce777d7f: 'Grid Width' # Grid Width
+    df016316-e4c0-46f7-9f56-585d734257a0: Titel # Titel
+    dfc36e50-8b8b-48a5-9eb0-3a278b0c13a6: 'Page Link' # Page Link
+    dff41763-7565-4d2d-854a-57446e222deb: 'Page Elements' # Page Elements
+    e0a06767-b57e-42c8-82b1-fe32bf54e785: 'Order Success' # Order Success
+    e0cb3a4c-e144-41b6-8a4f-3d2bf361b243: 'Shop Perks' # Shop Perks
+    e5bdd4fe-93a8-4915-ab87-93602a94922b: Coordinator # Coordinator
+    e7ff0a76-a0fb-4ac7-956e-507aebafddc4: GIPHY # GIPHY
+    e1091393-d5df-4755-9e71-eb5153766d9c: Video # Video
+    ead47a90-a89e-4ae0-9c7f-36ee9f0ef41d: 'No Mobile' # No Mobile
+    ecbe273f-332d-49dd-88bc-baff78bbe1af: 'CTA Button' # CTA Button
+    ecefd2fe-f0e0-4f2d-98ec-245769773a31: Shipped # Shipped
+    eeef5b38-8765-4dbf-bf7e-6e00969ad976: 'Grid Height' # Grid Height
+    f2a2596d-53a9-43c3-974a-a07cd5b1f08c: Link # Link
+    f5c23b08-df70-46b3-acb9-ebc1da93de73: Default # Default
+    f6b8a0f2-fbfd-446e-8cbd-6add39062745: Discipline # Discipline
+    f7d5d311-8bd1-4a2f-a8e5-642d9982779c: 'Enable Column ?' # Enable Column ?
+    f8ec372c-a7b1-4263-8ff2-bc8ace93f4e2: Discipline # Discipline
+    f8f94940-7e02-489a-a8d0-13253aed5161: Originals # Originals
+    f9bab6eb-6511-4081-b5cc-cea1837de56d: 'CTA Link' # CTA Link
+    f82acd93-420b-4b5b-8a7e-805ef6d3aea2: 'Head Angle 0° / 90°' # Head Angle 0° / 90°
+    f106b0a1-3208-4251-b2be-766455ffa0f6: Subtitle # Subtitle
+    f221d632-395b-4399-915b-005da06ba6e6: 'Button Link' # Button Link
+    f43126d1-9b2d-4f76-99c8-f6b2b929dc5c: 'Grid Offset' # Grid Offset
+    f309490a-3122-4f0b-a3f9-6d6c833896bf: 'Portfolio SEO' # Portfolio SEO
+    f2385760-50f9-477b-9310-7ed6948804db: Label # Label
+    f6811093-f45d-4453-ba1b-18e8ab567f50: 'Show on Homepage' # Show on Homepage
+    fb5b8c05-1298-41b8-9275-e34683803fb1: GIPHY # GIPHY
+    fd9400a9-9273-4056-9ab6-c1002f1bba94: 'Grid Coordinator' # Grid Coordinator
+plugins:
+  async-queue:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  blitz:
+    edition: standard
+    enabled: true
+    licenseKey: RU70RYUKCDD47M5YMZW4PG3K
+    schemaVersion: 3.10.0
+    settings:
+      apiKey: ZcrqTjjtCgL__LfR_vgL3cWB
+      cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
+      cacheDuration: null
+      cacheElementQueries: true
+      cacheElements: true
+      cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
+      cachePurgerTypes:
+        - putyourlightson\blitz\drivers\purgers\CloudflarePurger
+      cacheStorageSettings:
+        __assoc__:
+          -
+            - folderPath
+            - '@webroot/cache/blitz'
+          -
+            - createGzipFiles
+            - ''
+          -
+            - createBrotliFiles
+            - ''
+      cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
+      cacheWarmerSettings:
+        __assoc__:
+          -
+            - concurrency
+            - '3'
+      cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
+      cachingEnabled: ''
+      clearCacheAutomatically: '1'
+      customSiteUris: ''
+      debug: true
+      deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
+      deployerTypes:
+        - putyourlightson\blitz\drivers\deployers\GitDeployer
+      driverJobPriority: 100
+      excludedQueryStringParams:
+        - gclid
+        - fbclid
+      excludedUriPatterns:
+        -
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - /knock-knock/who-is-there
+        -
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - '/purchase/*'
+        -
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - '/discipline/*'
+        -
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - '/client/*'
+        -
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - '/object/*'
+        -
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - '/produktionsart/*'
+        -
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - '/produktkategorie/*'
+        -
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - '/produktgroesse/*'
+        -
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - /shopdata
+        -
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - /galerie
+      includedQueryStringParams:
+        - '.*'
+      includedUriPatterns:
+        -
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - '.*'
+      injectScriptEvent: DOMContentLoaded
+      integrations:
+        - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
+        - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
+      maxRetryAttempts: 10
+      mutexTimeout: 1
+      outputComments: true
+      queryStringCaching: '2'
+      queueJobTtr: 300
+      refreshCacheAutomaticallyForGlobals: true
+      refreshCacheJobPriority: 10
+      refreshCacheWhenElementSavedNotLive: false
+      refreshCacheWhenElementSavedUnchanged: false
+      sendPoweredByHeader: true
+      warmCacheAutomatically: '1'
+      warmPagesWithQueryStringParams: true
+  blitz-recommendations:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  commerce:
+    edition: pro
+    enabled: true
+    licenseKey: LXHA7E9AZJMZ94Y441JEIA09
+    schemaVersion: 3.4.13
+    settings:
+      activeCartDuration: PT1H
+      allowEmptyCartOnCheckout: true
+      autoSetNewCartAddresses: true
+      cartVariable: cart
+      defaultView: commerce/orders
+      dimensionUnits: cm
+      emailSenderAddress: ''
+      emailSenderAddressPlaceholder: null
+      emailSenderName: ''
+      emailSenderNamePlaceholder: null
+      gatewayPostRedirectTemplate: ''
+      mergeLastCartOnLogin: true
+      minimumTotalPriceStrategy: default
+      orderPdfFilenameFormat: 'Order-{number}'
+      orderPdfPath: purchase/_pdf/order
+      orderReferenceFormat: '{{number[:7]}}'
+      paymentCurrency: null
+      pdfAllowRemoteImages: true
+      pdfPaperOrientation: portrait
+      pdfPaperSize: letter
+      purgeInactiveCarts: true
+      purgeInactiveCartsDuration: P3M
+      requireBillingAddressAtCheckout: false
+      requireShippingAddressAtCheckout: false
+      requireShippingMethodSelectionAtCheckout: false
+      updateBillingDetailsUrl: ''
+      useBillingAddressForTax: false
+      validateBusinessTaxIdAsVatId: false
+      weightUnits: g
+  commerce-widgets:
+    edition: standard
+    enabled: true
+    licenseKey: 1AB8T6C5T0TPFLC0ON34JKC2
+    schemaVersion: 2.0.1
+  enupal-translate:
+    edition: standard
+    enabled: true
+    licenseKey: G8SRRMBIAIOWC9A4D0LR8N6X
+    schemaVersion: 2.2.1
+  imager-x:
+    edition: lite
+    enabled: true
+    licenseKey: H6NWXQHUJX8ZPXP2DUJUCCGT
+    schemaVersion: 3.0.0
+  knock-knock:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.1.1
+    settings:
+      blacklistIps: ''
+      checkInvalidLogins: ''
+      enabled: '1'
+      invalidLoginWindowDuration: '3600'
+      maxInvalidLogins: '10'
+      password: displayTheWebsite
+      siteSettings:
+        default:
+          enabled: ''
+          password: ''
+          template: ''
+        ksprDesignEn:
+          enabled: ''
+          password: ''
+          template: ''
+      template: ''
+      whitelistIps: ''
+  minify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  obfuscator:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  retour:
+    edition: standard
+    enabled: true
+    licenseKey: 899DJC9NKETZAIBON4HULQF2
+    schemaVersion: 3.0.10
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: 4Q7YXFOOSMKXSY367U2M9PPL
+    schemaVersion: 3.0.11
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+  wordsmith:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.0.0
+system:
+  edition: pro
+  live: true
+  name: kspr.design
+  schemaVersion: 3.7.33
+  timeZone: Europe/Zurich

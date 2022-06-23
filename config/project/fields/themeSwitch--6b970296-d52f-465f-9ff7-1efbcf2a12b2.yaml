@@ -1,0 +1,35 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: e5bdd4fe-93a8-4915-ab87-93602a94922b # Coordinator
+handle: themeSwitch
+instructions: ''
+name: 'Theme Switch'
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Light Theme'
+        -
+          - value
+          - lightTheme
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Dark Theme'
+        -
+          - value
+          - darkTheme
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,40 @@
+{% extends 'purchase/_layouts/main' %}
+
+{% block main %}
+    {% if currentUser %}
+        {% set orders = craft.orders.customer(craft.commerce.customers.customer).isCompleted(true).all() %}
+
+        <h1 class="text-center">{{'Meine Bestellungen'|t}}</h1>
+
+        <hr>
+
+        {% if orders|length %}
+            <table class="w-full mb-8">
+                <thead>
+                <tr>
+                    <th>{{ "Bestellung"|t }}</th>
+                    <th>{{ "Datum"|t }}</th>
+                    <th>{{ "Menge"|t }}</th>
+                    <th>{{ "Total"|t }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {# Get completed orders for the current customer.#}
+                {% for order in craft.orders.customer(craft.commerce.customers.customer).isCompleted(true).all() %}
+                    <tr>
+                        <td><a href="{{ url('purchase/customer/order', { number: order.number }) }}">Order {{ order.reference }}</a></td>
+                        <td>{{ order.dateOrdered|date }}</td>
+                        <td>{{ order.totalQty }} items</td>
+                        <td>{{ order.totalPrice|commerceCurrency(cart.currency) }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="empty-index">
+                <i class="fas fa-box-open"></i>
+                <p>You don’t have any orders yet. <br /><a href="{{ url('shop') }}">Continue shopping</a></p>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}

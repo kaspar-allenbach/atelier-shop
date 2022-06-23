@@ -1,0 +1,24 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 80dad2fa-b3cc-4a38-9a52-520125d66ab6 # Assets
+handle: objectType
+instructions: ''
+name: 'Object Type'
+searchable: true
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: '1'
+  limit: null
+  localizeRelations: false
+  selectionLabel: 'Typ hinzufügen'
+  showSiteMenu: true
+  source: 'group:8db206db-ec7a-443f-ac04-b2eaa324b122' # Object
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

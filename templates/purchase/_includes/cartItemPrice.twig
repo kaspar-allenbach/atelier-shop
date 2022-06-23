@@ -1,0 +1,29 @@
+<div class="itemPrice">
+    {% if not lineItemHasErrors %}
+        {% if item.onSale %}
+            <s>{{'Preis'|t}}: {{ item.price|commerceCurrency(cart.currency) }}</s>
+            <br>
+             <small>
+                {{'Rabatt'|t}}:
+                {{ item.saleAmount|commerceCurrency(cart.currency) }}
+                <br>
+                {{'Rabatt Preis'|t}}:
+                {{ item.salePrice|commerceCurrency(cart.currency) }}
+                <br>
+                {{'Subtotal Rabatt'|t}}:
+                {{ item.subtotal|commerceCurrency(cart.currency) }}
+                <br>
+            </small>
+        {% else %}
+            <span class="itemSubtotal"><strong>{{ item.subtotal|commerceCurrency(cart.currency) }}</strong></span>
+            <span class="itemPriceTag"><span>1 Ex. {{ item.price|commerceCurrency(cart.currency) }}</span></span>
+        {% endif %}
+    {% endif %}
+
+    {% for sale in item.purchasable.sales %}
+        {% if loop.first %}
+            {{'Rabattaktion'|t}}:
+        {% endif %}
+            {{ sale.name }}<br>
+    {% endfor %}
+</div>

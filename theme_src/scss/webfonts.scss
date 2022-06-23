@@ -1,0 +1,78 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3760806, 2019-05-16T08:45:27-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Vaud-Bold by Wordshape
+ * URL: https://www.myfonts.com/fonts/wordshape/vaud/bold/
+ * 
+ * Webfont: Vaud-BoldItalic by Wordshape
+ * URL: https://www.myfonts.com/fonts/wordshape/vaud/bold-italic/
+ * 
+ * Webfont: Vaud by Wordshape
+ * URL: https://www.myfonts.com/fonts/wordshape/vaud/book/
+ * 
+ * Webfont: Vaud-Italic by Wordshape
+ * URL: https://www.myfonts.com/fonts/wordshape/vaud/italic/
+ * 
+ * 
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3760806
+ * Licensed pageviews: 40,000
+ * Webfonts copyright: Copyright (c) Ian Lynam, 2013. All rights reserved.
+ * 
+ * © 2019 MyFonts Inc
+*/
+
+/* @import must be at top of file, otherwise CSS will not work */
+
+
+@import url("//hello.myfonts.net/count/3962a6");
+
+@font-face {
+  font-family: "Vaud";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/theme/webfonts/3962A6_0_0.eot");
+  src: url("/theme/webfonts/3962A6_0_0.eot?#iefix") format("embedded-opentype"),
+    url("/theme/webfonts/3962A6_0_0.woff2") format("woff2"),
+    url("/theme/webfonts/3962A6_0_0.woff") format("woff"),
+    url("/theme/webfonts/3962A6_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Vaud";
+  font-weight: bold;
+  font-style: italic;
+  src: url("/theme/webfonts/3962A6_1_0.eot");
+  src: url("/theme/webfonts/3962A6_1_0.eot?#iefix") format("embedded-opentype"),
+    url("/theme/webfonts/3962A6_1_0.woff2") format("woff2"),
+    url("/theme/webfonts/3962A6_1_0.woff") format("woff"),
+    url("/theme/webfonts/3962A6_1_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Vaud";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/theme/webfonts/3962A6_2_0.eot");
+  src: url("/theme/webfonts/3962A6_2_0.eot?#iefix") format("embedded-opentype"),
+    url("/theme/webfonts/3962A6_2_0.woff2") format("woff2"),
+    url("/theme/webfonts/3962A6_2_0.woff") format("woff"),
+    url("/theme/webfonts/3962A6_2_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Vaud";
+  font-weight: normal;
+  font-style: italic;
+  src: url("/theme/webfonts/3962A6_3_0.eot");
+  src: url("/theme/webfonts/3962A6_3_0.eot?#iefix") format("embedded-opentype"),
+    url("/theme/webfonts/3962A6_3_0.woff2") format("woff2"),
+    url("/theme/webfonts/3962A6_3_0.woff") format("woff"),
+    url("/theme/webfonts/3962A6_3_0.ttf") format("truetype");
+}

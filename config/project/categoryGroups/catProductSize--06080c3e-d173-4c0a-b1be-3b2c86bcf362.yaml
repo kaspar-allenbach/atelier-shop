@@ -1,0 +1,63 @@
+defaultPlacement: end
+fieldLayouts:
+  1da20de9-0f06-493e-8aa3-1f291cb84478:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 62d52290-1363-4360-b7b8-d96c8e6189e1 # Produkt Breite
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: daeb74c1-bb63-4cda-83d4-c6cc5e9d7c54 # Produkt Höhe
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 1
+handle: catProductSize
+name: Produktgrösse
+siteSettings:
+  bc63c03e-bdb9-4257-848b-bea06f5ce825: # Kaspar Allenbach
+    hasUrls: false
+    template: null
+    uriFormat: null
+  cb7c4cc1-6fcf-4482-912c-87ce9bbe5d98: # Kaspar Allenbach en
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: 232055f9-097f-4411-bd52-5730c9f27bac

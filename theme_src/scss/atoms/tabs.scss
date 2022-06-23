@@ -1,0 +1,46 @@
+.tabset {
+  .tabButtons {
+    @include smUp {
+      padding-left: $gridGap;
+    }
+  }
+  .tabPanel {
+    display: none;
+    
+    &.is-active {
+      display: block;
+    }
+  }
+}
+
+.variantImages {
+  .tabset {
+    button {
+      border: none;
+      background: $txtInvert;
+      @include smUp {
+        width: inherit;
+      }
+      @extend %fontS;
+      padding: 10px 15px;
+      &.is-active {
+        background: $brandColor;
+        color: $txtInvert;
+        &:hover {
+          cursor: default;
+          opacity: 1;
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: $brandColor;
+        opacity: 0.7;
+      }
+    }
+    .tabPanel {
+      &.is-active {
+        padding: 5px;
+      }
+    }
+  }
+}

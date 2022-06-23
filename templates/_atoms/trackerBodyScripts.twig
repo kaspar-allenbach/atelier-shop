@@ -1,0 +1,169 @@
+
+
+		{# <script src="https://cdn.usefathom.com/script.js" site="SJHKWNWM" honor-dnt="true" defer></script> #}
+		<script src="https://content-delivery.kasparallenbach.ch/script.js" data-site="SJHKWNWM" defer></script>
+
+		 <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-QDV40JEM0W"></script>
+		<script>
+			{# ga preloader #}
+			window['GoogleAnalyticsObject'] = 'ga';
+			window['ga'] = window['ga'] || function() {
+				(window['ga'].q = window['ga'].q || []).push(arguments)
+			};
+			{# default google analytics #}
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-QDV40JEM0W');
+			ga('require', 'ecommerce', 'ecommerce.js');
+		</script>
+		{% if (craft.app.request.segments|first == 'purchase') and (product is defined)  %}
+			<script>
+				pintrk('track', 'pagevisit', 'item_group_id' : '{{product.title | ascii | kebab }}' );
+			</script>
+		{% endif %}
+		{% if product is defined %}
+			{# Add to cart button on product page #}
+			<script type="text/javascript">
+				var myEle = document.getElementById("addToCartButton");
+				if(myEle){
+					$('#addToCartButton').click(function() {
+						fbq('track', 'InitiateCheckout');
+					});
+				}
+			</script>
+		{% endif %}
+		{% if craft.app.request.segments|last == 'cart' %}
+			{# Google Add to cart #}
+			<script>
+				gtag('event', 'add_to_cart', {
+					currency: 'CHF',
+					value: {{ cart.totalPrice }},
+					items: [
+						{% for item in cart.lineItems %}
+							{
+								item_name: '{{ item.purchasable.title }}',
+								item_id: '{{ item.sku }}',
+								item_group_id: '{{ item.purchasable.product.title | ascii | kebab }}',
+								price: {{ item.price }},
+								item_brand: '{{ globals.naviName }}',
+								item_list_name: '{{ item.purchasable.title }}',
+								quantity: {{ item.qty }}
+							}
+						{% if not loop.last %},{% endif %}
+						{% endfor %}
+					]
+				});
+			</script>
+			{# Facebook add to cart #}
+			<script type="text/javascript">
+				fbq('track', 'AddToCart', {currency: "CHF", value: {{ cart.itemTotal }} });
+			</script>
+			{# Pinterest add to cart #}
+			<script>
+				pintrk('track', 'addtocart', {
+					currency: 'CHF',
+					value: {{ cart.itemTotal }},
+					line_items: [
+						{% for item in cart.lineItems %}
+							{
+								product_name: '{{ item.purchasable.title }}',
+								product_id: '{{ item.sku }}',
+								product_group_id: '{{ item.purchasable.product.title | ascii | kebab }}',
+								value: {{ item.price }},
+								product_brand: '{{ globals.naviName }}',
+								quantity: {{ item.qty }}
+							}{% if not loop.last %},{% endif %}
+						{% endfor %}
+					]
+				});
+			</script>
+		{% endif %}
+		{% if craft.app.request.segments|last == 'addresses' %}
+			<script type="text/javascript">
+				$('#payrexxRedirect').click(function() {
+					fbq('track', 'AddPaymentInfo', { currency: "CHF", value: {{ cart.totalPrice }} });
+				});
+			</script>
+			<script>
+				gtag('event', 'add_payment_info', {
+					currency: 'CHF',
+					value: {{ cart.totalPrice }},
+					items: [
+						{% for item in cart.lineItems %}
+							{
+								item_name: '{{ item.purchasable.title }}',
+								item_id: '{{ item.sku }}',
+								item_group_id: '{{ item.purchasable.product.title | ascii | kebab }}',
+								price: {{ item.price }},
+								item_brand: '{{ globals.naviName }}',
+								item_list_name: '{{ item.purchasable.title }}',
+								currency: 'CHF',
+								quantity: {{ item.qty }}
+							}
+						{% if not loop.last %},{% endif %}
+						{% endfor %}
+					]
+				});
+			</script>
+		{% endif %}
+		{% if craft.app.request.segments|last == 'order' %}
+			<script>
+				gtag('event', 'purchase', {
+					currency: 'CHF',
+					value: {{ order.itemTotal }},
+					items: [
+						{% for item in order.lineItems %}
+							{
+								item_name: '{{ item.purchasable.title }}',
+								item_id: '{{ item.sku }}',
+								item_group_id: '{{ item.purchasable.product.title | ascii | kebab }}',
+								price: {{ item.price }},
+								item_brand: '{{ globals.naviName }}',
+								item_list_name: '{{ item.purchasable.title }}',
+								currency: 'CHF',
+								quantity: {{ item.qty }}
+							}
+						{% if not loop.last %},{% endif %}
+						{% endfor %}
+					]
+				});
+			</script>
+			<script>
+				pintrk('track', 'checkout', {
+				value: {{ order.itemTotal }},
+				order_quantity: 1,
+				currency: 'CHF',
+				line_items: [
+					{% for item in order.lineItems %}
+						{
+							product_name: '{{ item.purchasable.title }}',
+							product_id: '{{ item.sku }}',
+							product_group_id: '{{ item.purchasable.product.title | ascii | kebab }}',
+							product_price: {{ item.price }},
+							product_quantity: {{ item.qty }},
+							product_brand: '{{ globals.naviName }}'
+						}
+						{% if not loop.last %},{% endif %}
+					{% endfor %}
+				]
+				});
+			</script>
+			<script>
+				fbq('track', 'Purchase', {
+				value: {{ order.itemTotal }},
+				order_quantity: 1,
+				currency: 'CHF',
+				contents: [
+					{% for item in order.lineItems %}
+						{
+							quantity: {{ item.qty }},
+							id: {{ item.sku }}
+						}
+						{% if not loop.last %},{% endif %}
+					{% endfor %}
+				]
+				});
+			</script>
+		{% endif %}

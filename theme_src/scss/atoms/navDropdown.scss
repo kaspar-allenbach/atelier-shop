@@ -1,0 +1,66 @@
+.siteNavi .navList {
+  .dropdown {
+    position: relative;
+    > a,
+    > button {
+      padding-left: 20px !important;
+      &:before {
+        content: " ";
+        @extend %arrowDown;
+        left: 5px;
+        top: 19px;
+        position: absolute;
+      }
+    }
+    > ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      @include transition();
+      z-index: -1;
+      display: none;
+      padding-left: 0;
+      list-style: none;
+      background-color: $bgColor;
+      @extend %shadow;
+      li {
+        a {
+          padding: 10px;
+          display: block;
+          @extend %fontS;
+          text-decoration: none;
+          word-wrap: none;
+          border: none;
+          color: $txtColor;
+          &:hover {
+            text-decoration: none;
+            background-color: $txtColor;
+            color: $txtInvert;
+          }
+        }
+        &.active a {
+          background-color: $txtColor;
+          color: $txtInvert;
+        }
+      }
+    }
+    &:hover {
+      > ul {
+        transition-delay: 0s, 0s, 0.3s;
+        z-index: 1;
+        display: block;
+      }
+    }
+  }
+}
+
+.darkTheme {
+  .siteNavi .navList .dropdown > ul li a {
+    background: $darkThemeBg;
+    color: $txtInvert;
+    &:hover {
+      background: $txtInvert;
+      color: $darkThemeBg;
+    }
+  }
+}

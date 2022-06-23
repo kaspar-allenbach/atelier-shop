@@ -1,0 +1,45 @@
+defaultPlacement: end
+fieldLayouts:
+  c3fb6034-9f6e-4cee-83b0-7f043648321f:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: discipline
+name: Discipline
+siteSettings:
+  bc63c03e-bdb9-4257-848b-bea06f5ce825: # Kaspar Allenbach
+    hasUrls: false
+    template: null
+    uriFormat: null
+  cb7c4cc1-6fcf-4482-912c-87ce9bbe5d98: # Kaspar Allenbach en
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 579b00fb-5270-460f-8458-0b1a5f9eb862

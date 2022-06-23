@@ -1,0 +1,9 @@
+description: 'Order Success'
+enabled: true
+fileNameFormat: 'Order-{number}'
+handle: orderSuccess
+isDefault: false
+language: orderLanguage
+name: 'Order Success PDF'
+sortOrder: 1
+templatePath: purchase/_pdf/order

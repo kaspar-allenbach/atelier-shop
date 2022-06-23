@@ -1,0 +1,65 @@
+.siteHead {
+  @extend %hiddenMdDown;
+  background: $bgColor;
+  @include smUp {
+    margin-bottom: $gridGap;
+    margin-top: $gridGap * 3;
+  }
+  .layoutHolder {
+    .siteHeadGrid {
+      display: grid;
+      grid-template-columns: 1fr $navLogoSize;
+      grid-column-gap: $gridGap / 2;
+      @include smUp {
+        grid-template-columns: 1fr $navLogoSize 1fr;
+        grid-gap: $gridGap;
+        padding-top: 40px;
+        padding-bottom: 20px;
+      }
+      align-items: center;
+    }
+    .brandHeadTxt {
+      @extend %fontM;
+      color: $txtInvert;
+      display: block;
+      @include smUp {
+        color: $txtColor;
+      }
+      margin: 0;
+    }
+    .brandName {
+      text-align: right;
+      a {
+        text-decoration: none;
+        @include smDown {
+          color: $txtInvert;
+        }
+      }
+    }
+    .brandClaim {
+      @extend %hiddenSmDown;
+    }
+    .headerLogo {
+      width: $navLogoSize;
+      > * {
+        vertical-align: bottom;
+      }
+    }
+  }
+}
+
+.darkTheme {
+  .siteHead {
+    box-shadow: none;
+    background: $darkThemeBg;
+    .brandHeadTxt {
+      color: $txtInvert;
+    }
+  }
+}
+
+.headerLogo, .navLogo {
+  svg {
+    @extend %rotating;
+  }
+}

@@ -1,0 +1,29 @@
+.categoryLinks {
+    grid-column: 1/-1;
+    @include mdDown {
+        overflow-x: scroll;
+    }
+    @include mdUp {
+        @include flexBox(null, center, baseline);
+    }
+    a, p {
+        margin-bottom: 0;
+    }
+    ul {
+        padding-left: 0;
+        text-align: center;
+        margin-left: 0;
+        list-style: none;
+        margin-top: 0;
+        @include flexBox(null, flex-end, null);
+        li {
+            margin-right: $gridGap;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    .productEntryNwsltr {
+        @extend %hiddenSmDown;
+    }
+}

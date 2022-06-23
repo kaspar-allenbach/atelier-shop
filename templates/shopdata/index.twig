@@ -1,0 +1,106 @@
+{% extends "shopdata/_layoutShopData" %}
+{% import '_incl/docMacros' as macro %}
+{% requireLogin %}
+
+{% block content %}
+<main class="layoutHolder">
+		<article class="mainGrid">
+
+      {% set orders = craft.orders.completed(true).limit(null).orderBy('dateOrdered desc').cache().all() %}
+			<p class="timestamp">
+				Last Updated:
+				{{ latestOrder.dateOrdered | date('D d.m.Y - H:i') }}
+				-
+				{% if currentUser %}
+					<a href="{{ logoutUrl }}">Logout</a>
+				{% endif %}
+			</p>
+      {# <ul class="testString">
+        {% for abcd in craft.orders.orderBy('dateOrdered desc').all() %}
+          <li>
+            {{ abcd.dateOrdered  | date('D d.m.Y - H:i') }}
+            {{ abcd.shippingAddress.firstName ?? '' }} {{ abcd.shippingAddress.lastName ?? '' }}
+          </li>
+        {% endfor %}
+      </ul> #}
+
+			{% for date, ordersEntries in orders | group("dateOrdered|date('F Y')") %}
+
+				{% set totalSalesVolume = 0 %}
+				{% set totalSalesOnlyInvoice = 0 %}
+				{% set totalItemsQty = 0 %}
+
+				<section class="monthlyResult">
+					<h2>{{ date }}</h2>
+          {% spaceless %}
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>ID</th>
+                  <th>Datum</th>
+                  <th>Name</th>
+                  <th>Item</th>
+                  <th>Methode</th>
+                  <th class="txtRight">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for order in ordersEntries %}
+                  {% set transactionMethod = '' %}
+                  {% for transaction in craft.commerce.gateways.allCustomerEnabledGateways %}
+                    {% set transactionMethod = transaction %}
+                  {% endfor %}
+                    {# {{ dump(order) }} #}
+                    <tr>
+                      <td>{{ loop.revindex }}</td>
+                      <td>
+                        <a href="{{- url('purchase/customer/order') ~ '?number=' ~ order.number -}}">#{{ order.reference }}</a>
+                      </td>
+                      <td>
+                        {{ order.dateOrdered | date('d.m.y') }} <br>
+                        {{ order.dateOrdered | date('H:i') }}
+                      </td>
+                      <td>
+                        <a href="mailto:{{ order.email }}">{{ order.billingAddress.firstName ?? '' }}<br>{{ order.billingAddress.lastName ?? '' }}</a>
+                      </td>
+                      <td class="lineItems">
+                        {% for item in order.lineItems %}
+                          <div class="oneLine">
+                            <span>{{ item.sku }}</span>  <strong>{{ item.qty }}x {{ item.subtotal | currency('CHF')  }}</strong>
+                            {% set totalItemsQty = totalItemsQty + item.qty %}
+                          </div>
+                        {% endfor %}
+                      </td>
+                      <td>
+                        {% if order.gateway.id == 2 %}
+                            <span class="invoice">{{ order.gateway }}</span>
+                        {% else %}
+                          {% if order.payrexxPaymentMethod %}
+                            ({{ order.payrexxPaymentMethod }})
+                            <br><small>Payrexx</small>
+                          {% endif %}
+                        {% endif %}
+                      </td>
+                      <td  class="txtRight">
+                        {{ order.totalPrice | currency('CHF') }}
+                        {% set totalSalesVolume = totalSalesVolume + order.totalPrice %}
+                      </td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                  <td colspan="4">Total:</td>
+                  <td colspan="1">{{ totalItemsQty }}
+                    Stk.</td>
+                  <td class="txtRight"  colspan="2">
+                    <strong>{{ totalSalesVolume | currency('CHF') }}</strong> <br>Inkl. Alles
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          {% endspaceless %}
+				</section>
+			{% endfor %}
+		</article>
+</main>
+{% endblock %}

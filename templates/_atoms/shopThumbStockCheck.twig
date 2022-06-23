@@ -1,0 +1,76 @@
+{% set hasMultipleVariants = item.variants | length %}
+
+
+{% set soldOut %}
+    <small class="stockHint soldOut">{{ 'Ausverkauft' | t }}</small>
+{% endset %}
+
+{% set shortStock %}
+    <small class="stockHint lowStock">{{ 'Nur noch wenige auf Lager' | t }}</small>
+{% endset %}
+
+
+{% set soldOutMuilt %}
+    <small class="stockHint soldOut">{{ 'Eine Variante ist Ausverkauft' | t }}</small>
+{% endset %}
+
+{% set shortStockMulti %}
+    <small class="stockHint lowStock">{{ 'Eine Variante hat nur noch wenige auf Lager' | t }}</small>
+{% endset %}
+
+
+{% if item.type != 'originals' %}
+    {# Stock check for product which have on or more variants #}
+    {% if hasMultipleVariants < 2 %}
+
+        {# product has only one variant #}
+
+        {% for stockCheck in item.variants %}
+            {# Menge: {{ stockCheck.stock }} #}
+            {% if stockCheck.stock == 0 %}
+                {# if prodcut has zero in stock #}
+                {{ soldOut }}
+            {% elseif stockCheck.stock < 10 %}
+                {# if prodcut has less than 10 in stock #}
+                {{ shortStock }}
+            {% endif %}
+        {% endfor %}
+
+    {% else %}
+
+        {# product has more than one variant #}
+
+        {% set soldOutAnyone = false %}
+        {% set lowStockAnyone = false %}
+
+        {% for stockCheck in item.variants %}
+            {# Menge: {{ stockCheck.stock }} #}
+            
+            {% for value in [stockCheck.stock] %}
+                
+                {% if not soldOutAnyone and value == 0 %} {# if any variant has 0 #}
+                    {% set soldOutAnyone = true %}
+                {% elseif not lowStockAnyone and value < 10 %} {# if any variant has less than 10 #}
+                    {% set lowStockAnyone = true %}
+                {% endif %}
+            {% endfor %}
+
+        {% endfor %}
+
+        {% if soldOutAnyone == true and  lowStockAnyone == true %} {# if product has one variant sold out and one low stock #}
+            {{ soldOutMuilt }}
+        {% elseif soldOutAnyone == false and  lowStockAnyone == true %}  {# if product has one variant sold out #}
+            {{ shortStockMulti }}
+        {% elseif soldOutAnyone == true and  lowStockAnyone == false %}  {# if product has one low stock #}
+            {{ soldOutMuilt }}
+        {% endif %}
+
+    {% endif %}
+{% else %}
+    {# stockcheck for unique single products (originals) #}
+    {% for product in item.variants %}
+        {% if product.stock == 0 %}
+            <small class="stockHint soldOut">{{ 'Verkauft' | t }}</small>
+        {% endif %}
+    {% endfor %}
+{% endif %}

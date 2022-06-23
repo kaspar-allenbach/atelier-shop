@@ -1,0 +1,5 @@
+{% if craft.commerce.carts.cart.lineItems|length >= 1 %}
+    <a class="commerceBtn overalCart" href="{{ url('purchase/cart') }}">
+        <img src="/theme/img/shopping-cart.svg" alt=""> ({{ craft.commerce.carts.cart.lineItems|length }})
+    </a>
+{% endif %}

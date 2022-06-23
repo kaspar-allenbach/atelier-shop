@@ -1,0 +1,57 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: e5bdd4fe-93a8-4915-ab87-93602a94922b # Coordinator
+handle: gridHeight
+instructions: ''
+name: 'Grid Height'
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Span 1'
+        -
+          - value
+          - span1
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Span 2'
+        -
+          - value
+          - span2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Span 3'
+        -
+          - value
+          - span3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Span 4'
+        -
+          - value
+          - span4
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

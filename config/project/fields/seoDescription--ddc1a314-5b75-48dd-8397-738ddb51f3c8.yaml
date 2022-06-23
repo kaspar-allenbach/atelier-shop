@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: d0379430-3004-4eb7-af6d-c137e345363a # SEO
+handle: seoDescription
+instructions: ''
+name: 'SEO Description'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: '150'
+  code: '1'
+  columnType: text
+  initialRows: '2'
+  multiline: '1'
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: language
+type: craft\fields\PlainText

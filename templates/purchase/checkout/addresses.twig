@@ -1,0 +1,91 @@
+{% extends 'purchase/_layouts/checkout' %}
+{% import '_incl/docMacros' as macro %}
+
+{% set addresses = craft.commerce.customers.customer.addresses %}
+
+{% block content %}
+    <h1>{{'Lieferung' | t }}</h1>
+    <form method="post"  class="flex flex-col md:flex-row" autocomplete="on" id="addressForm">
+        <div class="w-full md:w-2/3 px-8 addressSectionPanel">
+                {{ csrfInput() }}
+
+                <input type="hidden" name="action" value="commerce/cart/update-cart">
+                
+                {# {{ redirectInput("purchase/checkout/shipping") }} #}
+                {{ redirectInput("purchase/checkout/payment") }}
+                <h2>{{'Lieferadresse'|t}}</h2>
+                {% if not cart.email %}
+                    <div class="inputWrapper">
+                        <label for="email">{{'E-Mail'|t}}</label>
+                        <input id="email" class="w-full" type="email" value="{{ cart.email }}" name="email" placeholder="email@site.com" required />
+                        <span class="flash">{{ cart.getErrors('email')|join }}</span><br>
+                    </div>
+                {% endif %}
+
+                {% include 'purchase/_includes/addresses/fieldset' with {
+                    title: ""|t,
+                    class: 'ShippingAddress',
+                    name: 'shippingAddress'
+                } %}
+
+                {{ hiddenInput('billingAddressSameAsShipping', 0) }}
+
+                <div class="md:flex -mx-4 mt-3">
+                    <div class="flex-3 mx-4">
+                        <label for="billingAddressSameAsShipping" class="shippingBillingAddressCheck normalLabel">
+                            <input id="billingAddressSameAsShipping" name="billingAddressSameAsShipping" type="checkbox" checked="checked"/>
+                            {{ 'Dieselbe Addresse für die Rechnung benutzen' | t }}
+                        </label>
+                    </div>
+                </div>
+
+                {% include 'purchase/_includes/addresses/fieldset' with {
+                    title: "Rechnungsadresse"|t,
+                    class: 'BillingAddress hidden',
+                    name: 'billingAddress'
+                } %}
+
+
+                
+            {% include "purchase/_includes/buyButton" %}
+        </div>
+        <div class="w-full md:w-1/3 md:px-8 border-r border-grey-lighter">
+            {% include "purchase/_includes/order-review" with {  } %}
+            {% include "_molecules/buyersTrust" %}
+        </div>
+    </form>
+
+    {% js %}
+        var $fieldsets = $('.address-fieldset');
+        $fieldsets.each(function () {
+    
+            var $addressFieldset = $(this);
+    
+            $('.address-select', $addressFieldset).each(function () {
+    
+                this.$element = $(this);
+                this.$radio = $('.radio input', this.$element);
+                this.$body = $('.body', this.$element);
+    
+                this.$radio.change($.proxy(function () {
+                    $('.body', $addressFieldset).addClass('hidden');
+                    this.$body.removeClass('hidden');
+                }, this));
+    
+                if (this.$radio.is(':checked')) {
+                    this.$body.removeClass('hidden');
+                    console.log('hello')
+                }
+            });
+    
+        });
+    
+        $("#billingAddressSameAsShipping").change(function (e) {
+            $('.address-fieldset.BillingAddress').toggleClass('hidden');
+        });
+
+        {% if (cart.billingAddressId and cart.billingAddress.hasErrors()) or (cart.billingAddressId != cart.shippingAddressId) %}
+            $("#billingAddressSameAsShipping").click();
+        {% endif %}
+    {% endjs %}
+{% endblock %}

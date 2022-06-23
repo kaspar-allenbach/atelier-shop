@@ -1,0 +1,91 @@
+body {
+  font-family: $MainFont;
+  overflow-x: hidden;
+  @extend %fontM;
+  background-color: $bgColor;
+  min-height: 100vh;
+  &.darkTheme {
+    background-color: $darkThemeBg;
+    h1, h2, h3, h4, h5, h6, li, a, p, .contentThumb p {
+      color: $darkThemeTxt;
+      font-family: $MainFont;
+    }
+    p a {
+      &:hover {
+        text-decoration-color: $txtInvert;
+      }
+    }
+  }
+}
+
+.content {
+  position: relative;
+}
+h1, h2, h3, h4, h5, h6, li, a, p {
+  color: $txtColor;
+  font-family: $MainFont;
+  margin-top: 0;
+}
+p {
+  margin-bottom: $gridGap;
+  a {
+    text-decoration: underline;
+    text-decoration-color: $brandColor;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.11em;
+    @include transition();
+    &:hover {
+      text-decoration-thickness: 0.15em;
+      text-decoration-color: $txtColor;
+    }
+  }
+}
+h1 {
+  font-size: 6em;
+  margin: 0;
+}
+.dropShadow {
+  @extend %shadow;
+}
+.heading {
+  @extend %fontXL;
+  font-weight: 600;
+}
+picture {
+  display: flex;
+  img {
+    object-fit: cover;
+  }
+}
+.panel {
+  @extend %panel;
+}
+footer {
+  @include mdDown {
+    .trustLinks, .footerNavi {
+      justify-content: space-around;
+    }
+  }
+  ul.footerNavi {
+    justify-content: flex-end;
+  }
+}
+.footerBrand {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .headerLogo {
+    width: 50px;
+  }
+  .brandName, .brandClaim {
+    text-decoration: none;
+    @extend %fontS;
+    margin: 0;
+  }
+  @include mdDown {
+    .brandClaim {
+      text-align: right;
+    }
+  }
+}

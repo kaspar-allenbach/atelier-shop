@@ -1,0 +1,22 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 0457eee9-3df5-43c1-8e17-fc2232fc73a8 # Portfolio
+handle: relPortfolio
+instructions: ''
+name: 'Related Portfolio'
+searchable: true
+settings:
+  allowSelfRelations: false
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Add Related Portfolio'
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:289c990c-2784-4ad7-b83b-c6707be4d02c'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

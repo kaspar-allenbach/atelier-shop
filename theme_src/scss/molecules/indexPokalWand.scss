@@ -1,0 +1,36 @@
+.pokalSection {
+  background-color: $darkThemeBg;
+  padding: ($gridGap * 2) 0;
+  @include mdUp {
+    padding: ($gridGap * 10) 0;
+  }
+  .pokalWand {
+    margin: 0 $gridGap * 2;
+    display: grid;
+    grid-gap: $gridGap;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: $gridGap;
+    @include mdUp {
+      grid-template-columns: minmax(300px, 1fr) repeat(4, 1fr);
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+    .pokalText {
+      @include mdDown {
+        grid-column: span 2;
+      }
+      h2, p {
+        color: $txtInvert;
+        margin: 0;
+      }
+    }
+    .pokal {
+      //background-color: $txtInvert;
+      //@extend %shadow;
+      padding: $gridGap;
+      max-width: 200px;
+    }
+  }
+}

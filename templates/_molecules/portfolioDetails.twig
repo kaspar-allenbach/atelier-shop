@@ -1,0 +1,32 @@
+<div class="mainGrid portfolioDetails">
+    <div class="title">
+        <p class="prefix">{{ 'Projekt' | t }}</p>
+        <h1>{{ entry.title }}</h1>
+    </div>
+    {% if entry.catDiscipline %}
+        <aside class="category">
+            <p class="prefix">{{ 'Disziplin' | t }}</p>
+            <ul>
+                {% for cat in entry.catDiscipline.all() %}
+                    <li>{{ cat.title }}</li>
+                {% endfor %}
+            </ul>
+        </aside>
+    {% endif %}
+
+    {% if entry.catClient %}
+        <aside class="client">
+            <p class="prefix">{{ 'Kunde' | t }}</p>
+            <ul>
+                {% for cat in entry.catClient.all() %}
+                    <li>{{ cat.title }}</li>
+                {% endfor %}
+            </ul>
+        </aside>
+    {% endif %}
+    <aside class="prevNext">
+        <p class="prefix">{{ 'Prev / Next' | t }}</p>
+        {% include '_molecules/prevNextBtn' %}
+    </aside>
+    {% include "_molecules/ctaButtons" %}
+</div>

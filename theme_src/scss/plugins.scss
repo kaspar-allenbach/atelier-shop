@@ -1,0 +1,28 @@
+// lightgallery plugins backdrop
+
+.lg-backdrop {
+  background-color: rgba($darkThemeBg, .7);
+}
+.lg-sub-html {
+  display: none;
+}
+.lg-toolbar {
+  background-color: transparent;
+}
+.lg-object {
+  padding: $gridGap / 2;
+  @include mdUp {
+    padding: $gridGap;
+  }
+}
+#lg-counter {
+  @extend %fontS;
+  font-weight: 700;
+}
+#lg-counter, .lg-toolbar .lg-icon, .lg-actions .lg-next, .lg-actions .lg-prev {
+  color: $txtInvert;
+  background-color: transparent;
+}
+.lg-outer .lg-item {
+  background: url("../img/loading.gif") no-repeat scroll center center transparent;
+}

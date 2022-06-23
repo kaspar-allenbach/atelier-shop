@@ -1,0 +1,49 @@
+field: ecbe273f-332d-49dd-88bc-baff78bbe1af # CTA Button
+fieldLayouts:
+  438a1614-9453-47be-b3a8-3ce1c3da2fa7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 7a0b53e7-d31f-4fce-8464-a9ea8f97d83a # Text
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7a0b53e7-d31f-4fce-8464-a9ea8f97d83a: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellTxt
+    instructions: ''
+    name: Text
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\redactor\Field
+handle: mxCtaBtnTxt
+name: 'CTA Begleittext'
+sortOrder: 2

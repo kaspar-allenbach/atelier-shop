@@ -1,0 +1,12 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+{% if entry.section.handle is defined and entry.section.handle == 'contact' %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.4.0/mapbox-gl.js" integrity="sha256-4vgPjIfsjmay+xrYNgX79wO5pIHcSKoCWJKwNmoqcms=" defer crossorigin="anonymous"></script>
+{% endif %}
+{% if env != 'dev' %}
+    <script src="/theme/js/atelier6.min.js?version={{ themeVersions }}"></script>
+{% else %}
+    <script src="/theme/js/atelier6.dev.js?version={{ themeVersions }}"></script>
+{% endif %}
+
+

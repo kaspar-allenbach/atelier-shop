@@ -1,0 +1,72 @@
+field: ecbe273f-332d-49dd-88bc-baff78bbe1af # CTA Button
+fieldLayouts:
+  dcee6958-e8b5-46e3-ba46-16c477efcd78:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 55d361a7-fafc-4ef5-8274-0566396d930e # Button Text
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f221d632-395b-4399-915b-005da06ba6e6 # Button Link
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  55d361a7-fafc-4ef5-8274-0566396d930e: # Button Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellBtnTxt
+    instructions: ''
+    name: 'Button Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+  f221d632-395b-4399-915b-005da06ba6e6: # Button Link
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellBtnLink
+    instructions: ''
+    name: 'Button Link'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Link hinzufügen'
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: mxCtaBtn
+name: 'CTA Button'
+sortOrder: 1

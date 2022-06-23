@@ -1,0 +1,53 @@
+{% extends "_layout" %}
+{% import '_incl/docMacros' as macro %}
+
+{% block content %}
+
+    {% if product.variants < 2 %}
+        {% set variantEntries = product %}
+    {% else %}
+        {% set variantEntries = product.variants() %}
+    {% endif %}
+
+    {% set hasMultipleVariants = product.variants() | length %}
+
+    {{ craft.blitz.getTemplate ("_atoms/shopCartTab") }}
+    <div class="content">
+    {% include "_molecules/shopVariantSchema" %}
+        <main class="layoutHolder">
+            <article class="mainGrid productGrid">
+                {% include "_molecules/shopVariantImages" %}
+                {% include "_molecules/shopProductGallery" %}
+                <div class="productDescription">
+                    <div class="productText{% if product.enableColumn == 1 %} enableColumn{% endif %}">
+                        {% include "_molecules/productText" %}
+                    </div>
+                    {% if product.type == 'originals' %}
+                        {% set originalsGLobalText = craft.entries.section('originalsListing').one() %}
+                        {% if originalsGLobalText %} {{ macro.richText(originalsGLobalText.originalsProduktText) }} {% endif %}
+                    {% endif %}
+                </div>
+                <aside class="productTaxonomy">
+                    {% include "_molecules/shopVariantTaxonomy" %}
+                    {% include "_molecules/buyersTrust" %}
+                </aside>
+            </article>
+        </main>
+    </div>
+    {% include "_organisms/shopPerks" %}
+    <aside class="layoutHolder">
+        <h2>{{'Weitere Produkte'|t}}</h2>
+        <div class="mainGrid">
+            {% if product.type == 'originals' %}
+                {% for item in craft.products.sticky(1).type('originals').all() %}
+                    {% include "_molecules/shopThumb" %}
+                {% endfor %}
+            {% else %}
+                {% for item in craft.products.hallOfFame(not 1).type('plakate').all() %}
+                    {% include "_molecules/shopThumb" %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </aside>
+    
+{% endblock %}

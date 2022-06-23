@@ -1,0 +1,32 @@
+tabs:
+  -
+    elements:
+      -
+        fieldUid: 58fd53d8-56fa-48cf-ad6b-f0c77971ce8d # Payrexx Gateway Id
+        instructions: null
+        label: null
+        required: '0'
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
+      -
+        fieldUid: 41e6afaa-0b1b-4bf2-98de-800efc6036f5 # Payrexx Payment Method
+        instructions: null
+        label: null
+        required: '0'
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
+      -
+        fieldUid: 7c0766e2-66e6-4dc5-bcea-da3950d180ed # Payrexx Transaction Id
+        instructions: null
+        label: null
+        required: '0'
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
+    name: Payrexx
+    sortOrder: 1

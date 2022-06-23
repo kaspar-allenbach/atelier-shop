@@ -1,0 +1,63 @@
+{% extends "purchase/_layouts/checkout" %}
+{% import '_incl/docMacros' as macro %}
+{% block main %}
+
+    <h1>{{ "Dein Warenkorb" | t }}</h1>
+
+    {% if cart.lineItems|length %}
+        <div class="cart">
+            <div class="tableRow tableHead">
+                <div>{{ "Produkt" | t }}</div>
+                <div></div>
+                <div>{{ "Menge" | t }}</div>
+                <div>{{ "Preis" | t }}</div>
+            </div>
+            <form method="POST" data-parsley-validate autocomplete="on">
+                {{ csrfInput() }}
+                <input type="hidden" name="action" value="commerce/cart/update-cart"/>
+                {{ redirectInput("purchase/cart") }}
+                <div class="cartGrid">
+                    {% set lineItemHasErrors = false %}
+                    {% for item in cart.lineItems %}
+                        {% if item.hasErrors() %}
+                            {# if the line item has errors lets record it so we can hide totals later (since they wont make sense) #}
+                            {% set lineItemHasErrors = true %}
+                        {% endif %}
+                        <div class="tableRow itemRow" {% if item.hasErrors() %} style="background-color:rgba(255, 0, 0, .1);" {% endif %}>
+                            {% include "purchase/_includes/cartItem" %}
+                        </div>
+                    {% endfor %}
+                    <div class="tableRow buttonRow">
+                        {# {% include "purchase/_includes/cartCoupon" %} #}
+                        {# ugly hack to display properly on mobile #}
+                        {% include "purchase/_includes/cartAdjustment" %}
+                        {% include "purchase/_includes/cartTotal" %}
+                        {% if not lineItemHasErrors %}
+                            <div class="orderButtons">
+                                <a class="btn btnSmall btnNeutral backToShop" href="{{ url('shop') }}">{{ "Zurück zum Shop" | t }}</a>
+                                {% if craft.app.language == 'de-CH' %}
+                                    <a class="btn commenceBuy" href="{{ url('/purchase/checkout/addresses') }}" id="initiateCheckout">
+                                        <img src="/theme/img/shopping-shipping-address.svg" alt="Cart Icon" class="btnIcon">
+                                        {{ "Weiter zur Lieferadresse" | t }}
+                                    </a>
+                                {% else %}
+                                    <a class="btn commenceBuy" href="{{ url('/en/purchase/checkout/addresses') }}" id="initiateCheckout">
+                                        <img src="/theme/img/shopping-shipping-address.svg" alt="Cart Icon" class="btnIcon">
+                                        {{ "Weiter zur Lieferadresse" | t }}
+                                    </a>
+                                {% endif %}
+                                   
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    {% endif %}
+    {% if not cart.lineItems|length %}
+        <p>
+            {{ "Sie haben noch keine Produkte im Warenkorb" | t }}.
+        </p>
+        <p><a href="{{ url('shop') }}" class="btn">{{ "Shop" | t }}</a></p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,45 @@
+field: 033595bd-f806-4358-8a90-838c988353f6 # Navi Links
+fieldLayouts:
+  8bf0bb24-aa00-4fe1-8f56-4ffc534b275a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4a47f355-afe1-42d4-8aa0-f42b10600a8e # Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  4a47f355-afe1-42d4-8aa0-f42b10600a8e: # Link
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellLink
+    instructions: ''
+    name: Link
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: 'Add link'
+      showSiteMenu: true
+      source: null
+      sources:
+        - singles
+        - 'section:1783fd15-f538-43ff-a601-6c104bffd5c5' # Sub Pages
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: mxSingleNaviPoint
+name: 'Navi Point'
+sortOrder: 1

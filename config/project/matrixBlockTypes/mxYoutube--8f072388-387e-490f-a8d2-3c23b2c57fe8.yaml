@@ -1,0 +1,41 @@
+field: a86d5131-4509-4986-a88b-9f74b5a791b8 # Listing Thumb
+fieldLayouts:
+  bc2c01db-ab1e-4fe1-994b-ea428ad3250d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 38e56902-5a8c-4a03-aec3-14c07babef99 # Youtube
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  38e56902-5a8c-4a03-aec3-14c07babef99: # Youtube
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellYoutube
+    instructions: ''
+    name: Youtube
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: mxYoutube
+name: Youtube
+sortOrder: 3

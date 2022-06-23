@@ -1,0 +1,96 @@
+.navigationMobile {
+  &:not(.opened) {
+    opacity: 0;
+    z-index: -1;
+  }
+  padding: $gridGap;
+  @include transition;
+  @extend %hiddenMdUp;
+  @include flexBox(column, space-evenly, center);
+  background: $darkThemeBg;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+  .opened {
+    opacity: 1;
+    z-index: 200;
+  }
+  #mobileNavCloser {
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    left: 0;
+    width: $navLogoSize;
+    height: $navLogoSize;
+    z-index: 1;
+    svg {
+      circle {
+        fill: $darkThemeBg;
+      }
+    }
+  }
+  ul {
+    @extend %neutralList;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    margin: 0;
+    li {
+      a {
+        color: $txtInvert;
+        padding: $gridGap / 2 0;
+        display: block;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+          background: transparent;
+        }
+      }
+      &.active a {
+        text-decoration: underline;
+        text-decoration-color: $brandColor;
+        text-decoration-thickness: 0.2em;
+        color: $brandColor;
+        font-weight: 700;
+      }
+      &.dropdown {
+        > a {
+          display: none;
+        }
+        &.active li:not(.active) a {
+          text-decoration: none;
+          color: $txtInvert;
+        }
+      }
+    }
+  }
+  .mobileNavbrand {
+    @include flexBox(column-reverse, space-around, center);
+    z-index: 1;
+    a {
+      width: 80px;
+      padding-bottom: $gridGap / 2;
+      color: $txtInvert;
+      svg #iyvsgsnsii-spaceboy circle{fill: transparent !important;}
+    }
+    .brandName {
+      margin: 0;
+      a {
+        text-decoration: none;
+        color: $txtInvert;
+        @extend %fontM;
+      }
+    }
+  }
+  canvas {
+    background: $darkThemeBg;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

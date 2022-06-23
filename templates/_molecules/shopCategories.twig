@@ -1,0 +1,34 @@
+{% set shopEntryIds = craft.products.ids() %}
+{% set catLinks = craft.categories.group('shopCategories').relatedTo(shopEntryIds).all() %}
+{% set listingPillButtons = craft.entries.section(['shopListing','originalsListing']).orderBy('postDate asc').all() %}
+
+<aside class="categoryLinks">
+	
+		{% for link in listingPillButtons %}
+			{% if loop.first %}<ul>{% endif %}
+			{%- set activeBtnCheck -%}
+				{% if link.id == entry.id %}btnActive{% endif %}
+			{%- endset -%}
+			<li>
+				<a href="{{ link.url }}" class="btn btnSmall btnInvert btnPill {{ activeBtnCheck }}">{{ link.title }}</a>
+			</li>
+			{% if loop.last %}</ul>{% endif %}
+		{% endfor %}
+
+		{% for cat in catLinks %}
+			{% if loop.first %}<ul>{% endif %}
+			{%- set activeBtnCheck -%}
+                {% if category is defined %}
+                    {% if cat.id == category.id %}
+                        btnActive
+                    {% endif %}
+                {% endif %}
+			{%- endset -%}
+			<li>
+				<a href="{{ cat.url }}" class="btn btnSmall btnInvert btnPill{{ activeBtnCheck }}">
+					{{ cat.title | replace({" ": "&nbsp;"}) | raw  | nl2br }}
+				</a>
+			</li>
+			{% if loop.last %}</ul>{% endif %}
+		{% endfor %}
+</aside>

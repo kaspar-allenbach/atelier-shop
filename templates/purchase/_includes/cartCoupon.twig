@@ -1,0 +1,10 @@
+<div class="couponCode"> {# Update Coupon form uses the single update controller action: #}
+    {% if cart.getFirstError('couponCode') %}
+        <span class="flash">{{ cart.getFirstError('couponCode') }}</span>
+    {% endif %}
+
+    <span class="{% if cart.getFirstError('couponCode') %}has-error{% endif %}">
+        <input type="text" name="couponCode" width="11" class="{% if cart.getFirstError('couponCode') %}has-error{% endif %}"  value="{{ cart.couponCode }}" placeholder="{{ "Coupon Code"|t }}">
+    </span>
+    <input class="btn btnNeutral" type="submit" value="{{ 'Anwenden' | t }}"/>
+</div>

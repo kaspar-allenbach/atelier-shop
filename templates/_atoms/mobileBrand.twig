@@ -1,0 +1,10 @@
+{% import '_incl/docMacros' as macro %}
+
+<h2 class="brandName brandHeadTxt">
+	<a href="{{ currentSite.baseUrl }}">{{ globals.naviName }}</a>
+</h2>
+<a href="{{ currentSite.baseUrl }}" class="headerLogo">
+	{% for asset in globals.naviLogo.all() %}
+		{{ macro.oneImage(asset) }}
+	{% endfor %}
+</a>

@@ -1,0 +1,18 @@
+{% extends "_layout" %}
+{% import '_incl/docMacros' as macro %}
+
+{% block content %}
+    {# all content #}
+    <main class="contactGrid">
+        <article class="adress">
+            <div>
+                {# <h1 class="heading minor">{{ entry.title }}</h1> #}
+                {{ macro.richText(entry.adress)}}
+            </div>
+        </article>
+        <figure class="portrait">
+            {{ macro.pictureElement(entry.portrait) }}
+        </figure>
+        <div class="map" id="mapBox"></div>
+    </main>
+{% endblock %}

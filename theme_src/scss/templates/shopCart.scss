@@ -1,0 +1,247 @@
+.shopCheckout.shopCart {
+  .cartHead {
+    background-color: $txtInvert;
+    .brand {
+      text-align: left;
+      h2,
+      h3 {
+        @extend %fontM;
+        margin: 0;
+      }
+      svg {
+        width: 50px !important;
+        margin-right: 30px;
+      }
+    }
+    .shoppingCart {
+      width: 35px;
+    }
+    nav {
+      @include smDown {
+        padding-top: 30px;
+      }
+    }
+  }
+  .itemProduct {
+    @include smDown {
+      border-bottom: 1px solid $txtColor;
+    }
+  }
+  .itemImage{
+    @include smDown {
+      grid-row: 1;
+      grid-column: 2;
+    }
+  }
+  .itemPrice {
+    @include smDown {
+      grid-row: 2;
+      grid-column: 2;
+      strong {
+        background: $txtInvert;
+      }
+    }
+  }
+  .tableHead {
+    @extend %hiddenSmDown;
+  }
+  .tableRow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    &.itemRow {
+      @extend %panel;
+      position: relative;
+      p {
+        margin: 0;
+      }
+      @include mdDown {
+        padding: 10px;
+        margin-bottom: 30px;
+      }
+    }
+    @include smUp {
+      grid-template-columns: 1fr 150px 1fr 1fr;
+      grid-gap: 20px;
+    }
+    .changeLineItem {
+      @extend %fontXS;
+      @include flexBox(null, space-between, flex-end);
+      @include mdUp {
+        @include flexBox(null, null, flex-start);
+      }
+      .qtyChanger {
+        @include mdUp {
+          flex:1 ;
+        }
+      }
+      .btnGroup, .btnRemove {
+        margin-bottom: 0;
+      }
+    }
+    .itemPrice {
+      text-align: right;
+      @include mdDown {
+        @include flexBox(column-reverse, null, null);
+      }
+      .itemPriceTag {
+        @extend %fontXS;
+      }
+      span {
+        display: block;
+        @include mdDown {
+          display: block;
+          padding-top: 5px;
+        }
+      }
+    }
+    padding: 10px 0;
+    .adjustmentName {
+      grid-column: span 2;
+    }
+    .adjustment {
+      grid-column: 1/-1;
+      @include mdUp{
+        grid-column: span 2;
+      }
+    }
+    .couponCode {
+      @include mdUp {
+        flex-wrap: wrap;
+      }
+      input[type="number"] {
+        width: 100%;
+      }
+      @include mdDown {
+        grid-column: 1 / -1;
+      }
+      > div {
+        flex-basis: 100%;
+      }
+    }
+  }
+ .editLineItem, .itemQuantity {
+    @include mdDown {
+      grid-row: 2;
+    }
+  }
+  .itemQuantity {
+    @include flexBox(column, space-between, null);
+    @include mdUp {
+      grid-column: 3;
+      grid-row: 1;
+    }
+  }
+
+  .couponCode {
+    align-self: flex-start;
+    @include flexBox(null, null, null);
+    span input {
+      border-radius: 4px 0 0 4px;
+      border-color: $subtleColor;
+    }
+    input.btn {
+      border-radius: 0 4px 4px 0;
+      align-self: stretch;
+      @include mdDown {
+        width: 100%;
+      }
+    }
+    @include smUp {
+      grid-column: span 3;
+    }
+  }
+  .cartButtons {
+    .btn {
+      @extend %fontXS;
+    }
+    @include mdDown {
+      @include flexBox(null, center, center);
+      > *:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+  .buttonRow {
+    .btn {
+      white-space: normal;
+      word-wrap: break-word;
+      text-align: center;
+      align-self: flex-start;
+      margin: 0;
+    }
+  }
+  .qtyInteger {
+    @extend %fontM;
+    font-weight: bold;
+  }
+
+  //cart
+  .cartTotal {
+    text-align: right;
+    grid-column: span 2;
+    @include mdDown {
+      grid-column: 1/-1;
+    }
+    small {
+      display: block;
+    }
+    h4 {
+      span {
+        display: block;
+        font-weight: 400;
+        @extend %fontS;
+      }
+    }
+    @extend %panel;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+  .orderButtons {
+    @include flexBox(column-reverse, null, null);
+    @include mdUp {
+      @include flexBox(row, space-between, null);
+    }
+    .backToShop {
+      @include mdUp {
+        padding: 10px 15px 8px;
+      }
+      @include mdDown {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    .commenceBuy {
+      @include mdDown {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .editLineItem {
+    @include flexBox(null, flex-end, flex-end);
+    @include mdUp {
+      @include flexBox(null, flex-end, flex-start);
+    }
+  }
+  .btnGroup {
+    margin-bottom: 0;
+    .btnRemove {
+      @include mdDown {
+        position: absolute;
+        top: -15px;
+        right: -9px;
+        font-size: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        &:before {
+          content: "X";
+          font-size: 12px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

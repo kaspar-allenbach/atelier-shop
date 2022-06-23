@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 6e3154cb-63d9-480c-abd7-9607d38ddac3 # Buyers trust
+handle: optionsLogos
+instructions: 'zum Beispiel zahlbar via kreditkarte versna dper post usw'
+name: 'Options Logos'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_optionslogos}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

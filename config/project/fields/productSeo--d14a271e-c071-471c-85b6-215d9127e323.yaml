@@ -1,0 +1,21 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: d0379430-3004-4eb7-af6d-c137e345363a # SEO
+handle: productSeo
+instructions: ''
+name: 'Product SEO'
+searchable: true
+settings:
+  elementDisplayPreviewType: google
+  facebookTabEnabled: ''
+  generalEnabledFields:
+    - seoPreview
+    - seoTitle
+    - seoDescription
+    - seoImage
+  generalTabEnabled: '1'
+  sitemapTabEnabled: ''
+  twitterTabEnabled: ''
+translationKeyFormat: null
+translationMethod: language
+type: nystudio107\seomatic\fields\SeoSettings

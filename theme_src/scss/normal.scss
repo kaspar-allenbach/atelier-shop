@@ -1,0 +1,38 @@
+html, *, body {
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+figure {
+  margin: 0;
+}
+picture {
+  display: block;
+  height: 100%;
+}
+.visuallyHidden { 
+  position: absolute !important;
+  height: 1px; 
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0;
+}
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 300ms;
+}

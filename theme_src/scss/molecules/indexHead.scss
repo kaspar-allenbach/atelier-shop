@@ -1,0 +1,30 @@
+.presenter {
+  min-height: 300px;
+  padding: $gridGap * 2;
+  @include mdUp {
+    @include flexBox(null, flex-start, flex-end);
+  }
+  .headerLogo {
+    max-width: 50px;
+    margin-right: $gridGap;
+    display: block;
+  }
+  .brandHeadTxt {
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .brandName,
+  .brandClaim,
+  .indexTxt {
+    margin: 0;
+    @extend %fontS;
+  }
+  .indexBrand {
+    max-width: 50vh;
+    @include mdUp {
+      div {
+        display: flex;
+      }
+    }
+  }
+}

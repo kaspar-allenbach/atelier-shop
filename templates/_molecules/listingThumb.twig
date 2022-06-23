@@ -1,0 +1,37 @@
+{% import '_incl/docMacros' as macro %}
+
+{# sets up the grid class system #}
+
+{% set thumbAtrributes = {
+        
+        class: [
+            'listingThumb',
+            'width' ~ entry.gridWidth | capitalize,
+            'height' ~ entry.gridHeight | capitalize,
+            'pos' ~  entry.positionLower.value | length | capitalize,
+        ] 
+
+} %}
+
+
+{# Switch between entry types, link or not or crosslink #}
+{% if entry.type == 'portfolioEntry' %}
+   <a href="{{ entry.url }}" {{attr(thumbAtrributes)}}>
+{% elseif entry.type  ==  'linkedEntry' %}
+    {% set entryLink = entry.relPortfolio.one() %}
+    <a href="{{ entryLink.url }}" {{attr(thumbAtrributes)}}>
+{% else %}
+    <figure {{attr(thumbAtrributes)}}>
+{% endif %}
+
+
+
+    {% include '_atoms/thumbText' %}
+    {% include '_atoms/listingAsset' %}
+    
+
+{% if entry.type != 'thumbEntry' %}
+    </a>
+{% else %}
+    </figure>
+{% endif %}

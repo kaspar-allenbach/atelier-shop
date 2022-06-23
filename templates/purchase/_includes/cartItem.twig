@@ -1,0 +1,18 @@
+{% import '_incl/docMacros' as macro %}
+
+<div class="itemProduct">
+    <div>
+        <strong><a href="{{ item.purchasable.product.url }}">{{ item.purchasable.product.title }}</a></strong><br>
+        {# <small>(sku: {{ item.purchasable.title }})</small> #}
+        {% if item.purchasable.catProductSize %}
+            <small>Format: {{ item.purchasable.catProductSize.title }}</small>
+        {% else %}
+            <small>Format: {{ item.purchasable.product.catProductSize.one() }}</small>
+        {% endif %}
+    </div>
+</div>
+<div class="itemImage">
+     {% include "purchase/_includes/lineItemImage" %}
+</div>
+{% include "purchase/_includes/cartItemPrice" %}
+{% include "_atoms/shopLineItemQty" %}

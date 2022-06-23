@@ -1,0 +1,44 @@
+.portfolioDetails {
+    margin-top: $gridGap;
+    .title {
+      grid-column: 1/-1;
+      @include smUp {
+        grid-column: span 6;
+      }
+    }
+    .category, .client {
+      @include smUp {
+        grid-column: span 3;
+      }
+      @include mdUp {
+        grid-column: span 2;
+      }
+    }
+    .prevNext {
+      grid-column: 1/-1;
+      @include mdUp {
+        grid-column: span 2;
+      }
+    }
+    p.prefix {
+      border-top: 1px solid $txtColor;
+      @extend %fontXS;
+      padding-top: 10px;
+    }
+    h1 {
+      @extend %fontXXL;
+    }
+    .category {
+      ul {
+        padding-left: 15px;
+        @extend %fontS;
+      }
+    }
+    .client {
+      ul {
+        list-style: none;
+        padding-left: 0;
+        @extend %fontS;
+      }
+    }
+  }

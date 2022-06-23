@@ -1,0 +1,31 @@
+$bgColor: #f7f3ed;
+
+$darkThemeBg: #27292b;
+$darkThemeTxt: white;
+
+$brandColor: rgb(219, 158, 18);
+
+$txtColor: $darkThemeBg;
+$txtInvert: white;
+$linkColor: $txtColor;
+$hoverColor: #f7f3ed;
+
+$hintColor: $brandColor;
+$disabledColor: #f7f3ed;
+$subtleColor: #ccc;
+
+$buyColor: $brandColor;
+
+$btnColor: #e8be7f;
+
+$revealColor: lighten( $txtColor, 30% );
+
+$gridGap: 15px;
+
+$navLogoSize: 50px;
+$MainFont: 'Vaud', sans-serif;
+
+$tabBorder: solid 3px $brandColor;
+
+$errorColor: red;
+

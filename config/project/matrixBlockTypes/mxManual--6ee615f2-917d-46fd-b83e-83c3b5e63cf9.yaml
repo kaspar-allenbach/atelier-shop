@@ -1,0 +1,66 @@
+field: 033595bd-f806-4358-8a90-838c988353f6 # Navi Links
+fieldLayouts:
+  840137e4-ef4c-4659-92a9-564425fda806:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f2385760-50f9-477b-9310-7ed6948804db # Label
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1fec92c9-a924-4e65-ae8f-292e7eaa621d # Url
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  1fec92c9-a924-4e65-ae8f-292e7eaa621d: # Url
+    columnSuffix: jmibwurv
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: cellLink
+    instructions: ''
+    name: Url
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: null
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  f2385760-50f9-477b-9310-7ed6948804db: # Label
+    columnSuffix: jrcilidn
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellLabel
+    instructions: ''
+    name: Label
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+handle: mxManual
+name: Manual
+sortOrder: 3

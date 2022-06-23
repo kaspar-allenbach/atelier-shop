@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 32b6581c-f334-41d2-8c31-56debf8fa7cb # Shop
+handle: shopPerks
+instructions: ''
+name: 'Shop Perks'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_shopperks}}'
+  maxBlocks: '5'
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,45 @@
+defaultPlacement: end
+fieldLayouts:
+  b270f240-52e0-469c-9009-1ed6614a4365:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: produktionsart
+name: Produktionsart
+siteSettings:
+  bc63c03e-bdb9-4257-848b-bea06f5ce825: # Kaspar Allenbach
+    hasUrls: false
+    template: null
+    uriFormat: null
+  cb7c4cc1-6fcf-4482-912c-87ce9bbe5d98: # Kaspar Allenbach en
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: d28f2c11-cf41-4d8c-8974-355b4e7058bd

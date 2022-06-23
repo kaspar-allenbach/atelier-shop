@@ -1,0 +1,84 @@
+// I put mostly layout stuff here
+$gridBaseNumber: 3;
+$gridMobileBaseNumber: 1;
+
+$gridContentNumber: 12;
+
+.layoutHolder {
+  // @media only screen and (min-resolution: 192dpi) {
+  //  max-width: 1200px;
+  // }
+  // @include mdUp {
+  //   max-width: 960px;
+  // }
+  // @include lgUp {
+  //   max-width: 1080px;
+  // }
+  // max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  padding: 0 $gridGap;
+  @include mdUp {
+    padding-top: 0;
+    padding-left: $gridGap / 2;
+    padding-right: $gridGap / 2;
+  }
+}
+.mainGrid {
+  display: grid;
+  grid-template-columns: repeat($gridMobileBaseNumber, 1fr);
+  grid-gap: $gridGap / 2;
+  @include transition(all);
+  grid-template-rows: auto;
+  position: relative;
+  @include smUp {
+    grid-template-columns: repeat($gridBaseNumber, 1fr);
+    grid-gap: $gridGap;
+    align-items: flex-start;
+  }
+}
+.subPagesGrid {
+  max-width: 1200px;
+  margin: auto;
+  @include mdUp {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: $gridGap;
+  }
+}
+@include smUp {
+  //make span grid column classes
+  @for $i from 1 through $gridContentNumber {
+    $spanVar: $i;
+
+    //generate all span classes
+
+    .widthSpan#{$i} {
+      grid-column: span $spanVar;
+      //within the span loop create all offset loops for each span option
+      @for $i from 1 through $gridContentNumber {
+        $offsetVar: $i;
+
+        &.offset#{$offsetVar} {
+          grid-column: $i #{"/"} span $spanVar;
+        }
+      }
+    }
+  }
+  .height {
+    @for $i from 1 through 4 {
+      &Span#{$i} {
+        grid-row: auto / span $i;
+      }
+    }
+  }
+  .wrapOnce {
+    @include flexBox(null, center, center);
+    > * {
+      padding-right: $gridGap;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}

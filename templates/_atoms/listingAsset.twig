@@ -1,0 +1,30 @@
+{% import '_incl/docMacros' as macro %}
+
+{% if currentHandle == 'homepage' %}
+	{% set aspectRatio = 1/1 %}
+{% else %}
+	{% set aspectRatio = null %}
+{% endif %}
+
+{% for block in entry.listingThumb.all() %}
+
+	<figure
+		class="visualPart">
+		{# if on homepage ise picture element #}
+		{% switch block.type %}
+			{% case "mxImg" %}
+				{% for asset in block.cellImg.all() %}
+					{{ macro.portfolioListing(asset, aspectRatio) }}
+				{% endfor %}
+			{% case "mxGiphy" %}
+				<img src="{{ block.cellGiphy }}" alt="{{ entry.title }}" class="lazyload">
+			{% case "mxYoutube" %}
+				{{ macro.youTube(block.cellYoutube, 1) }}
+			{% case "mxVideo" %}
+				{% for asset in block.cellVideo.all() %}
+					{{ macro.video(asset, 1) }}
+				{% endfor %}
+		{% endswitch %}
+	</figure>
+
+{% endfor %}

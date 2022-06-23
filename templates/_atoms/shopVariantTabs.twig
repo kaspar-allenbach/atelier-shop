@@ -1,0 +1,34 @@
+{% import '_incl/docMacros' as macro %}
+
+
+<div class="tabset">
+    <div class="tabButtons">
+        {% for variant in variantEntries %}
+            <button
+                class="js-image-variant-tab"
+                data-variant-slug="{{ variant.sku | ascii | kebab }}"
+                data-is-default-variant="{{ variant.isDefault ? 'true' : 'false' }}"
+                type="button"
+            >
+                <span class="hiddenSmUp">
+                    {% for cat in variant.catProductSize.all() %}
+                        {{ cat.title |replace({'Weltformat': ''}) }}
+                    {% endfor %}
+                </span>
+                <span class="hiddenSmDown">{{ variant.title }}</span>
+            </button>
+        {% endfor %}
+    </div>
+    <div class="tabPanels">
+        {% for variant in variantEntries %}
+            <section
+                class="tabPanel js-image-variant-panel"
+                data-variant-slug="{{ variant.sku | ascii | kebab }}"
+            >
+                {% for asset in variant.variantThumb.all() %}
+                    {{ macro.variantImage( asset, 16/10 ) }}
+                {% endfor %}
+            </section>
+        {% endfor %}
+    </div>
+</div>

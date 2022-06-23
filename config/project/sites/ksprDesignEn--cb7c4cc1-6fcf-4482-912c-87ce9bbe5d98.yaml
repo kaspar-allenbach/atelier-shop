@@ -1,0 +1,9 @@
+baseUrl: $SITE_URL_EN
+enabled: true
+handle: ksprDesignEn
+hasUrls: true
+language: en
+name: 'Kaspar Allenbach en'
+primary: false
+siteGroup: c5ca8e90-d161-46ab-a1f7-a310ab06b79c # kspr.design
+sortOrder: 2

@@ -1,0 +1,26 @@
+.ctaWrapper {
+  grid-column: 1/-1;
+  padding: 20px 0;
+  border-top: solid 1px $txtColor;
+  @include flexBox(column, center, center);
+  @include mdUp {
+    grid-column: 7/-1;
+    @include flexBox(row, flex-start, baseline);
+    .ctaBtn {
+      margin-right: $gridGap;
+    }
+  }
+  .txtBlock {
+    p {
+      margin: 0;
+      @include mdDown {
+        text-align: center;
+      }
+    }
+  }
+}
+.darkTheme {
+  .ctaWrapper {
+    border-color: $txtInvert;
+  }
+}

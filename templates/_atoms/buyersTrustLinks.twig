@@ -1,0 +1,11 @@
+{% for item in buyersTrust.buyersTrustLinks.all() %}
+	{% if loop.first %}
+		<ul class="trustLinks">
+		{% endif %}
+		<li>
+			<a href="{{ item.url }}">{{ item.title }}</a>
+		</li>
+		{% if loop.last %}
+		</ul>
+	{% endif %}
+{% endfor %}

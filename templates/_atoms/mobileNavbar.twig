@@ -1,0 +1,10 @@
+{% import '_incl/docMacros' as macro %}
+
+<div class="mobileNavbar">
+  <button id="mobileNavOpener">
+    {{ svg('@webroot/theme/img/hamburger-open.svg') | append('<title>Schliessen</title>', 'replace') }}
+  </button>
+  {% include "_atoms/mobileBrand" %}
+  {% include '_atoms/envTrigger' %}
+  {% include '_molecules/microNews' %}
+</div>

@@ -1,0 +1,17 @@
+.portfolioEntry, .subPages {
+    .folioTxt {
+        height: 100%;
+        display: flex;
+    }
+    .posCenter {
+        align-self: center;
+    }
+    .posBottom {
+        align-self: flex-end;
+    }
+    .mxTxt {
+        @include mdDown {
+            grid-column: 1/-1;
+        }
+    }
+}

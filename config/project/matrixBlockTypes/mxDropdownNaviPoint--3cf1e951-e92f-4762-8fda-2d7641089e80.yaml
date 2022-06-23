@@ -1,0 +1,74 @@
+field: 033595bd-f806-4358-8a90-838c988353f6 # Navi Links
+fieldLayouts:
+  a9f1d9af-6719-43cf-a01a-6b625197964a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d1748e1a-c93e-4956-861c-b08ee202d058 # Dropdown Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9371ef87-7104-4faa-bd86-e7bf0ecb55a1 # Dropdown Links
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  9371ef87-7104-4faa-bd86-e7bf0ecb55a1: # Dropdown Links
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: mxDropdownLinks
+    instructions: ''
+    name: 'Dropdown Links'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: 'Add Links'
+      showSiteMenu: true
+      source: null
+      sources:
+        - singles
+        - 'section:1783fd15-f538-43ff-a601-6c104bffd5c5' # Sub Pages
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  d1748e1a-c93e-4956-861c-b08ee202d058: # Dropdown Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellDropdownText
+    instructions: ''
+    name: 'Dropdown Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: '1'
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+handle: mxDropdownNaviPoint
+name: Dropdown
+sortOrder: 2

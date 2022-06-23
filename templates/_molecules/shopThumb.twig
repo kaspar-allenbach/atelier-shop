@@ -1,0 +1,23 @@
+{% import '_incl/docMacros' as macro %}
+
+
+
+
+<a href="{{ item.url }}" class="listingThumb">
+	{% include "_atoms/shopThumbStockCheck" %}
+	<figure class="visualPart">
+
+		{% set imageThumb = item.variantThumb|length ? item.variantThumb.one() : item.defaultVariant.variantThumb|length ? item.defaultVariant.variantThumb.one() %}
+
+		{{ macro.shopThumb(imageThumb, 1/1) }}
+		
+	</figure>
+	<div class="textPart">
+		{% if item.productType | length %}
+			<h3 class="thumbCategory">{{ macro.category(item.productType) }}</h3>
+		{% endif %}
+		<h2 class="thumbTitle">
+			{{ item.title }}
+		</h2>
+	</div>
+</a>

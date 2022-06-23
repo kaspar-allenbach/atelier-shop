@@ -1,0 +1,44 @@
+{% import '_incl/docMacros' as macro %}
+
+{# if used on a category page the handle changes from 'product' to 'category' #}
+{% if category is defined %}
+    {% set txtContent = category.productText.all() %}
+{% else %}
+    {% set txtContent = entry.productText.all() %}
+{% endif %}
+
+
+{% for block in txtContent %}
+    {% switch block.type %}
+        {% case "mxTxtBox" %}
+            {% if block.cellTxtBox == 'txtBoxStart' %}<div class="txtBox">{% else %}</div>{% endif %}
+        {% case "mxSubtitle" %}
+            {% if block.cellSubtitle %}
+                <{{block.subtitleLevel.value ?? 'h3' }} class="productTextSubtitle {{ block.cellSeparator ? 'separator' }}">
+                    {{ block.cellSubtitle }}
+                </{{block.subtitleLevel.value ?? 'h3' }}>
+            {% endif %}
+        {% case "mxLead" %}
+            {% if block.cellLeadtxt %}
+                <{{block.subtitleLevel.value ?? 'h2' }} class="productLead">
+                    {{ macro.textField( block.cellLeadtxt ) }}
+                </{{block.subtitleLevel.value ?? 'h2' }}>
+            {% endif %}
+        {% case "mxQuote" %}
+            <blockquote{% if block.cellCiteLink %} cite="{{ block.cellCiteLink }}"{% endif %}>
+                <p>{{ macro.textField( block.cellQuote ) }}</p>
+                <footer>
+                    {% if block.cellCiteLink %}
+                        <cite><a href="{{ block.cellCiteLink }}">{{ block.cellSource }}</a></cite>
+                    {% else %}
+                        <cite>{{ block.cellSource }}</cite>
+                    {% endif %}
+                    
+                </footer>
+            </blockquote>
+        {% default %}
+            {% if block.cellTxt %}
+                {{ macro.richText( block.cellTxt ) }}
+            {% endif %}
+    {% endswitch %}
+{% endfor %}

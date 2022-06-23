@@ -1,0 +1,122 @@
+field: dff41763-7565-4d2d-854a-57446e222deb # Page Elements
+fieldLayouts:
+  ef937211-8699-4205-935b-0ad0d4e17033:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b1e7ba52-bd70-4ed9-9800-3beb49d79fe1 # Image
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4ca40e58-ce65-483d-81e5-0664a0dc9541 # Grid Coordinator
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  4ca40e58-ce65-483d-81e5-0664a0dc9541: # Grid Coordinator
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellGridCoordinator
+    instructions: ''
+    name: 'Grid Coordinator'
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 1de37067-3475-4ba0-ab7e-5bf7f9083a3f # No Mobile
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 4be5fd5d-b5b9-4ea4-a7a0-c9fdfc3c4f14 # Grid Width
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 89834594-bd35-4a51-8a39-55dfd77db7f6 # Same Cell?
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - a01b6dc1-d170-418f-a5b8-d582ced1f2a7 # Grid Offset
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - eeef5b38-8765-4dbf-bf7e-6e00969ad976 # Grid Height
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_5_cellgridcoordinator}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  b1e7ba52-bd70-4ed9-9800-3beb49d79fe1: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellImg
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:f30daf60-565d-4952-a03a-5740ee091724'
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Add Image'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:f30daf60-565d-4952-a03a-5740ee091724'
+      singleUploadLocationSubpath: '{owner.slug}'
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: mxImage
+name: Image
+sortOrder: 1

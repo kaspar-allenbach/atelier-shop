@@ -1,0 +1,15 @@
+.envHint {
+    background: red;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    margin: 0;
+    width: 100%;
+    flex-basis: 100%;
+    p {
+      margin: 0;
+    }
+    .envNon {
+      color: white;
+    }
+}

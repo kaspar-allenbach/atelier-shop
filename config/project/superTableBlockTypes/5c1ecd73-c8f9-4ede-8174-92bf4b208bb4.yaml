@@ -1,0 +1,91 @@
+field: 4e00500c-6d8b-4fcd-ac2f-06a765ba2fac # SplitLink
+fieldLayouts:
+  afea3ad7-b1fd-4084-a91f-00fd07c6fca4:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 5b4ca42f-5407-413b-b5fc-8ad7687c8a47 # Link Label
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6458f7a8-2514-438d-bfb7-adafd0df6d66 # Link Url
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 50149d68-1643-4992-a961-0adcc401448a # Link Active?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5b4ca42f-5407-413b-b5fc-8ad7687c8a47: # Link Label
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: stLinkLabel
+    instructions: ''
+    name: 'Link Label'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: siteGroup
+    type: craft\fields\PlainText
+  6458f7a8-2514-438d-bfb7-adafd0df6d66: # Link Url
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: stLinkUrl
+    instructions: ''
+    name: 'Link Url'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+  50149d68-1643-4992-a961-0adcc401448a: # Link Active?
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: stLinkActive
+    instructions: ''
+    name: 'Link Active?'
+    searchable: false
+    settings:
+      default: false
+      offLabel: Inaktiv
+      onLabel: Aktiv
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch

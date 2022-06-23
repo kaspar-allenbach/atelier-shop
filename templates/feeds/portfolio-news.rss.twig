@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  {% set pageEntry = craft.entries.section('shopListing').one() %}
+  <channel>
+    <title>{{ pageEntry.title }}, {{ globals.naviName }}</title>
+    <link>{{ pageEntry.url }}</link>
+    <atom:link href="{{ url(craft.app.request.pathInfo) }}" rel="self" type="application/rss+xml" />
+    <description>{{ pageEntry.seoDescription }}</description>
+    <language>{{ craft.app.language }}</language>
+    <pubDate>{{ now|rss }}</pubDate>
+    <lastBuildDate>{{ now|rss }}</lastBuildDate>
+
+    {% for entry in craft.entries.section('portfolioEntry').all() %}
+      <item>
+        <title>{{ entry.title }}</title>
+        <link>{{ entry.url }}</link>
+        <pubDate>{{ entry.postDate|rss }}</pubDate>
+        <author>{{ pageEntry.author }}</author>
+        <guid>{{ entry.url }}</guid>
+        <description><![CDATA[{{ entry.seoDescription }}]]></description>
+        {% for block in entry.listingThumb %}
+          {% switch block.type %}
+            {% case "mxImg" %}
+              {% for asset in block.cellImg.all() %}
+                {% set transformedImage = craft.imager.transformImage(asset, { width: 1024, format: 'jpg'}) %}
+                <media:content
+                xmlns:media="http://search.yahoo.com/mrss/"
+                url="{{ currentSite.baseUrl | trim('/') }}{{ transformedImage.url }}"
+                medium="image"
+                type="image/jpeg"
+                width="{{ transformedImage.width }}" 
+                height="{{ transformedImage.height }}" />
+              {% endfor %}
+            {% case "mxGiphy" %}
+              <media:content
+                xmlns:media="http://search.yahoo.com/mrss/"
+                url="{{ block.cellGiphy }}"
+                medium="image"
+                type="image/gif" />
+          {% endswitch %}
+				{% endfor %}
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

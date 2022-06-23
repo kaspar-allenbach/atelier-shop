@@ -1,0 +1,41 @@
+field: a86d5131-4509-4986-a88b-9f74b5a791b8 # Listing Thumb
+fieldLayouts:
+  47b52aa6-bb35-40b0-870a-2fa1b27be67e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e7ff0a76-a0fb-4ac7-956e-507aebafddc4 # GIPHY
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  e7ff0a76-a0fb-4ac7-956e-507aebafddc4: # GIPHY
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: cellGiphy
+    instructions: ''
+    name: GIPHY
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: '1'
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'https://media.giphy.com/media/4EExYTBySQ4B1zaOzY/giphy.gif'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: mxGiphy
+name: GIPHY
+sortOrder: 2

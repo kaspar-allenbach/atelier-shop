@@ -1,0 +1,24 @@
+.internetExplorer {
+  
+  .ieUser {
+    position: absolute;
+    z-index: 1000000000;
+    background: rgba($brandColor, 0.9);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1920px;
+    text-align: center;
+    padding-top: 150px;
+    .locale {
+      margin-bottom: 150px;
+    }
+    h2 {
+      @extend %fontXL;
+      font-weight: 700;
+    }
+    p {
+      @extend %fontXL;
+    }
+  }
+}

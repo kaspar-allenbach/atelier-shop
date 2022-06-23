@@ -1,0 +1,17 @@
+.layoutHolder.indexIntro {
+  padding-top: $gridGap * 2;
+  padding-bottom: $gridGap * 2;
+  .indexIntro {
+    @extend %fontXL;
+    br {
+      margin-bottom: 10px;
+    }
+  }
+}
+.productHolder {
+  display: flex;
+  @include mdDown {
+    flex-direction: row;
+  }
+  margin-bottom: 10px;
+}

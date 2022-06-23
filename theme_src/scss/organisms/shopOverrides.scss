@@ -1,0 +1,144 @@
+.shopCheckout {
+  overflow-x: hidden;
+  //header
+  .cartHead {
+    background-color: $txtInvert;
+    .brand {
+      @include flexBox(null, center, center);
+      text-align: left;
+      h2,
+      h3 {
+        @extend %fontM;
+        margin: 0;
+        padding: 0;
+      }
+      svg {
+        width: 50px !important;
+        margin-right: 30px;
+      }
+    }
+    .shoppingCart {
+      max-width: 30px;
+    }
+  }
+  form > fieldset {
+    padding: 0;
+  }
+  .lineItem {
+    .itemDescription {
+      flex: 1;
+      width: 100%;
+    }
+    img {
+      align-self: flex-start;
+      margin-right: 10px;
+    }
+  }
+  hr {
+    margin: 3px 0;
+  }
+  h1 {
+    @extend %fontL;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  h4 {
+    margin: 0;
+  }
+  .bg-white {
+    background: $bgColor;
+  }
+  .multitextrow {
+    @include mdDown {
+      flex-direction: column;
+      max-width: 100%;
+    }
+  }
+  .order-review {
+    @extend %panel;
+  }
+  .adjustment {
+    list-style-type: none;
+    padding-left: 0;
+    @extend %fontXS;
+    padding-top: $gridGap;
+    .adjustmentType {
+      @extend %fontS;
+      font-weight: 700;
+    }
+  }
+  .card-data,
+  .card-holder {
+    padding: 0;
+    margin: 0;
+  }
+  .checkbox {
+    input {
+      width: inherit;
+    }
+  }
+  ul.address-data,
+  ul.order-details {
+    li {
+      margin: 0;
+      @extend %fontS;
+      @include flexBox(null, space-between, center);
+    }
+  }
+  #main p a,
+  #main li a {
+    @extend %fontS;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .badge {
+    text-decoration: none !important;
+  }
+  .orderMessage {
+    @extend %fontS;
+    margin-top: $gridGap;
+    margin-bottom: $gridGap * 3;
+  }
+  .orderHead {
+    @include flexBox(null, space-between, center);
+  }
+  .steps {
+    li {
+      @extend %fontXS;
+    }
+    @include mdDown {
+      min-width: 100%;
+      ul {
+        margin: 0;
+        padding-top: 20px;
+        @include flexBox(null, center, center);
+        li a {
+          padding: 0;
+        }
+      }
+    }
+  }
+  .adressButtons {
+    @include flexBox(null, flex-end, center);
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  box-sizing: border-box !important;
+}
+.orderPaidStatus {
+  color: red;
+  text-transform: uppercase;
+  position: absolute;
+  transform: rotate(30deg);
+  @extend %fontXL;
+  font-weight: 700;
+}
+.paypal-rest-form {
+  text-align: center;
+  margin-top: $gridGap;
+}

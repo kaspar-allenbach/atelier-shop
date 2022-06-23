@@ -1,0 +1,421 @@
+field: 5b85f50a-924a-4fc6-b0dc-dd06ed203e1a # Grid Coordinator
+fieldLayouts:
+  c545edef-a5da-4f75-b9a1-3e562a0442e1:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 03fc42f4-3ad8-48d6-9a14-79a2e3de0ab8 # Grid Width
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: aa9a7864-be5d-4255-8414-0c7c5661ae56 # Grid Height
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ade15e61-1d5e-418a-a5bc-a160f51cf6d0 # Grid Offset
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a6d14185-b811-4647-b6e1-af7f4a468f8c # No Mobile
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  03fc42f4-3ad8-48d6-9a14-79a2e3de0ab8: # Grid Width
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: gridWidth
+    instructions: ''
+    name: 'Grid Width'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 1'
+            -
+              - value
+              - span1
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 2'
+            -
+              - value
+              - span2
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 3'
+            -
+              - value
+              - span3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 4'
+            -
+              - value
+              - span4
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 5'
+            -
+              - value
+              - span5
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 6'
+            -
+              - value
+              - span6
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 7'
+            -
+              - value
+              - span7
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 8'
+            -
+              - value
+              - span8
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 9'
+            -
+              - value
+              - span9
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 10'
+            -
+              - value
+              - span10
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 11'
+            -
+              - value
+              - span11
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 12'
+            -
+              - value
+              - span12
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  a6d14185-b811-4647-b6e1-af7f4a468f8c: # No Mobile
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: hideOnMobile
+    instructions: ''
+    name: 'No Mobile'
+    searchable: true
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  aa9a7864-be5d-4255-8414-0c7c5661ae56: # Grid Height
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: gridHeight
+    instructions: ''
+    name: 'Grid Height'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 1'
+            -
+              - value
+              - span1
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 2'
+            -
+              - value
+              - span2
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 3'
+            -
+              - value
+              - span3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Span 4'
+            -
+              - value
+              - span4
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  ade15e61-1d5e-418a-a5bc-a160f51cf6d0: # Grid Offset
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: gridOffset
+    instructions: ''
+    name: 'Grid Offset'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 0'
+            -
+              - value
+              - offset0
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 1'
+            -
+              - value
+              - offset1
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 2'
+            -
+              - value
+              - offset2
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 3'
+            -
+              - value
+              - offset3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 4'
+            -
+              - value
+              - offset4
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 5'
+            -
+              - value
+              - offset5
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 6'
+            -
+              - value
+              - offset6
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 7'
+            -
+              - value
+              - offset7
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 8'
+            -
+              - value
+              - offset8
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 9'
+            -
+              - value
+              - offset9
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 10'
+            -
+              - value
+              - offset10
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 11'
+            -
+              - value
+              - offset11
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Offset 12'
+            -
+              - value
+              - offset12
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown

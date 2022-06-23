@@ -1,0 +1,37 @@
+{% import '_incl/docMacros' as macro %}
+
+{# -------------------------------------------------------------------------------- <br>
+<strong></strong>  #{{ order.reference }}<br>
+<strong>{{ "E-Mail"|t }}:</strong> <a href="mailto:{{ order.customer.email }}">{{ order.customer.email }}</a><br>
+<strong>{{ "Total"|t }}:</strong> {{ order.totalPrice|commerceCurrency(cart.currency) }}<br>
+<strong>{{ "Bestelldatum"|t }}:</strong> {{ macro.defDate( order.dateOrdered ) }}<br>
+<strong>{{ 'Zahlart' | t }}:</strong> {{ order.gateway }} <br>
+-------------------------------------------------------------------------------- <br> #}
+
+<table class="orderData" style="width: 100%;">
+  <thead>
+    <tr>
+      <th style="{{tableHeadBorder}}"><strong>{{'Bestellung'|t}}:</strong></th>
+      <th style="{{tableHeadBorder}}"><strong>{{ "E-Mail"|t }}:</strong></th>
+      <th style="{{tableHeadBorder}}">{{ "Total"|t }}:</th>
+      <th style="{{tableHeadBorder}}">{{ "Bestelldatum"|t }}:</th>
+      <th style="{{tableHeadBorder}}">{{ 'Zahlart' | t }}:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td style="{{tableBorder}}">
+            #<a href="{{ currentSite.baseUrl ~ 'purchase/customer/order?number=' ~ order.number }}">{{ order.reference }}</a>
+        </td>
+        <td style="{{tableBorder}}"><a href="mailto:{{ order.email }}">{{ order.email }}</a></td>
+        <td style="{{tableBorder}}">{{ order.totalPrice|commerceCurrency(order.currency) }}</td>
+        <td style="{{tableBorder}}">{{ macro.defDate( order.dateOrdered ) }}</td>
+        <td style="{{tableBorder}}">
+          {{ order.gateway }}
+          {% if order.payrexxPaymentMethod %}
+            ({{ order.payrexxPaymentMethod }})
+          {% endif %}
+        </td>
+    </tr>
+  </tbody>
+</table>

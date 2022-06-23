@@ -1,0 +1,27 @@
+{% extends "_layout" %}
+{% import '_incl/docMacros' as macro %}
+
+{% set frontProducts = craft.products.hallOfFame(not 1).type('not originals').orderBy('sticky desc').all() %}
+
+{% block content %}
+	{# all content #}
+	{{ craft.blitz.getTemplate ("_atoms/shopCartTab") }}
+	<main class="layoutHolder">
+		<article class="mainGrid stickyEntry">
+			{% for item in frontProducts %}
+				{% if loop.index == 9 %}
+					<div class="contentThumb">
+						<h1>{{ entry.title }}</h1>
+						<p>{{ macro.textField(entry.introText) }}</p>
+						{% include "_molecules/shopCategories" %}
+					</div>
+				{% endif %}
+				{% include "_molecules/shopThumb" %}
+				{% if (loop.last) and (entry.shopListingText) %}
+						<div class="{% if loop.index is odd %}odd{% else %}even{% endif %} shopTxt">{{ macro.richText(entry.shopListingText)}}</div>
+				{% endif %}
+			{% endfor %}
+		</article>
+	</main>
+	{% include "_organisms/shopPerks" %}
+{% endblock %}

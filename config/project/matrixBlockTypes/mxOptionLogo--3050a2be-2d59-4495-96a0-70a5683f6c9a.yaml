@@ -1,0 +1,80 @@
+field: 0dcf12e9-7072-4828-af83-d3faa9e93193 # Options Logos
+fieldLayouts:
+  d3bb4595-68c8-4185-b861-ed779bb5463c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 3e962b98-92fc-454a-897d-688e05ad2e64 # Logo
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: dc2b3e4f-3122-4800-87a7-232009875d28 # Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3e962b98-92fc-454a-897d-688e05ad2e64: # Logo
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: cellLogo
+    instructions: ''
+    name: Logo
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:c7817451-af61-4d42-af4a-fb7370ef4fd2' # Shop
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:86365b96-23a4-41aa-afd6-2396f45c29ad' # Images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  dc2b3e4f-3122-4800-87a7-232009875d28: # Link
+    columnSuffix: null
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: cellLink
+    instructions: ''
+    name: Link
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: null
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: mxOptionLogo
+name: 'Option Logo'
+sortOrder: 1

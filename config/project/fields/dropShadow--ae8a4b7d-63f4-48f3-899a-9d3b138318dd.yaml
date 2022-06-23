@@ -1,0 +1,14 @@
+columnSuffix: null
+contentColumnType: boolean
+fieldGroup: 80dad2fa-b3cc-4a38-9a52-520125d66ab6 # Assets
+handle: dropShadow
+instructions: ''
+name: Schatten
+searchable: true
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch
