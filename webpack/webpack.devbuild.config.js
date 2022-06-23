@@ -5,6 +5,6 @@ const baseConfig = require('./webpack.base.config.js');
 module.exports = merge(baseConfig, {
   devtool: "source-map",
   output: {
-    filename: 'www/theme/js/atelier6.dev.js'
+    filename: 'www/theme/js/atelier-shop.dev.js'
   }
 });

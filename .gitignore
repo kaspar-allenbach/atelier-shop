@@ -42,3 +42,5 @@ www/cache/blitz/*
 /www/theme/css/atelier6.min.css
 /www/theme/css/atelier6.min.css.map
 /translations/en
+/www/theme/js/atelier-shop.dev.js
+/www/theme/js/atelier-shop.dev.js.map
