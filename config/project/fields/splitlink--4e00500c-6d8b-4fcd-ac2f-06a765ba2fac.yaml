@@ -1,0 +1,43 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: b561ef0e-3093-459e-ba9a-555511435eb8 # Globals
+handle: splitlink
+instructions: ''
+name: SplitLink
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 5b4ca42f-5407-413b-b5fc-8ad7687c8a47 # Link Label
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 6458f7a8-2514-438d-bfb7-adafd0df6d66 # Link Url
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 50149d68-1643-4992-a961-0adcc401448a # Link Active?
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_splitlink}}'
+  fieldLayout: table
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

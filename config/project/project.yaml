@@ -1,4 +1,4 @@
-dateModified: 1655982678
+dateModified: 1655988283
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: 'Kaspar Allenbach'
@@ -47,6 +47,8 @@ meta:
     4c43e277-578d-470f-8572-70b3c0ec2212: 'Grid Width' # Grid Width
     4c98f2b7-f4eb-42a0-a361-8edb4cdb000d: Subtitle # Subtitle
     4ca40e58-ce65-483d-81e5-0664a0dc9541: 'Grid Coordinator' # Grid Coordinator
+    4e00500c-6d8b-4fcd-ac2f-06a765ba2fac: SplitLink # SplitLink
+    5b4ca42f-5407-413b-b5fc-8ad7687c8a47: 'Link Label' # Link Label
     5b85f50a-924a-4fc6-b0dc-dd06ed203e1a: 'Grid Coordinator' # Grid Coordinator
     5bb0c4af-9358-4f2a-9945-fa6ddfb0d3ae: Client # Client
     5bdde4af-80bb-4aa6-be5d-7b2d2cb62b7d: 'Hall of Fame' # Hall of Fame
@@ -132,12 +134,14 @@ meta:
     5953ac4a-fb66-4c89-b92c-c1894300b26a: 'Grid Offset' # Grid Offset
     06080c3e-d173-4c0a-b1be-3b2c86bcf362: Produktgrösse # Produktgrösse
     6082ab94-81c7-43df-936c-ca4af64122df: 'Product Text' # Product Text
+    6458f7a8-2514-438d-bfb7-adafd0df6d66: 'Link Url' # Link Url
     8307e833-b2d9-4fa8-bec3-7a9c74448c2b: Image # Image
     8382fe8e-8a5e-4d70-8716-744be405f18e: 'Order Success PDF' # Order Success PDF
     9371ef87-7104-4faa-bd86-e7bf0ecb55a1: 'Dropdown Links' # Dropdown Links
     013938a5-20cd-44f2-ab2d-38b805db8698: 'No Mobile' # No Mobile
     033595bd-f806-4358-8a90-838c988353f6: 'Navi Links' # Navi Links
     33789f87-45d7-4389-83ef-53f45d499dae: 'Guru Member' # Guru Member
+    50149d68-1643-4992-a961-0adcc401448a: 'Link Active?' # Link Active?
     51134fad-f9e8-4897-b7dc-0687653933b4: 'Produkt Grösse' # Produkt Grösse
     51531e4e-b696-4edb-b7b7-da517c4f4d08: 'Subtitle Level' # Subtitle Level
     56554bf1-3b19-4d17-bc8b-4f5367895da6: Kontakt # Kontakt

@@ -1,0 +1,15 @@
+.splitLink {
+    background: $brandColor;
+    text-decoration: none;
+    padding: 10px;
+    @extend %shadow;
+    @include mdUp {
+        padding: 40px 5px 10px;
+        position: absolute;
+        right: 170px;
+        top: 0;
+    }
+}
+.layoutHolder {
+    position: relative;
+}
