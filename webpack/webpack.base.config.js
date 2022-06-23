@@ -6,7 +6,7 @@ module.exports = {
       'lazysizes',
       'respimage',
       'lightgallery',
-      './theme_src/js/atelier6.js'
+      './theme_src/js/atelier-shop.js'
     ]
   },
   resolve: {

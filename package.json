@@ -1,5 +1,5 @@
 {
-  "name": "craft3-atelier6",
+  "name": "craft3-atelier",
   "version": "0.0.1",
   "private": true,
   "license": "UNLICENSED",
@@ -44,9 +44,9 @@
     "build:js": "webpack --config webpack/webpack.prod.config.js",
     "build:dev:js": "webpack --config webpack/webpack.devbuild.config.js",
     "build:css": "run-s prebuild:css prefix:css",
-    "build:dev:css": "node-sass --source-map true theme_src/scss/atelier6.scss www/theme/css/atelier6.dev.css",
-    "prebuild:css": "node-sass --source-map true theme_src/scss/atelier6.scss www/theme/css/atelier6.prebuild.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 3 versions' --grid true  < www/theme/css/atelier6.prebuild.css | postcss --use cssnano --output www/theme/css/atelier6.min.css",
+    "build:dev:css": "node-sass --source-map true theme_src/scss/atelier-shop.scss www/theme/css/atelier-shop.dev.css",
+    "prebuild:css": "node-sass --source-map true theme_src/scss/atelier-shop.scss www/theme/css/atelier-shop.prebuild.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 3 versions' --grid true  < www/theme/css/atelier-shop.prebuild.css | postcss --use cssnano --output www/theme/css/atelier-shop.min.css",
     "watch:js": "webpack --config webpack/webpack.dev.config.js",
     "watch:css": "watch 'npm run build:dev:css' theme_src/scss",
     "dev": "run-p watch:css watch:js",
@@ -56,6 +56,6 @@
   },
   "repository": {
     "type": "github",
-    "url": "https://github.com/kaspar-allenbach/atelier6.git"
+    "url": "https://github.com/kaspar-allenbach/atelier-shop.git"
   }
 }
