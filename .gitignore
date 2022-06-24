@@ -44,3 +44,8 @@ www/cache/blitz/*
 /translations/en
 /www/theme/js/atelier-shop.dev.js
 /www/theme/js/atelier-shop.dev.js.map
+/www/theme/js/atelier-shop.min.js.gz
+/www/theme/js/atelier-shop.min.js
+/www/theme/css/atelier-shop.prebuild.css.map
+/www/theme/css/atelier-shop.prebuild.css
+/www/theme/css/atelier-shop.min.css
