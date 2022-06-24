@@ -6,7 +6,7 @@ return [
         'password' => getenv('FRONTEND_PASSWORD'),
     ],
     'dev' => [
-        'enabled' => false,
+        'enabled' => true,
         
     ],
     'production' => [
