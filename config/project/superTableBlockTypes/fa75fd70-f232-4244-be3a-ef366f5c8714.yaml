@@ -8,7 +8,7 @@ fieldLayouts:
             fieldUid: deb3a438-4762-413b-8d26-6874ce777d7f # Grid Width
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -17,7 +17,7 @@ fieldLayouts:
             fieldUid: 87b5c269-b346-48ec-b733-cfdc4ddc4b48 # Grid Height
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -26,7 +26,7 @@ fieldLayouts:
             fieldUid: 06f979ef-8feb-418b-983e-2c40682013d8 # Grid Offset
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -35,7 +35,7 @@ fieldLayouts:
             fieldUid: 4b242d97-2643-492e-8184-c90cb6d321a5 # Same Cell?
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -44,7 +44,7 @@ fieldLayouts:
             fieldUid: b26a36c8-3867-411b-97fe-64dd67872ca0 # No Mobile
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

@@ -8,7 +8,7 @@ fieldLayouts:
             fieldUid: 743e4f39-6d24-4770-9451-5ab26133947e # Video
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -17,7 +17,7 @@ fieldLayouts:
             fieldUid: fd9400a9-9273-4056-9ab6-c1002f1bba94 # Grid Coordinator
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -38,7 +38,7 @@ fields:
       allowUploads: true
       allowedKinds:
         - video
-      defaultUploadLocationSource: 'volume:f30daf60-565d-4952-a03a-5740ee091724'
+      defaultUploadLocationSource: 'volume:c7817451-af61-4d42-af4a-fb7370ef4fd2' # Shop
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
@@ -48,7 +48,7 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
-      singleUploadLocationSource: 'volume:f30daf60-565d-4952-a03a-5740ee091724'
+      singleUploadLocationSource: 'volume:c7817451-af61-4d42-af4a-fb7370ef4fd2' # Shop
       singleUploadLocationSubpath: '{owner.slug}'
       source: null
       sources: '*'
@@ -78,20 +78,6 @@ fields:
                   - width
                   - ''
           -
-            - 7b17e818-42bf-4627-b500-ba29e3ce9049 # Autoplay?
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
-          -
-            - 89953990-3fda-43a6-a581-7f0f5b4dcb0c # No Mobile
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
-          -
             - c7861ec0-d436-4b74-b5f7-7cb5042b2647 # Grid Height
             -
               __assoc__:
@@ -100,6 +86,20 @@ fields:
                   - ''
           -
             - f43126d1-9b2d-4f76-99c8-f6b2b929dc5c # Grid Offset
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 7b17e818-42bf-4627-b500-ba29e3ce9049 # Autoplay?
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 89953990-3fda-43a6-a581-7f0f5b4dcb0c # No Mobile
             -
               __assoc__:
                 -

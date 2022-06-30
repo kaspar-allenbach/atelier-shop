@@ -8,7 +8,7 @@ fieldLayouts:
             fieldUid: 4c98f2b7-f4eb-42a0-a361-8edb4cdb000d # Subtitle
             instructions: null
             label: null
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -17,7 +17,7 @@ fieldLayouts:
             fieldUid: 8b8cae1e-f369-4549-841b-83cd0c74531e # Grid Coordinator
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -57,6 +57,13 @@ fields:
       columns:
         __assoc__:
           -
+            - bd1b86cc-8c8a-443d-8dd6-7b20a69f6862 # Grid Width
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
             - 025fe7fb-2982-4476-99c0-3f43ab0501b3 # Grid Height
             -
               __assoc__:
@@ -71,7 +78,7 @@ fields:
                   - width
                   - ''
           -
-            - bd1b86cc-8c8a-443d-8dd6-7b20a69f6862 # Grid Width
+            - ead47a90-a89e-4ae0-9c7f-36ee9f0ef41d # No Mobile
             -
               __assoc__:
                 -
@@ -79,13 +86,6 @@ fields:
                   - ''
           -
             - c7588676-6e6a-4430-869f-c3b5656247c4 # H?
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
-          -
-            - ead47a90-a89e-4ae0-9c7f-36ee9f0ef41d # No Mobile
             -
               __assoc__:
                 -
