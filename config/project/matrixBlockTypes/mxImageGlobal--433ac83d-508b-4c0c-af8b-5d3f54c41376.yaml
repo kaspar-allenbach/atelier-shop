@@ -8,7 +8,7 @@ fieldLayouts:
             fieldUid: 9b65638a-4ac4-4659-b7e2-86860d8dc135 # Image
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -17,7 +17,7 @@ fieldLayouts:
             fieldUid: 1d7ca8d7-9095-4b2e-b3e7-61cd44766d65 # Grid Coordinator
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -37,6 +37,20 @@ fields:
       columns:
         __assoc__:
           -
+            - deb3a438-4762-413b-8d26-6874ce777d7f # Grid Width
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 87b5c269-b346-48ec-b733-cfdc4ddc4b48 # Grid Height
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
             - 06f979ef-8feb-418b-983e-2c40682013d8 # Grid Offset
             -
               __assoc__:
@@ -51,21 +65,7 @@ fields:
                   - width
                   - ''
           -
-            - 87b5c269-b346-48ec-b733-cfdc4ddc4b48 # Grid Height
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
-          -
             - b26a36c8-3867-411b-97fe-64dd67872ca0 # No Mobile
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
-          -
-            - deb3a438-4762-413b-8d26-6874ce777d7f # Grid Width
             -
               __assoc__:
                 -
@@ -96,7 +96,7 @@ fields:
       allowUploads: true
       allowedKinds:
         - image
-      defaultUploadLocationSource: 'volume:f30daf60-565d-4952-a03a-5740ee091724'
+      defaultUploadLocationSource: 'volume:c7817451-af61-4d42-af4a-fb7370ef4fd2' # Shop
       defaultUploadLocationSubpath: ''
       limit: ''
       localizeRelations: false
@@ -106,7 +106,7 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
-      singleUploadLocationSource: 'volume:f30daf60-565d-4952-a03a-5740ee091724'
+      singleUploadLocationSource: 'volume:c7817451-af61-4d42-af4a-fb7370ef4fd2' # Shop
       singleUploadLocationSubpath: ''
       source: null
       sources: '*'

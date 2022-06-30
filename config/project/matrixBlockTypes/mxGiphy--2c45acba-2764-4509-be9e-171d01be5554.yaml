@@ -8,7 +8,7 @@ fieldLayouts:
             fieldUid: fb5b8c05-1298-41b8-9275-e34683803fb1 # GIPHY
             instructions: null
             label: null
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -17,7 +17,7 @@ fieldLayouts:
             fieldUid: 5b85f50a-924a-4fc6-b0dc-dd06ed203e1a # Grid Coordinator
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -44,13 +44,6 @@ fields:
                   - width
                   - ''
           -
-            - a6d14185-b811-4647-b6e1-af7f4a468f8c # No Mobile
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
-          -
             - aa9a7864-be5d-4255-8414-0c7c5661ae56 # Grid Height
             -
               __assoc__:
@@ -59,6 +52,13 @@ fields:
                   - ''
           -
             - ade15e61-1d5e-418a-a5bc-a160f51cf6d0 # Grid Offset
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - a6d14185-b811-4647-b6e1-af7f4a468f8c # No Mobile
             -
               __assoc__:
                 -
@@ -86,7 +86,7 @@ fields:
     searchable: true
     settings:
       maxLength: '255'
-      placeholder: 'https://media.giphy.com/media/l1J9N1n7UXolzAq2I/giphy.gif'
+      placeholder: null
       types:
         - url
     translationKeyFormat: null
