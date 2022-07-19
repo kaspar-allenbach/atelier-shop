@@ -9,6 +9,10 @@ return [
         'enabled' => true,
         
     ],
+    'stage' => [
+        'enabled' => true,
+        
+    ],
     'production' => [
         'enabled' => false,
     ],
