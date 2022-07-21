@@ -46,6 +46,11 @@ $gridContentNumber: 12;
     grid-gap: $gridGap;
   }
 }
+.contentThumb {
+  @include lgDown {
+    grid-column: 1/-1;
+  }
+}
 @include smUp {
   //make span grid column classes
   @for $i from 1 through $gridContentNumber {

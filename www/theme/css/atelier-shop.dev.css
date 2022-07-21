@@ -2090,6 +2090,10 @@ picture {
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 15px; } }
 
+@media (max-width: 992px) {
+  .contentThumb {
+    grid-column: 1/-1; } }
+
 @media (min-width: 576px) {
   .widthSpan1 {
     grid-column: span 1; }
@@ -2569,7 +2573,7 @@ footer ul.footerNavi {
   src: url("/theme/webfonts/3962A6_3_0.eot");
   src: url("/theme/webfonts/3962A6_3_0.eot?#iefix") format("embedded-opentype"), url("/theme/webfonts/3962A6_3_0.woff2") format("woff2"), url("/theme/webfonts/3962A6_3_0.woff") format("woff"), url("/theme/webfonts/3962A6_3_0.ttf") format("truetype"); }
 
-.portfolioDetails h1, .pageHead .pageTitle, .subPages .mainGrid h2 {
+.portfolioDetails h1, .pageHead .pageTitle, .subPages .mainGrid h2, .homepage .indexTitle {
   font-size: 25px;
   font-size: 2.5rem;
   line-height: 1.2;
@@ -2582,7 +2586,7 @@ footer ul.footerNavi {
   font-family: "Vaud", sans-serif;
   margin: 0; }
   @media (min-width: 576px) {
-    .portfolioDetails h1, .pageHead .pageTitle, .subPages .mainGrid h2 {
+    .portfolioDetails h1, .pageHead .pageTitle, .subPages .mainGrid h2, .homepage .indexTitle {
       font-size: 30px;
       font-size: 3rem;
       line-height: 1.3;
@@ -3468,6 +3472,7 @@ a.listingThumb {
   display: inline-block;
   position: relative;
   z-index: 10;
+  align-self: normal;
   text-decoration: none; }
   a.listingThumb:hover {
     transform: scale(1.05);
@@ -3476,10 +3481,14 @@ a.listingThumb {
     a.listingThumb:hover .textPart {
       opacity: 1; }
   a.listingThumb .visualPart {
-    position: relative; }
+    position: relative;
+    width: 100%;
+    height: 100%; }
     a.listingThumb .visualPart img, a.listingThumb .visualPart video {
       border-radius: 2px;
-      min-width: 100%; }
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
   a.listingThumb .textPart {
     position: absolute;
     top: 0;
@@ -4618,6 +4627,9 @@ input[type="email"] {
 
 .homepage .categoryLinks {
   justify-content: flex-start; }
+
+.homepage .indexTitle {
+  font-weight: 600; }
 
 .internetExplorer .ieUser {
   position: absolute;

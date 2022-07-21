@@ -16,6 +16,7 @@ a.listingThumb {
   display: inline-block;
   position: relative;
   z-index: 10;
+  align-self: normal;
   &:hover {
     transform: scale(1.05);
     box-shadow: none;
@@ -28,9 +29,13 @@ a.listingThumb {
   @extend %fontM;
   .visualPart {
     position: relative;
+    width: 100%;
+    height: 100%;
     img, video {
       border-radius: 2px;
-      min-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
   .textPart {

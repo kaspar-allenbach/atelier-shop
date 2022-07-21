@@ -5,4 +5,8 @@
     .categoryLinks {
         justify-content: flex-start;
     }
+    .indexTitle {
+        @extend %fontXXL;
+        font-weight: 600;
+    }
 }
