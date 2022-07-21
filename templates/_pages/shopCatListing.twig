@@ -15,7 +15,7 @@
 			{% for item in craft.products.relatedTo(category).hallOfFame(not 1).all() %}
 				{% include "_molecules/shopThumb" %}
 			{% endfor %}
-			<div class="categoryText{% if category.enableColumn == 1 %} enableColumn{% endif %}">
+			<div class="contentThumb{% if category.enableColumn == 1 %} enableColumn{% endif %}">
 				{% include "_molecules/productText" %}
 			</div>
 		</article>

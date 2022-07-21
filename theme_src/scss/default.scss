@@ -6,7 +6,16 @@ body {
   min-height: 100vh;
   &.darkTheme {
     background-color: $darkThemeBg;
-    h1, h2, h3, h4, h5, h6, li, a, p, .contentThumb p {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    li,
+    a,
+    p,
+    .contentThumb p {
       color: $darkThemeTxt;
       font-family: $MainFont;
     }
@@ -21,7 +30,15 @@ body {
 .content {
   position: relative;
 }
-h1, h2, h3, h4, h5, h6, li, a, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+a,
+p {
   color: $txtColor;
   font-family: $MainFont;
   margin-top: 0;
@@ -62,30 +79,40 @@ picture {
   @extend %panel;
 }
 footer {
+  @include mdUp {
+    .trustLinks,
+    .footerBrand {
+      padding-top: 50px;
+      padding-bottom: 100px;
+    }
+  }
   @include mdDown {
-    .trustLinks, .footerNavi {
+    .trustLinks,
+    .footerNavi {
       justify-content: space-around;
     }
   }
   ul.footerNavi {
     justify-content: flex-end;
   }
-}
-.footerBrand {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  .headerLogo {
-    width: 50px;
-  }
-  .brandName, .brandClaim {
-    text-decoration: none;
-    @extend %fontS;
-    margin: 0;
-  }
-  @include mdDown {
+  .footerBrand {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .headerLogo {
+      width: 50px;
+    }
+    .brandName,
     .brandClaim {
-      text-align: right;
+      text-decoration: none;
+      padding: 0 !important;
+      @extend %fontS;
+      margin: 0;
+    }
+    @include mdDown {
+      .brandClaim {
+        text-align: right;
+      }
     }
   }
 }

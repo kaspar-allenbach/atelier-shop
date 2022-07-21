@@ -8,13 +8,15 @@
       }
     }
   }
-  .mainGrid {
+  .subPagesGrid {
     h3, h4 {
       margin: 0;
     }
     h2 {
       padding-top: $gridGap;
-      @extend %fontXXL;
+      padding-bottom: $gridGap / 2;
+      @extend %fontXL;
+      font-weight: bold;
       @include smDown {
         grid-column: 1/-1;
       }
