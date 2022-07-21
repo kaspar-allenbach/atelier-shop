@@ -89,11 +89,14 @@ footer {
   @include mdDown {
     .trustLinks,
     .footerNavi {
-      justify-content: space-around;
+      justify-content: center;
     }
   }
   ul.footerNavi {
     justify-content: flex-end;
+    @include mdDown {
+      justify-content: center;
+    }
   }
   .footerBrand {
     display: flex;

@@ -2521,10 +2521,13 @@ picture {
 @media (max-width: 786px) {
   footer .trustLinks,
   footer .footerNavi {
-    justify-content: space-around; } }
+    justify-content: center; } }
 
 footer ul.footerNavi {
   justify-content: flex-end; }
+  @media (max-width: 786px) {
+    footer ul.footerNavi {
+      justify-content: center; } }
 
 footer .footerBrand {
   display: flex;
