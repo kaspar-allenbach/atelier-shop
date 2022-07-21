@@ -3818,7 +3818,8 @@ input[type="email"] {
   justify-content: center;
   flex-wrap: wrap;
   padding: 15px;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 45px; }
   @media (min-width: 786px) {
     .shopPerks {
       flex-direction: row;
@@ -3951,12 +3952,14 @@ input[type="email"] {
     white-space: pre; }
   .shopListing blockquote p:after, .categoryTemplate blockquote p:after {
     content: "»"; }
-  .shopListing blockquote cite:before, .categoryTemplate blockquote cite:before {
-    content: "— ";
+  .shopListing blockquote cite, .categoryTemplate blockquote cite {
     color: #db9e12; }
-  .shopListing blockquote cite a:hover, .categoryTemplate blockquote cite a:hover {
-    text-decoration: none;
-    font-weight: 700; }
+    .shopListing blockquote cite:before, .categoryTemplate blockquote cite:before {
+      content: "— ";
+      color: #db9e12; }
+    .shopListing blockquote cite a:hover, .categoryTemplate blockquote cite a:hover {
+      text-decoration: none;
+      font-weight: 700; }
 
 .shopListing .productTextSubtitle, .categoryTemplate .productTextSubtitle {
   font-weight: 700;
@@ -3988,9 +3991,11 @@ input[type="email"] {
       .shopListing .content .productGrid, .originalsListing .productGrid {
         grid-template-rows: auto 75px auto; } }
   @media (max-width: 786px) {
-    .shopListing .content .pageHead, .originalsListing .pageHead {
-      text-align: center;
-      padding-top: 40px; } }
+    .shopListing .content, .originalsListing {
+      margin-top: 15px; }
+      .shopListing .content .pageHead, .originalsListing .pageHead {
+        text-align: center;
+        padding-top: 40px; } }
   .shopListing .content .stickyEntry, .shopListing .content .secondaryEntries, .originalsListing .stickyEntry, .originalsListing .secondaryEntries {
     padding-bottom: 15px; }
     @media (max-width: 576px) {

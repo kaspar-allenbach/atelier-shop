@@ -29,6 +29,7 @@
     }
     cite {
       @extend %fontM;
+      color: $brandColor;
       &:before {
         content: "— ";
         color: $brandColor;

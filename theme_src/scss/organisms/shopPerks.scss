@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   padding: $gridGap;
   width: 100%;
+  margin-bottom: $gridGap * 3;
   @include mdUp {
     flex-direction: row;
     margin: $gridGap * 3 0;
@@ -13,7 +14,6 @@
   }
   .perk {
     display: flex;
-
     @include mdUp {
       padding: 0 $gridGap * 2;
       flex-direction: column;
