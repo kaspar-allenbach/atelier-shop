@@ -3825,7 +3825,6 @@ input[type="email"] {
       margin: 45px 0;
       padding: 45px; } }
   .shopPerks .perk {
-    flex: 0 0 20%;
     display: flex; }
     @media (min-width: 786px) {
       .shopPerks .perk {
@@ -3849,6 +3848,15 @@ input[type="email"] {
           margin-right: 0;
           max-width: 100px;
           padding-bottom: 15px; } }
+    .shopPerks .perk form .btn, .shopPerks .perk form .productEntryNwsltr .nwsltrLink, .productEntryNwsltr .shopPerks .perk form .nwsltrLink {
+      margin: 0; }
+    .shopPerks .perk form input {
+      border-radius: 5px;
+      padding-top: 8px;
+      padding-bottom: 6px;
+      border: solid 1px #27292b;
+      padding-left: 10px;
+      min-width: 500px; }
     @media (max-width: 786px) {
       .shopPerks .perk form {
         width: 100%;

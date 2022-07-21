@@ -12,7 +12,6 @@
     padding: $gridGap * 3;
   }
   .perk {
-    flex: 0 0 20%;
     display: flex;
 
     @include mdUp {
@@ -41,6 +40,17 @@
       }
     }
     form {
+      .btn {
+        margin: 0;
+      }
+      input {
+        border-radius: 5px;
+        padding-top: 8px;
+        padding-bottom: 6px;
+        border: solid 1px $txtColor;
+        padding-left: 10px;
+        min-width: 500px;
+      }
       @include mdDown {
         width: 100%;
         display: flex;
