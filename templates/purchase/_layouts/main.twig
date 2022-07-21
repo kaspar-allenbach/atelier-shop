@@ -47,10 +47,10 @@
     <style>{% include 'purchase/tailwind.css' %}</style>
     <style>{% include 'purchase/style.css' %}</style>
 
-     {% if env != 'dev' %}
-        <link href="/theme/css/atelier6.min.css?version={{ themeVersions }}" rel="stylesheet">
+        {% if env != 'dev' %}
+        <link href="/theme/css/atelier-shop.min.css?version={{ themeVersions }}" rel="stylesheet">
     {% else %}
-        <link href="/theme/css/atelier6.dev.css" rel="stylesheet">
+        <link href="/theme/css/atelier-shop.dev.css?version={{ themeVersions }}" rel="stylesheet">
     {% endif %}
 
     {% include '_atoms/fbPixel' %}

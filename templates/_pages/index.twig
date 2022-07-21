@@ -11,7 +11,7 @@
 			{% for item in frontProducts %}
 				{% if loop.index == 9 %}
 					<div class="contentThumb">
-						<h1>{{ entry.title }}</h1>
+						<h1 class="indexTitle">{{ entry.title }}</h1>
 						<p>{{ macro.textField(entry.introText) }}</p>
 						{% include "_molecules/shopCategories" %}
 					</div>
@@ -22,6 +22,9 @@
 				{% endif %}
 			{% endfor %}
 		</article>
+		{% for entry in craft.entries.section('hallOfFame').all() %}
+		<a href="{{ entry.url }}" class="btn hallofFameBtn">{{ entry.title }}</a>
+	{% endfor %}
 	</main>
 	{% include "_organisms/shopPerks" %}
 {% endblock %}

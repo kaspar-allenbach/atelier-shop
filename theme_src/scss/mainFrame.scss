@@ -4,7 +4,7 @@ $gridMobileBaseNumber: 1;
 
 $gridContentNumber: 12;
 
-.layoutHolder {
+.layoutHolder, .subPagesGrid {
   // @media only screen and (min-resolution: 192dpi) {
   //  max-width: 1200px;
   // }
@@ -20,8 +20,8 @@ $gridContentNumber: 12;
   padding: 0 $gridGap;
   @include mdUp {
     padding-top: 0;
-    padding-left: $gridGap / 2;
-    padding-right: $gridGap / 2;
+    padding-left: $gridGap * 2;
+    padding-right: $gridGap * 2;
   }
 }
 .mainGrid {
@@ -44,6 +44,11 @@ $gridContentNumber: 12;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: $gridGap;
+  }
+}
+.contentThumb {
+  @include lgDown {
+    grid-column: 1/-1;
   }
 }
 @include smUp {

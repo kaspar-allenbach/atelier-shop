@@ -6,6 +6,10 @@ return [
         'password' => getenv('FRONTEND_PASSWORD'),
     ],
     'dev' => [
+        'enabled' => false,
+        
+    ],
+    'stage' => [
         'enabled' => true,
         
     ],

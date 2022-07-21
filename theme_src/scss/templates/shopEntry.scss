@@ -1,5 +1,5 @@
 .shopListing .content, .originalsListing {
-  max-width: 1500px;
+  max-width: 1200px;
   margin: auto;
   .productGrid {
     grid-template-columns: 20px repeat(6, 1fr) 20px;
@@ -8,6 +8,7 @@
     }
   }
   @include mdDown {
+    margin-top: $gridGap;
     .pageHead {
       text-align: center;
       padding-top: 40px;

@@ -5,7 +5,7 @@
         <strong><a href="{{ item.purchasable.product.url }}">{{ item.purchasable.product.title }}</a></strong><br>
         {# <small>(sku: {{ item.purchasable.title }})</small> #}
         {% if item.purchasable.catProductSize %}
-            <small>Format: {{ item.purchasable.catProductSize.title }}</small>
+            <small>Format: {{ item.purchasable.catProductSize.one() }}</small>
         {% else %}
             <small>Format: {{ item.purchasable.product.catProductSize.one() }}</small>
         {% endif %}

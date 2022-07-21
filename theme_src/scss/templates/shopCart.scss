@@ -24,7 +24,9 @@
   }
   .itemProduct {
     @include smDown {
-      border-bottom: 1px solid $txtColor;
+      position: absolute;
+      width: 100%;
+      padding: 10px;
     }
   }
   .itemImage{
@@ -35,8 +37,7 @@
   }
   .itemPrice {
     @include smDown {
-      grid-row: 2;
-      grid-column: 2;
+      @include flexBox(row-reverse, space-between, baseline);
       strong {
         background: $txtInvert;
       }
@@ -46,9 +47,6 @@
     @extend %hiddenSmDown;
   }
   .tableRow {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
     &.itemRow {
       @extend %panel;
       position: relative;
@@ -61,6 +59,7 @@
       }
     }
     @include smUp {
+      display: grid;
       grid-template-columns: 1fr 150px 1fr 1fr;
       grid-gap: 20px;
     }
@@ -81,9 +80,6 @@
     }
     .itemPrice {
       text-align: right;
-      @include mdDown {
-        @include flexBox(column-reverse, null, null);
-      }
       .itemPriceTag {
         @extend %fontXS;
       }
@@ -126,7 +122,13 @@
     }
   }
   .itemQuantity {
-    @include flexBox(column, space-between, null);
+    @include mdDown {
+      @include flexBox(row, space-between, null);
+      margin-top: 10px;
+      .btn {
+        width: 80px;
+      }
+    }
     @include mdUp {
       grid-column: 3;
       grid-row: 1;

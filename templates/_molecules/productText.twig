@@ -3,6 +3,8 @@
 {# if used on a category page the handle changes from 'product' to 'category' #}
 {% if category is defined %}
     {% set txtContent = category.productText.all() %}
+{% elseif product is defined %}
+    {% set txtContent = product.productText.all() %}
 {% else %}
     {% set txtContent = entry.productText.all() %}
 {% endif %}
