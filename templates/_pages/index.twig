@@ -22,6 +22,9 @@
 				{% endif %}
 			{% endfor %}
 		</article>
+		{% for entry in craft.entries.section('hallOfFame').all() %}
+		<a href="{{ entry.url }}" class="btn hallofFameBtn">{{ entry.title }}</a>
+	{% endfor %}
 	</main>
 	{% include "_organisms/shopPerks" %}
 {% endblock %}
