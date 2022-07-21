@@ -4,7 +4,7 @@
 {% if category is defined %}
     {% set txtContent = category.productText.all() %}
 {% else %}
-    {% set txtContent = entry.productText.all() %}
+    {% set txtContent = product.productText.all() %}
 {% endif %}
 
 

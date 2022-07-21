@@ -2065,8 +2065,8 @@ picture {
   @media (min-width: 786px) {
     .layoutHolder {
       padding-top: 0;
-      padding-left: 7.5px;
-      padding-right: 7.5px; } }
+      padding-left: 30px;
+      padding-right: 30px; } }
 
 .mainGrid {
   display: grid;
@@ -3972,7 +3972,7 @@ input[type="email"] {
   margin-bottom: 15px; }
 
 .shopListing .content, .originalsListing {
-  max-width: 1500px;
+  max-width: 1200px;
   margin: auto; }
   .shopListing .content .productGrid, .originalsListing .productGrid {
     grid-template-columns: 20px repeat(6, 1fr) 20px; }

@@ -20,8 +20,8 @@ $gridContentNumber: 12;
   padding: 0 $gridGap;
   @include mdUp {
     padding-top: 0;
-    padding-left: $gridGap / 2;
-    padding-right: $gridGap / 2;
+    padding-left: $gridGap * 2;
+    padding-right: $gridGap * 2;
   }
 }
 .mainGrid {
