@@ -4222,7 +4222,9 @@ input[type="email"] {
 
 @media (max-width: 576px) {
   .shopCheckout.shopCart .itemProduct {
-    border-bottom: 1px solid #27292b; } }
+    position: absolute;
+    width: 100%;
+    padding: 10px; } }
 
 @media (max-width: 576px) {
   .shopCheckout.shopCart .itemImage {
@@ -4231,15 +4233,14 @@ input[type="email"] {
 
 @media (max-width: 576px) {
   .shopCheckout.shopCart .itemPrice {
-    grid-row: 2;
-    grid-column: 2; }
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: baseline; }
     .shopCheckout.shopCart .itemPrice strong {
       background: white; } }
 
 .shopCheckout.shopCart .tableRow {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
   padding: 10px 0; }
   .shopCheckout.shopCart .tableRow.itemRow {
     position: relative; }
@@ -4251,6 +4252,7 @@ input[type="email"] {
         margin-bottom: 30px; } }
   @media (min-width: 576px) {
     .shopCheckout.shopCart .tableRow {
+      display: grid;
       grid-template-columns: 1fr 150px 1fr 1fr;
       grid-gap: 20px; } }
   .shopCheckout.shopCart .tableRow .changeLineItem {
@@ -4268,10 +4270,6 @@ input[type="email"] {
       margin-bottom: 0; }
   .shopCheckout.shopCart .tableRow .itemPrice {
     text-align: right; }
-    @media (max-width: 786px) {
-      .shopCheckout.shopCart .tableRow .itemPrice {
-        display: flex;
-        flex-direction: column-reverse; } }
     .shopCheckout.shopCart .tableRow .itemPrice span {
       display: block; }
       @media (max-width: 786px) {
@@ -4300,14 +4298,19 @@ input[type="email"] {
   .shopCheckout.shopCart .editLineItem, .shopCheckout.shopCart .itemQuantity {
     grid-row: 2; } }
 
-.shopCheckout.shopCart .itemQuantity {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
-  @media (min-width: 786px) {
-    .shopCheckout.shopCart .itemQuantity {
-      grid-column: 3;
-      grid-row: 1; } }
+@media (max-width: 786px) {
+  .shopCheckout.shopCart .itemQuantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px; }
+    .shopCheckout.shopCart .itemQuantity .btn, .shopCheckout.shopCart .itemQuantity .productEntryNwsltr .nwsltrLink, .productEntryNwsltr .shopCheckout.shopCart .itemQuantity .nwsltrLink {
+      width: 80px; } }
+
+@media (min-width: 786px) {
+  .shopCheckout.shopCart .itemQuantity {
+    grid-column: 3;
+    grid-row: 1; } }
 
 .shopCheckout.shopCart .couponCode {
   align-self: flex-start;
