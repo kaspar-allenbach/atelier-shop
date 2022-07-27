@@ -130,10 +130,7 @@
 			{{ svg(image) }}
 		{% else %}
 			{% set transformedImages = craft.imager.transformImage(image,
-                [{ width: 320 },
-                { width: 980 },
-                { width: 1200 },],
-                { jpegQuality: 75, ratio: ratioRaram },
+                [{ width: 320 },{ width: 576 },{ width: 768 },{ width: 992 },{ width: 1200 },],{ jpegQuality: 75, ratio: ratioRaram },
                 { filenamePattern: macro.imageNaming(image) | kebab ~ '-kaspar_allenbach' ~ '_{fullname|shorthash}.{extension}' })
              %}
 			<img
